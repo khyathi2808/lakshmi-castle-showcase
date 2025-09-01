@@ -1,0 +1,334 @@
+import { useState } from "react";
+import { Phone, Mail, MapPin, Send, RotateCcw } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
+
+const ContactSection = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+    interestedIn: "3BHK Apartment"
+  });
+
+  const { toast } = useToast();
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Basic validation
+    if (!formData.name || !formData.email || !formData.phone) {
+      toast({
+        title: "Validation Error",
+        description: "Please fill in all required fields.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    // Simulate form submission
+    toast({
+      title: "Inquiry Submitted Successfully!",
+      description: "Thank you for your interest in Lakshmi Castle. Our team will contact you within 24 hours.",
+    });
+
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+      interestedIn: "3BHK Apartment"
+    });
+  };
+
+  const handleReset = () => {
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      message: "",
+      interestedIn: "3BHK Apartment"
+    });
+    toast({
+      title: "Form Reset",
+      description: "All form fields have been cleared.",
+    });
+  };
+
+  const handleCallNow = () => {
+    window.open("tel:+919963379888", "_self");
+  };
+
+  const contactInfo = [
+    {
+      icon: Phone,
+      title: "Call Us",
+      content: "99633 79888",
+      action: () => window.open("tel:+919963379888", "_self"),
+      color: "from-primary to-primary-glow"
+    },
+    {
+      icon: Mail,
+      title: "Email Us",
+      content: "info@lakshmicastle.com",
+      action: () => window.open("mailto:info@lakshmicastle.com", "_self"),
+      color: "from-secondary to-secondary-glow"
+    },
+    {
+      icon: MapPin,
+      title: "Visit Us",
+      content: "VIP Road, Visakhapatnam",
+      action: () => document.querySelector('#location')?.scrollIntoView({ behavior: 'smooth' }),
+      color: "from-accent to-accent-soft"
+    }
+  ];
+
+  return (
+    <section id="contact" className="py-20 bg-background">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Contact Us
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Ready to make Lakshmi Castle your new home? Get in touch with our expert team for personalized assistance.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Contact Information */}
+          <div className="space-y-6">
+            <h3 className="text-2xl font-bold text-foreground mb-6">Get in Touch</h3>
+            
+            {contactInfo.map((info, index) => {
+              const IconComponent = info.icon;
+              return (
+                <Card key={index} className="card-luxury cursor-pointer hover-lift" onClick={info.action}>
+                  <CardContent className="p-6">
+                    <div className="flex items-center">
+                      <div className={`w-12 h-12 rounded-full bg-gradient-to-r ${info.color} flex items-center justify-center mr-4 shadow-md`}>
+                        <IconComponent className="w-6 h-6 text-white" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-foreground">{info.title}</h4>
+                        <p className="text-muted-foreground">{info.content}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
+
+            {/* Quick Action Buttons */}
+            <div className="space-y-3 pt-4">
+              <Button
+                onClick={handleCallNow}
+                className="w-full btn-hero"
+                aria-label="Call developer now"
+              >
+                <Phone className="w-5 h-5 mr-2" />
+                Call Now: 99633 79888
+              </Button>
+              
+              <Button
+                onClick={() => document.querySelector('#floor-plans')?.scrollIntoView({ behavior: 'smooth' })}
+                variant="outline"
+                className="w-full btn-outline-luxury"
+                aria-label="View floor plans"
+              >
+                View Floor Plans
+              </Button>
+            </div>
+
+            {/* Developer Information */}
+            <Card className="card-premium mt-8">
+              <CardHeader>
+                <CardTitle className="text-lg">Developer Details</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3 text-sm">
+                  <div>
+                    <h5 className="font-semibold text-foreground">Arya Nirman Pvt. Ltd.</h5>
+                    <p className="text-muted-foreground">
+                      Flat No. 403, Hema Heritage Apartments<br />
+                      D.No. 7-18-16, Plot No. 46<br />
+                      Kirlampudi Layout, Visakhapatnam – 530024
+                    </p>
+                  </div>
+                  <div>
+                    <h5 className="font-semibold text-foreground">Project Architect</h5>
+                    <p className="text-muted-foreground">K. Uday Sankar</p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Contact Form */}
+          <div className="lg:col-span-2">
+            <Card className="card-premium">
+              <CardHeader>
+                <CardTitle className="text-2xl">Send us an Inquiry</CardTitle>
+                <p className="text-muted-foreground">
+                  Fill out the form below and our team will get back to you within 24 hours.
+                </p>
+              </CardHeader>
+              <CardContent>
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-2">
+                      <Label htmlFor="name">Full Name *</Label>
+                      <Input
+                        id="name"
+                        name="name"
+                        type="text"
+                        placeholder="Enter your full name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        required
+                        className="transition-all duration-300 focus:shadow-md"
+                      />
+                    </div>
+                    
+                    <div className="space-y-2">
+                      <Label htmlFor="phone">Phone Number *</Label>
+                      <Input
+                        id="phone"
+                        name="phone"
+                        type="tel"
+                        placeholder="Enter your phone number"
+                        value={formData.phone}
+                        onChange={handleInputChange}
+                        required
+                        className="transition-all duration-300 focus:shadow-md"
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="email">Email Address *</Label>
+                    <Input
+                      id="email"
+                      name="email"
+                      type="email"
+                      placeholder="Enter your email address"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      required
+                      className="transition-all duration-300 focus:shadow-md"
+                    />
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="interestedIn">Interested In</Label>
+                    <select
+                      id="interestedIn"
+                      name="interestedIn"
+                      value={formData.interestedIn}
+                      onChange={(e) => setFormData(prev => ({ ...prev, interestedIn: e.target.value }))}
+                      className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground transition-all duration-300 focus:shadow-md focus:outline-none focus:ring-2 focus:ring-ring"
+                    >
+                      <option value="3BHK Apartment">3BHK Apartment</option>
+                      <option value="2040 sq.ft. Plan">2040 sq.ft. Plan (Pink)</option>
+                      <option value="1990 sq.ft. Plan">1990 sq.ft. Plan (Green)</option>
+                      <option value="Site Visit">Schedule Site Visit</option>
+                      <option value="Investment Opportunity">Investment Opportunity</option>
+                    </select>
+                  </div>
+
+                  <div className="space-y-2">
+                    <Label htmlFor="message">Message</Label>
+                    <Textarea
+                      id="message"
+                      name="message"
+                      placeholder="Tell us about your requirements, preferred floor, budget, or any specific questions..."
+                      value={formData.message}
+                      onChange={handleInputChange}
+                      rows={4}
+                      className="transition-all duration-300 focus:shadow-md"
+                    />
+                  </div>
+
+                  {/* Form Actions */}
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <Button
+                      type="submit"
+                      className="btn-hero flex-1"
+                      aria-label="Submit inquiry form"
+                    >
+                      <Send className="w-5 h-5 mr-2" />
+                      Submit Inquiry
+                    </Button>
+                    
+                    <Button
+                      type="button"
+                      variant="outline"
+                      onClick={handleReset}
+                      className="btn-outline-luxury"
+                      aria-label="Reset form fields"
+                    >
+                      <RotateCcw className="w-5 h-5 mr-2" />
+                      Reset Form
+                    </Button>
+                  </div>
+
+                  <p className="text-xs text-muted-foreground text-center">
+                    By submitting this form, you agree to our privacy policy and consent to being contacted by our sales team.
+                  </p>
+                </form>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+
+        {/* Call to Action */}
+        <div className="mt-16">
+          <Card className="bg-gradient-to-r from-primary to-primary-glow text-white">
+            <CardContent className="p-8 text-center">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                Schedule Your Site Visit Today
+              </h3>
+              <p className="text-lg text-gray-200 mb-6 max-w-2xl mx-auto">
+                Experience the luxury of Lakshmi Castle firsthand. Our team will provide a guided tour and answer all your questions.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button
+                  className="btn-gold px-8 py-3 text-lg"
+                  onClick={handleCallNow}
+                  aria-label="Call to schedule site visit"
+                >
+                  Call to Schedule Visit
+                </Button>
+                <Button
+                  variant="outline"
+                  className="border-white text-white hover:bg-white hover:text-primary px-8 py-3 text-lg"
+                  onClick={() => window.open('https://wa.me/919963379888?text=Hi, I would like to schedule a site visit for Lakshmi Castle', '_blank')}
+                  aria-label="WhatsApp to schedule visit"
+                >
+                  WhatsApp Us
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ContactSection;
