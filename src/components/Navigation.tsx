@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import ayraNirmanLogo from "@/assets/ayra-nirman-logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);

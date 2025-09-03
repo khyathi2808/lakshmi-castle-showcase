@@ -152,7 +152,15 @@ const Footer = () => {
                   variant="outline"
                   size="sm"
                   className="border-white text-white hover:bg-white hover:text-primary w-full justify-start"
-                  onClick={() => {/* Simulate download */}}
+                  onClick={() => {
+                    const link = document.createElement('a');
+                    link.href = 'https://ayranirman.com/wp-content/uploads/2025/09/Lakshmi-Castle-Ayra-Nirma.pdf';
+                    link.download = 'Lakshmi-Castle-Brochure.pdf';
+                    link.target = '_blank';
+                    document.body.appendChild(link);
+                    link.click();
+                    document.body.removeChild(link);
+                  }}
                   aria-label="Download project brochure"
                 >
                   <Download className="w-4 h-4 mr-2" />

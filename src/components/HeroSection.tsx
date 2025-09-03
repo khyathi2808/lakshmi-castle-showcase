@@ -40,24 +40,25 @@ const HeroSection = () => {
   };
 
   const handleEnquireNow = () => {
-    toast({
-      title: "Enquiry Received",
-      description: "Thank you! Your inquiry for Lakshmi Castle has been received. We'll contact you soon.",
-    });
+    const element = document.querySelector("#contact");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   const handleDownloadBrochure = () => {
-    toast({
-      title: "Brochure Download",
-      description: "Downloading Lakshmi Castle brochure...",
-    });
-    // Simulate PDF download
     const link = document.createElement('a');
-    link.href = '#';
-    link.download = 'lakshmi-castle-brochure.pdf';
+    link.href = 'https://ayranirman.com/wp-content/uploads/2025/09/Lakshmi-Castle-Ayra-Nirma.pdf';
+    link.download = 'Lakshmi-Castle-Brochure.pdf';
+    link.target = '_blank';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
+    
+    toast({
+      title: "Download Started",
+      description: "Lakshmi Castle brochure is being downloaded...",
+    });
   };
 
   const handleExploreFloorPlans = () => {
