@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Menu, X, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import ayraNirmanLogo from "@/assets/ayra-nirman-logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -45,7 +44,7 @@ const Navigation = () => {
           {/* Logo */}
           <div className="flex-shrink-0">
             <img 
-              src={ayraNirmanLogo} 
+              src="https://res.cloudinary.com/dwzqkft2i/image/upload/v1756901252/generated-image_2_1_k6pmdg.jpg" 
               alt="Ayra Nirman Logo" 
               className="h-10 w-auto object-contain"
             />
