@@ -146,9 +146,11 @@ const LocationSection = () => {
               <CardContent>
                 <p className="text-muted-foreground">
                   <strong>Lakshmi Castle</strong><br />
-                  VIP Road<br />
-                  Visakhapatnam, Andhra Pradesh<br />
-                  PIN: 530024
+                  504, 5th Floor, Kotu Empire, VIP Rd<br />
+                  Siripuram, Visakhapatnam, Andhra Pradesh 530003<br />
+                  <br />
+                  <strong>Developer:</strong> Ayra Nirman Private Limited<br />
+                  <strong>Email:</strong> info@ayranirman.com
                 </p>
               </CardContent>
             </Card>

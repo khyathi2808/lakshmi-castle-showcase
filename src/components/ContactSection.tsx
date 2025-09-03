@@ -84,14 +84,14 @@ const ContactSection = () => {
     {
       icon: Mail,
       title: "Email Us",
-      content: "info@lakshmicastle.com",
-      action: () => window.open("mailto:info@lakshmicastle.com", "_self"),
+      content: "info@ayranirman.com",
+      action: () => window.open("mailto:info@ayranirman.com", "_self"),
       color: "from-secondary to-secondary-glow"
     },
     {
       icon: MapPin,
       title: "Visit Us",
-      content: "VIP Road, Visakhapatnam",
+      content: "504, 5th Floor, Kotu Empire, VIP Rd, Siripuram, Visakhapatnam",
       action: () => document.querySelector('#location')?.scrollIntoView({ behavior: 'smooth' }),
       color: "from-accent to-accent-soft"
     }
@@ -163,11 +163,14 @@ const ContactSection = () => {
               <CardContent>
                 <div className="space-y-3 text-sm">
                   <div>
-                    <h5 className="font-semibold text-foreground">Arya Nirman Pvt. Ltd.</h5>
+                    <h5 className="font-semibold text-foreground">Ayra Nirman Private Limited</h5>
                     <p className="text-muted-foreground">
-                      Flat No. 403, Hema Heritage Apartments<br />
-                      D.No. 7-18-16, Plot No. 46<br />
-                      Kirlampudi Layout, Visakhapatnam – 530024
+                      Crafting luxury residences for global living. With operations in India and USA, we combine modern design with timeless elegance.
+                    </p>
+                    <p className="text-muted-foreground mt-2">
+                      504, 5th Floor, Kotu Empire, VIP Rd<br />
+                      Siripuram, Visakhapatnam, Andhra Pradesh 530003<br />
+                      Email: info@ayranirman.com
                     </p>
                   </div>
                   <div>

@@ -37,12 +37,13 @@ const Footer = () => {
           <div className="space-y-4">
             <h3 className="text-xl font-bold mb-4">Developer</h3>
             <div className="space-y-3">
-              <h4 className="font-semibold">Arya Nirman Pvt. Ltd.</h4>
+              <h4 className="font-semibold">Ayra Nirman Private Limited</h4>
               <p className="text-sm text-gray-300">
-                Flat No. 403, Hema Heritage Apartments<br />
-                D.No. 7-18-16, Plot No. 46<br />
-                Kirlampudi Layout<br />
-                Visakhapatnam – 530024
+                Crafting luxury residences for global living. With operations in India and USA, we combine modern design with timeless elegance.
+              </p>
+              <p className="text-sm text-gray-300 mt-2">
+                504, 5th Floor, Kotu Empire, VIP Rd<br />
+                Siripuram, Visakhapatnam, Andhra Pradesh 530003
               </p>
               <Button
                 variant="outline"
@@ -66,11 +67,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center">
                 <Mail className="w-4 h-4 mr-2" />
-                <span className="text-sm">info@lakshmicastle.com</span>
+                <span className="text-sm">info@ayranirman.com</span>
               </div>
               <div className="flex items-start">
                 <MapPin className="w-4 h-4 mr-2 mt-1 flex-shrink-0" />
-                <span className="text-sm">VIP Road, Visakhapatnam</span>
+                <span className="text-sm">504, 5th Floor, Kotu Empire, VIP Rd, Siripuram, Visakhapatnam, Andhra Pradesh 530003</span>
               </div>
               <div className="pt-2">
                 <p className="text-sm font-medium">Project Architect:</p>
