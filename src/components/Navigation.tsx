@@ -47,7 +47,7 @@ const Navigation = () => {
             <img 
               src={ayraNirmanLogo} 
               alt="Ayra Nirman Logo" 
-              className="h-12 w-auto"
+              className="h-10 w-auto object-contain"
             />
           </div>
 
