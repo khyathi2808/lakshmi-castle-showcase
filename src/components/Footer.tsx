@@ -39,21 +39,13 @@ const Footer = () => {
             <div className="space-y-3">
               <h4 className="font-semibold">Ayra Nirman Private Limited</h4>
               <p className="text-sm text-gray-300">
-                Crafting luxury residences for global living. With operations in India and USA, we combine modern design with timeless elegance.
+                Crafting luxury residences for global living. With operations in India, we combine modern design with timeless elegance.
               </p>
               <p className="text-sm text-gray-300 mt-2">
                 504, 5th Floor, Kotu Empire, VIP Rd<br />
                 Siripuram, Visakhapatnam, Andhra Pradesh 530003
               </p>
-              <Button
-                variant="outline"
-                size="sm"
-                className="border-white text-primary"
-                onClick={() => scrollToSection('#contact')}
-                aria-label="Contact developer"
-              >
-                Contact Developer
-              </Button>
+              
             </div>
           </div>
 
@@ -204,42 +196,33 @@ const Footer = () => {
                     <DialogTitle>Terms & Conditions - Lakshmi Castle</DialogTitle>
                   </DialogHeader>
                   <div className="p-4 space-y-4 text-sm">
-                    <div>
-                      <h5 className="font-semibold mb-2">1. Pricing & Additional Charges</h5>
-                      <p className="text-muted-foreground">
-                        The quoted prices are base prices and do not include charges for electricity connection, 
-                        water connection, UGD connection, car parking (if applicable), stamp duty, registration charges, 
-                        and other statutory charges. These will be charged extra as applicable.
-                      </p>
-                    </div>
-                    <div>
-                      <h5 className="font-semibold mb-2">2. Modifications</h5>
-                      <p className="text-muted-foreground">
-                        The promoter reserves the right to modify the design, specifications, floor plans, 
-                        and amenities without prior notice to comply with legal requirements or for project improvement.
-                      </p>
-                    </div>
-                    <div>
-                      <h5 className="font-semibold mb-2">3. Representations</h5>
-                      <p className="text-muted-foreground">
-                        All images, floor plans, and artistic impressions are for representational purposes only 
-                        and may not reflect the actual appearance of the development.
-                      </p>
-                    </div>
-                    <div>
-                      <h5 className="font-semibold mb-2">4. Completion Timeline</h5>
-                      <p className="text-muted-foreground">
-                        Project completion timelines are estimates and may be subject to force majeure conditions, 
-                        government approvals, and other factors beyond the developer's control.
-                      </p>
-                    </div>
-                    <div>
-                      <h5 className="font-semibold mb-2">5. Booking & Payments</h5>
-                      <p className="text-muted-foreground">
-                        All bookings are subject to availability and execution of sale agreement. 
-                        Payment schedules will be as per the agreed terms in the sale agreement.
-                      </p>
-                    </div>
+                   <div>
+  <h5 className="font-semibold mb-2">1. Pricing & Additional Charges</h5>
+  <p className="text-muted-foreground">
+    All services, features, and add-ons are subject to the stated pricing plans, and any additional usage beyond the included limits may incur extra charges as per the platform’s billing policy.
+  </p>
+</div>
+<div>
+  <h5 className="font-semibold mb-2">2. Modifications</h5>
+  <p className="text-muted-foreground">
+    The promoter reserves the right to modify the design, specifications, floor plans, and amenities without prior notice to comply with legal requirements or for project improvement.
+  </p>
+</div>
+<div>
+  <h5 className="font-semibold mb-2">3. Representations</h5>
+  <p className="text-muted-foreground">
+    All images, floor plans, and artistic impressions are for representational purposes only and may not reflect the actual appearance of the development.
+  </p>
+</div>
+<div>
+  <h5 className="font-semibold mb-2">4. Specifications</h5>
+  <p className="text-muted-foreground">
+    Construction specifications and features may change as per project needs.
+  </p>
+</div>
+
+
+
                   </div>
                 </DialogContent>
               </Dialog>

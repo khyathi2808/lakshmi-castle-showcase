@@ -36,13 +36,7 @@ const GallerySection = () => {
       category: "interior",
       description: "Spacious living area with modern furniture and elegant interiors"
     },
-    {
-      id: 4,
-      src: floorPlanPink,
-      title: "Floor Plan - Pink Layout",
-      category: "plans",
-      description: "Detailed floor plan showing 2040 sq.ft. layout with all rooms"
-    },
+    
     {
       id: 5,
       src: heroBuilding1,
@@ -63,7 +57,7 @@ const GallerySection = () => {
     { id: "all", name: "All Images", count: galleryImages.length },
     { id: "exterior", name: "Exterior Views", count: galleryImages.filter(img => img.category === "exterior").length },
     { id: "interior", name: "Interior Design", count: galleryImages.filter(img => img.category === "interior").length },
-    { id: "plans", name: "Floor Plans", count: galleryImages.filter(img => img.category === "plans").length },
+    
     { id: "amenities", name: "Amenities", count: galleryImages.filter(img => img.category === "amenities").length }
   ];
 
@@ -130,7 +124,7 @@ const GallerySection = () => {
               variant={selectedCategory === category.id ? "default" : "outline"}
               className={`${
                 selectedCategory === category.id 
-                  ? "btn-premium" 
+                  ? "btn-hero" 
                   : "btn-outline-luxury"
               } transition-all duration-300`}
               onClick={() => setSelectedCategory(category.id)}

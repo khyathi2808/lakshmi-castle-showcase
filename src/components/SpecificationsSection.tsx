@@ -30,7 +30,7 @@ const SpecificationsSection = () => {
       id: "plumbing",
       title: "Sanitary & Plumbing", 
       icon: Droplets,
-      color: "from-secondary to-secondary-glow",
+      color: "from-primary to-primary-glow",
       details: [
         "Sanitary fittings: Parryware or equivalent brand",
         "CP fittings: Jaguar or equivalent brand",
@@ -46,7 +46,7 @@ const SpecificationsSection = () => {
       id: "electrical",
       title: "Electrical Works",
       icon: Lightbulb,
-      color: "from-accent to-accent-soft",
+      color: "from-primary to-primary-glow",
       details: [
         "Individual EB meters for each apartment",
         "MCB and ELCB protection for safety",
@@ -62,7 +62,7 @@ const SpecificationsSection = () => {
       id: "doors",
       title: "Doors & Windows",
       icon: DoorOpen,
-      color: "from-luxury-pink to-pink-300",
+      color: "from-primary to-primary-glow",
       details: [
         "Main door: Teak wood frame with solid panel door",
         "Internal doors: Sal wood frame with flush doors",
@@ -78,7 +78,7 @@ const SpecificationsSection = () => {
       id: "kitchen",
       title: "Kitchen & Flooring",
       icon: ChefHat,
-      color: "from-emerald-500 to-teal-400",
+      color: "from-primary to-primary-glow",
       details: [
         "Kitchen: Granite platform with SS sink",
         "Wall tiles: Ceramic tiles up to 2 feet above platform",
@@ -128,7 +128,7 @@ const SpecificationsSection = () => {
           
           <Button
             onClick={handleDownloadSpecs}
-            className="btn-premium"
+            className="btn-hero"
             aria-label="Download detailed specifications PDF"
           >
             <Download className="w-5 h-5 mr-2" />

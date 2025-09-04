@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Phone, Mail, MapPin, Send, RotateCcw } from "lucide-react";
+import { Phone, MessageCircle, Mail, MapPin, Send, RotateCcw } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -82,18 +82,25 @@ const ContactSection = () => {
       color: "from-primary to-primary-glow"
     },
     {
+      icon: MessageCircle,
+      title: "WhatsApp Us",
+      content: "99633 79888",
+      action: () =>  window.open('https://wa.me/919963379888?text=Hi, I would like to schedule a site visit for Lakshmi Castle', '_blank'),
+      color: "from-primary to-primary-glow"
+    },
+    {
       icon: Mail,
       title: "Email Us",
       content: "info@ayranirman.com",
       action: () => window.open("mailto:info@ayranirman.com", "_self"),
-      color: "from-secondary to-secondary-glow"
+      color: "from-primary to-primary-glow"
     },
     {
       icon: MapPin,
       title: "Visit Us",
       content: "504, 5th Floor, Kotu Empire, VIP Rd, Siripuram, Visakhapatnam",
       action: () => document.querySelector('#location')?.scrollIntoView({ behavior: 'smooth' }),
-      color: "from-accent to-accent-soft"
+      color: "from-primary to-primary-glow"
     }
   ];
 

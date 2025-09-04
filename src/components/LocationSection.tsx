@@ -16,35 +16,35 @@ const LocationSection = () => {
       name: "RTC Complex",
       distance: "5 minutes",
       type: "Transportation",
-      color: "from-secondary to-secondary-glow"
+      color: "from-primary to-primary-glow"
     },
     {
       icon: GraduationCap,
       name: "Educational Institutions",
       distance: "3-8 minutes",
       type: "Education",
-      color: "from-accent to-accent-soft"
+      color: "from-primary to-primary-glow"
     },
     {
       icon: Hospital,
       name: "Healthcare Facilities",
       distance: "5-10 minutes",
       type: "Healthcare",
-      color: "from-luxury-pink to-pink-300"
+      color: "from-primary to-primary-glow"
     },
     {
       icon: Building2,
       name: "IT Corridor",
       distance: "15 minutes",
       type: "Business",
-      color: "from-emerald-500 to-teal-400"
+      color: "from-primary to-primary-glow"
     },
     {
       icon: Plane,
       name: "Airport & Railway",
       distance: "20-25 minutes",
       type: "Transportation",
-      color: "from-blue-500 to-cyan-400"
+      color: "from-primary to-primary-glow"
     }
   ];
 
@@ -119,7 +119,7 @@ const LocationSection = () => {
             <div className="flex flex-col sm:flex-row gap-3">
               <Button
                 onClick={handleViewOnMaps}
-                className="btn-premium flex-1"
+                className="w-full btn-hero"
                 aria-label="View location on Google Maps"
               >
                 <MapPin className="w-5 h-5 mr-2" />
@@ -128,7 +128,7 @@ const LocationSection = () => {
               <Button
                 onClick={handleGetDirections}
                 variant="outline"
-                className="btn-outline-luxury flex-1"
+                className="w-full btn-hero"
                 aria-label="Get directions to location"
               >
                 Get Directions
@@ -225,7 +225,7 @@ const LocationSection = () => {
 
           <Card className="card-luxury text-center">
             <CardContent className="p-6">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-secondary to-secondary-glow flex items-center justify-center shadow-lg">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-primary to-primary-glow flex items-center justify-center shadow-lg">
                 <Car className="w-8 h-8 text-white" />
               </div>
               <h4 className="text-lg font-semibold text-foreground mb-2">Excellent Connectivity</h4>
@@ -237,7 +237,7 @@ const LocationSection = () => {
 
           <Card className="card-luxury text-center">
             <CardContent className="p-6">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-accent to-accent-soft flex items-center justify-center shadow-lg">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-primary to-primary-glow flex items-center justify-center shadow-lg">
                 <Building2 className="w-8 h-8 text-white" />
               </div>
               <h4 className="text-lg font-semibold text-foreground mb-2">Business District</h4>

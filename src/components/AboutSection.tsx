@@ -9,7 +9,7 @@ import ramakrishnaBeachImage from "../assets/ramakrishna-beach.jpg";
 import vizagCentralImage from "../assets/vizag-central.jpg";
 import westsideStoreImage from "../assets/westside-store.jpg";
 import cmrCentralImage from "../assets/cmr-central.jpg";
-
+import floorPlanPink from "@/assets/floor-plan-pink.jpg";
 const AboutSection = () => {
   const developerHighlights = [
     {
@@ -22,19 +22,19 @@ const AboutSection = () => {
       icon: Users,
       title: "500+ Happy Families",
       description: "Successfully delivered premium residential projects",
-      color: "from-secondary to-secondary-glow"
+      color: "from-primary to-primary-glow"
     },
     {
       icon: Award,
       title: "Quality Construction",
       description: "Known for superior build quality and timely delivery",
-      color: "from-accent to-accent-soft"
+      color: "from-primary to-primary-glow"
     },
     {
       icon: Clock,
       title: "Timely Delivery",
       description: "Committed to project completion within schedule",
-      color: "from-luxury-pink to-pink-300"
+      color: "from-primary to-primary-glow"
     }
   ];
 
@@ -73,7 +73,7 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-muted/30">
+    <section id="properties" className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -112,7 +112,7 @@ const AboutSection = () => {
                 <p className="text-sm text-muted-foreground">Close to beaches</p>
               </div>
             </div>
-            <Button className="btn-premium">
+            <Button className="w-full btn-hero">
               <Download className="w-5 h-5 mr-2" />
               Download Brochure
             </Button>
@@ -194,7 +194,7 @@ const AboutSection = () => {
         <div className="mb-16">
           <Card className="card-luxury bg-gradient-to-r from-accent/10 to-accent-soft/10">
             <CardContent className="p-8 text-center">
-              <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-accent to-accent-soft flex items-center justify-center shadow-lg">
+              <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-primary to-primary-glow flex items-center justify-center shadow-lg">
                 <Heart className="w-10 h-10 text-white" />
               </div>
               <h3 className="text-2xl font-bold text-foreground mb-4">
@@ -263,7 +263,7 @@ const AboutSection = () => {
               return (
                 <Card key={index} className="card-luxury text-center">
                   <CardContent className="p-6">
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-luxury-pink to-pink-300 flex items-center justify-center shadow-lg">
+                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-primary to-primary-glow flex items-center justify-center shadow-lg">
                       <IconComponent className="w-8 h-8 text-white" />
                     </div>
                     <h4 className="text-lg font-semibold text-foreground mb-2">
@@ -320,7 +320,7 @@ const AboutSection = () => {
             
             <div className="mt-8">
               <Button
-                className="btn-premium w-full"
+                className="w-full btn-hero"
                 onClick={() => document.querySelector('#location')?.scrollIntoView({ behavior: 'smooth' })}
                 aria-label="View detailed location information"
               >

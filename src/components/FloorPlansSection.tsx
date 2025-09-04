@@ -70,21 +70,13 @@ const FloorPlansSection = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               onClick={handleDownloadPlans}
-              className="btn-premium"
+              className="btn-hero"
               aria-label="Download floor plans PDF"
             >
               <Download className="w-5 h-5 mr-2" />
               Download Plans
             </Button>
-            <Button
-              onClick={toggleComparison}
-              variant="outline"
-              className={`btn-outline-luxury ${showComparison ? 'bg-primary text-primary-foreground' : ''}`}
-              aria-label="Toggle floor plans comparison"
-            >
-              <ArrowLeftRight className="w-5 h-5 mr-2" />
-              {showComparison ? 'Hide' : 'Compare'} Plans
-            </Button>
+            
           </div>
         </div>
 
@@ -92,18 +84,26 @@ const FloorPlansSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {floorPlans.map((plan) => (
             <Card key={plan.id} className="card-luxury overflow-hidden">
-              <CardHeader className={`bg-gradient-to-r ${plan.color} text-white`}>
-                <div className="flex justify-between items-center">
-                  <div>
-                    <CardTitle className="text-2xl font-bold">{plan.name}</CardTitle>
-                    <p className="text-lg font-medium">{plan.area}</p>
-                  </div>
-                  <div className="text-right">
-                    <p className="text-2xl font-bold">{plan.price}</p>
-                    <p className="text-sm opacity-90">Starting Price</p>
-                  </div>
-                </div>
-              </CardHeader>
+              <CardHeader className="bg-gradient-to-r from-primary to-primary-glow text-white">
+  <div className="flex justify-between items-center">
+    <div className="flex items-center gap-2">
+      {/* Small Plan Badge */}
+      <span
+        className={`px-2 py-1 rounded text-xs font-semibold ${
+          plan.id === "pink" ? "bg-pink-500" : "bg-green-500"
+        }`}
+      >
+        {plan.name}
+      </span>
+      <CardTitle className="text-2xl font-bold">{plan.area}</CardTitle>
+    </div>
+    <div className="text-right">
+      <p className="text-2xl font-bold">{plan.price}</p>
+      <p className="text-sm opacity-90">Starting Price</p>
+    </div>
+  </div>
+</CardHeader>
+
               
               <CardContent className="p-6">
                 {/* Floor Plan Image */}
@@ -158,7 +158,7 @@ const FloorPlansSection = () => {
                 <div className="mt-6 flex gap-3">
                   <Dialog>
                     <DialogTrigger asChild>
-                      <Button className="btn-premium flex-1">
+                      <Button className="btn-hero flex-1">
                         <Maximize className="w-4 h-4 mr-2" />
                         View Details
                       </Button>

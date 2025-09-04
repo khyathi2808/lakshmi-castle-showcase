@@ -8,13 +8,14 @@ const Navigation = () => {
   const { toast } = useToast();
 
   const navItems = [
-    { name: "Home", href: "#home" },
+    
     { name: "About", href: "#about" },
-    { name: "Floor Plans", href: "#floor-plans" },
+    { name: "Properties", href: "#properties" },
+   
     { name: "Specifications", href: "#specifications" },
-    { name: "Gallery", href: "#gallery" },
-    { name: "Location", href: "#location" },
+    { name: "Testimonials", href: "#testimonials" }, 
     { name: "Contact", href: "#contact" },
+
   ];
 
   const handleEnquireNow = () => {
@@ -41,13 +42,20 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <img 
-              src="https://res.cloudinary.com/dwzqkft2i/image/upload/v1756901252/generated-image_2_1_k6pmdg.jpg" 
-              alt="Ayra Nirman Logo" 
-              className="h-20 w-auto object-contain"
-            />
-          </div>
+<div className="flex-shrink-0">
+  <button
+    onClick={() => scrollToSection("#home")}
+    aria-label="Navigate to Home"
+    className="focus:outline-none"
+  >
+    <img 
+      src="https://res.cloudinary.com/dwzqkft2i/image/upload/v1756901252/generated-image_2_1_k6pmdg.jpg" 
+      alt="Ayra Nirman Logo" 
+      className="h-20 w-auto object-contain" 
+    />
+  </button>
+</div>
+
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">

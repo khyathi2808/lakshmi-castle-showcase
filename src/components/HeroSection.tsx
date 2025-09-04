@@ -13,9 +13,9 @@ const HeroSection = () => {
   const slides = [
     {
       image: heroBuilding1,
-      title: "Ayra Nirman – Luxury Residences for Global Living",
-      subtitle: "Designed for Elegance. Built for Life.",
-      description: "Premium 3BHK Residences on VIP Road, Visakhapatnam"
+      title: "Ayra Nirman",
+      subtitle: "Luxury Residences for Global Living",
+      description: "Designed for Elegance. Built for Life."
     },
     {
       image: heroBuilding2,
