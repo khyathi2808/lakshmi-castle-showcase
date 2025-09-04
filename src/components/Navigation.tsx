@@ -18,11 +18,10 @@ const Navigation = () => {
   ];
 
   const handleEnquireNow = () => {
-    toast({
-      title: "Enquiry Form",
-      description: "Opening enquiry form for Lakshmi Castle...",
-    });
-    // This would open a modal in a real implementation
+    const element = document.querySelector("#contact");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   const handleCallNow = () => {
@@ -76,7 +75,8 @@ const Navigation = () => {
               aria-label="Call developer at 99633 79888"
             >
               <Phone className="w-4 h-4 mr-2" />
-              Call Now
+              
++91-99633 79888
             </Button>
             <Button
               onClick={handleEnquireNow}
@@ -123,7 +123,8 @@ const Navigation = () => {
                 aria-label="Call developer at 99633 79888"
               >
                 <Phone className="w-4 h-4 mr-2" />
-                Call Now
+                
++91-99633 79888
               </Button>
               <Button
                 onClick={handleEnquireNow}
