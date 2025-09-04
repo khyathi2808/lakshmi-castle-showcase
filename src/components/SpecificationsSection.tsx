@@ -107,7 +107,7 @@ const SpecificationsSection = () => {
     });
     // Simulate PDF download
     const link = document.createElement('a');
-    link.href = '#';
+    link.href = 'https://res.cloudinary.com/dwzqkft2i/image/upload/v1756992750/WhatsApp_Image_2025-08-29_at_11.50.54_PM_1_1_ongnup.jpg';
     link.download = 'lakshmi-castle-specifications.pdf';
     document.body.appendChild(link);
     link.click();

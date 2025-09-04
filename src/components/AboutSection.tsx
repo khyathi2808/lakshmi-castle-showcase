@@ -2,7 +2,8 @@ import { Building2, Users, Award, Clock, MapPin, Phone, Download, Car, ShoppingB
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-
+import { Landmark, GitFork, Bus, Train } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 // Import beach and shopping images
 import lawsonsBayImage from "../assets/lawsons-bay-beach.jpg";
 import ramakrishnaBeachImage from "../assets/ramakrishna-beach.jpg";
@@ -11,6 +12,7 @@ import westsideStoreImage from "../assets/westside-store.jpg";
 import cmrCentralImage from "../assets/cmr-central.jpg";
 import floorPlanPink from "@/assets/floor-plan-pink.jpg";
 const AboutSection = () => {
+  const { toast } = useToast();
   const developerHighlights = [
     {
       icon: Building2,
@@ -39,11 +41,13 @@ const AboutSection = () => {
   ];
 
   const locationConnectivity = [
-    { name: "RTC Complex", distance: "2.5 km", icon: Building },
-    { name: "Siripuram Junction", distance: "1.8 km", icon: MapPin },
-    { name: "VIP Road", distance: "0.5 km", icon: Car },
-    { name: "International Airport", distance: "12 km", icon: Building2 }
-  ];
+  { name: "Shopping Hub", distance: "0.1 km", icon: ShoppingBag },
+  { name: "Sampath Vinayak Temple", distance: "0.2 km", icon: Landmark },
+  { name: "Siripuram Junction", distance: "0.3 km", icon: MapPin },
+  { name: "RTC Complex", distance: "1 km", icon: Building },
+  { name: "RK Beach", distance: "1.9 km", icon: Waves },
+  { name: "Vizag Railway Station", distance: "3.6 km", icon: Train }
+];
 
   const shoppingDestinations = [
     { name: "Vizag Central", description: "Premium shopping mall", image: vizagCentralImage },
@@ -71,6 +75,21 @@ const AboutSection = () => {
     "Easy Access to IT Corridor",
     "Well-connected to Airport & Railway Station"
   ];
+  
+  const handleDownloadBrochure = () => {
+    const link = document.createElement('a');
+    link.href = 'https://whatsapp-image-2025-08-29-at-11-50-54-pm-1.tiiny.site/';
+    link.download = 'Lakshmi-Castle-Brochure.pdf';
+    link.target = '_blank';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    
+    toast({
+      title: "Download Started",
+      description: "Lakshmi Castle brochure is being downloaded...",
+    });
+  };
 
   return (
     <section id="properties" className="py-20 bg-muted/30">
@@ -83,7 +102,7 @@ const AboutSection = () => {
           <div className="max-w-4xl mx-auto">
             <h3 className="text-2xl md:text-3xl font-bold text-primary mb-6">Lakshmi Castle</h3>
             <p className="text-lg text-muted-foreground mb-8">
-              Located on VIP Road, Visakhapatnam, Lakshmi Castle combines prime location, world-class connectivity, 
+              Located on VIP Road, Visakhapatnam, Lakshmi Castle combines prime location, unparalleled connectivity, 
               shopping, beaches, and cultural hubs. It is designed for modern living with effortless convenience.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
@@ -112,10 +131,15 @@ const AboutSection = () => {
                 <p className="text-sm text-muted-foreground">Close to beaches</p>
               </div>
             </div>
-            <Button className="w-full btn-hero">
-              <Download className="w-5 h-5 mr-2" />
-              Download Brochure
-            </Button>
+            <Button
+                onClick={handleDownloadBrochure}
+                
+                className="btn-hero text-lg px-8 py-4"
+                aria-label="Download Lakshmi Castle brochure"
+              >
+                <Download className="w-5 h-5 mr-2" />
+                Download Brochure
+              </Button>
           </div>
         </div>
 

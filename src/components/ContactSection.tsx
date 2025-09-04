@@ -1,4 +1,5 @@
 import { useState } from "react";
+
 import { Phone, MessageCircle, Mail, MapPin, Send, RotateCcw } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -13,7 +14,7 @@ const ContactSection = () => {
     email: "",
     phone: "",
     message: "",
-    interestedIn: "3BHK Apartment"
+    interestedIn: "Property"
   });
 
   const { toast } = useToast();
@@ -51,7 +52,7 @@ const ContactSection = () => {
       email: "",
       phone: "",
       message: "",
-      interestedIn: "3BHK Apartment"
+      interestedIn: "Property"
     });
   };
 
@@ -61,7 +62,7 @@ const ContactSection = () => {
       email: "",
       phone: "",
       message: "",
-      interestedIn: "3BHK Apartment"
+      interestedIn: "Property"
     });
     toast({
       title: "Form Reset",
@@ -228,9 +229,8 @@ const ContactSection = () => {
                       onChange={(e) => setFormData(prev => ({ ...prev, interestedIn: e.target.value }))}
                       className="w-full px-3 py-2 border border-input rounded-md bg-background text-foreground transition-all duration-300 focus:shadow-md focus:outline-none focus:ring-2 focus:ring-ring"
                     >
-                      <option value="3BHK Apartment">3BHK Apartment</option>
-                      <option value="2040 sq.ft. Plan">2040 sq.ft. Plan (Pink)</option>
-                      <option value="1990 sq.ft. Plan">1990 sq.ft. Plan (Green)</option>
+                      <option value="Property">Property</option>
+                      
                       <option value="Site Visit">Schedule Site Visit</option>
                       <option value="Investment Opportunity">Investment Opportunity</option>
                     </select>

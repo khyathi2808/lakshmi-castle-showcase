@@ -18,7 +18,7 @@ const FloorPlansSection = () => {
       area: "2040 sq.ft.",
       image: floorPlanPink,
       features: ["Master Bedroom with Attached Bath", "2 Additional Bedrooms", "Spacious Living Room", "Modern Kitchen", "Pooja Room", "2 Balconies", "2 Bathrooms", "Store Room"],
-      price: "₹85,68,000*",
+      price: "₹2,40,00,000*",
       color: "from-luxury-pink to-pink-300"
     },
     {
@@ -27,7 +27,7 @@ const FloorPlansSection = () => {
       area: "1990 sq.ft.",
       image: floorPlanPink, // Using same image as placeholder
       features: ["Master Bedroom with Attached Bath", "2 Additional Bedrooms", "Living & Dining Area", "Modular Kitchen", "Pooja Room", "1 Balcony", "2 Bathrooms", "Utility Area"],
-      price: "₹83,58,000*",
+      price: "₹1,99,00,000*",
       color: "from-secondary to-green-300"
     }
   ];
@@ -39,7 +39,7 @@ const FloorPlansSection = () => {
     });
     // Simulate PDF download
     const link = document.createElement('a');
-    link.href = '#';
+    link.href = 'https://res.cloudinary.com/dwzqkft2i/image/upload/v1756907548/floor_plan_vbjglm.jpg';
     link.download = 'lakshmi-castle-floor-plans.pdf';
     document.body.appendChild(link);
     link.click();

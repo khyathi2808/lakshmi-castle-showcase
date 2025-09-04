@@ -144,7 +144,7 @@ const Footer = () => {
                   className="border-white text-primary w-full justify-start"
                   onClick={() => {
                     const link = document.createElement('a');
-                    link.href = 'https://ayranirman.com/wp-content/uploads/2025/09/Lakshmi-Castle-Ayra-Nirma.pdf';
+                    link.href = 'https://whatsapp-image-2025-08-29-at-11-50-54-pm-1.tiiny.site/';
                     link.download = 'Lakshmi-Castle-Brochure.pdf';
                     link.target = '_blank';
                     document.body.appendChild(link);

@@ -3,14 +3,9 @@ import { Star, ChevronLeft, ChevronRight } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import testimonial1 from "@/assets/testimonial-1.jpg";
-import testimonial2 from "@/assets/testimonial-2.jpg";
-import testimonial3 from "@/assets/testimonial-3.jpg";
-import testimonial4 from "@/assets/testimonial-4.jpg";
-import testimonial5 from "@/assets/testimonial-5.jpg";
-import testimonial6 from "@/assets/testimonial-6.jpg";
-import testimonial7 from "@/assets/testimonial-7.jpg";
-import testimonial8 from "@/assets/testimonial-8.jpg";
-import testimonial9 from "@/assets/testimonial-9.jpg";
+import testimonial2 from "@/assets/testimonial-2.png";
+import testimonial3 from "@/assets/testimonial-3.png";
+
 
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -18,7 +13,7 @@ const Testimonials = () => {
   const testimonials = [
     {
       id: 1,
-      name: "Rajesh Kumar",
+      name: "Gayatri Aaditya",
       location: "Visakhapatnam",
       image: testimonial1,
       rating: 5,
@@ -26,7 +21,7 @@ const Testimonials = () => {
     },
     {
       id: 2,
-      name: "Priya Sharma",
+      name: "Swetha",
       location: "Hyderabad",
       image: testimonial2,
       rating: 5,
@@ -34,60 +29,13 @@ const Testimonials = () => {
     },
     {
       id: 3,
-      name: "Michael Johnson",
-      location: "New York, USA",
-      image: testimonial3,
-      rating: 5,
-      testimonial: "As an international client, I was impressed by their professionalism and global standards of luxury living.",
-    },
-    {
-      id: 4,
-      name: "Sudha Reddy",
-      location: "Bangalore",
-      image: testimonial4,
-      rating: 5,
-      testimonial: "The spacious 3BHK apartment with modern amenities has exceeded all our expectations. Highly recommended!",
-    },
-    {
-      id: 5,
-      name: "Arjun Patel",
+      name: "Surya Raju",
       location: "Mumbai",
-      image: testimonial5,
+      image: testimonial3,
       rating: 5,
       testimonial: "Outstanding project management and timely delivery. The premium fittings and finishes are top-notch.",
     },
-    {
-      id: 6,
-      name: "Anita & Vinod Gupta",
-      location: "Delhi",
-      image: testimonial6,
-      rating: 5,
-      testimonial: "We found our perfect home here. The community feel and security features make it ideal for families.",
-    },
-    {
-      id: 7,
-      name: "Lakshmi Naidu",
-      location: "Chennai",
-      image: testimonial7,
-      rating: 5,
-      testimonial: "The traditional values combined with modern living standards make this a truly special place to call home.",
-    },
-    {
-      id: 8,
-      name: "Dr. Ravi Krishnan",
-      location: "Kochi",
-      image: testimonial8,
-      rating: 5,
-      testimonial: "Professional service throughout the buying process. The investment value and quality are exceptional.",
-    },
-    {
-      id: 9,
-      name: "Meera Joshi",
-      location: "Pune",
-      image: testimonial9,
-      rating: 5,
-      testimonial: "The attention to detail in every corner of the apartment showcases the craftsmanship and dedication.",
-    },
+    
   ];
 
   const testimonialsPerPage = 3;
