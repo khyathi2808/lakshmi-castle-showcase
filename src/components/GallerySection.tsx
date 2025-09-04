@@ -4,7 +4,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { useToast } from "@/hooks/use-toast";
-import heroBuilding1 from "@/assets/hero-building-1.jpg";
+import heroBuilding1 from "@/assets/hero-building-1.jpeg";
 import heroBuilding2 from "@/assets/hero-building-2.jpg";
 import interiorLiving from "@/assets/interior-living.jpg";
 import floorPlanPink from "@/assets/floor-plan-pink.jpg";
@@ -37,20 +37,7 @@ const GallerySection = () => {
       description: "Spacious living area with modern furniture and elegant interiors"
     },
     
-    {
-      id: 5,
-      src: heroBuilding1,
-      title: "Entrance Lobby",
-      category: "interior",
-      description: "Premium entrance lobby with modern fittings and marble flooring"
-    },
-    {
-      id: 6,
-      src: heroBuilding2,
-      title: "Amenities Area",
-      category: "amenities",
-      description: "Common amenities including landscaped gardens and recreational facilities"
-    }
+    
   ];
 
   const categories = [

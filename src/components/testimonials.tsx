@@ -30,8 +30,7 @@ const Testimonials = () => {
     {
       id: 3,
       name: "Surya Raju",
-      location: "Mumbai",
-      image: testimonial3,
+      location: "Mumbai",      image: testimonial3,
       rating: 5,
       testimonial: "Outstanding project management and timely delivery. The premium fittings and finishes are top-notch.",
     },
