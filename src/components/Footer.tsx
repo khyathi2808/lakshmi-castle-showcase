@@ -48,7 +48,7 @@ const Footer = () => {
               <Button
                 variant="outline"
                 size="sm"
-                className="border-white text-white hover:bg-white hover:text-primary"
+                className="border-white text-primary"
                 onClick={() => scrollToSection('#contact')}
                 aria-label="Contact developer"
               >
@@ -73,14 +73,11 @@ const Footer = () => {
                 <MapPin className="w-4 h-4 mr-2 mt-1 flex-shrink-0" />
                 <span className="text-sm">504, 5th Floor, Kotu Empire, VIP Rd, Siripuram, Visakhapatnam, Andhra Pradesh 530003</span>
               </div>
-              <div className="pt-2">
-                <p className="text-sm font-medium">Project Architect:</p>
-                <p className="text-sm text-gray-300">K. Uday Sankar</p>
-              </div>
+              
               <Button
                 variant="outline"
                 size="sm"
-                className="border-white text-white hover:bg-white hover:text-primary w-full"
+                className="border-white text-primary w-full"
                 onClick={() => window.open("tel:+919963379888", "_self")}
                 aria-label="Call developer at 99633 79888"
               >
@@ -118,7 +115,7 @@ const Footer = () => {
                 <Button
                   variant="outline"
                   size="icon"
-                  className="border-white text-white hover:bg-white hover:text-primary"
+                  className="border-white text-primary"
                   onClick={() => handleSocialClick('facebook')}
                   aria-label="Follow us on Facebook"
                 >
@@ -127,7 +124,7 @@ const Footer = () => {
                 <Button
                   variant="outline"
                   size="icon"
-                  className="border-white text-white hover:bg-white hover:text-primary"
+                  className="border-white text-primary"
                   onClick={() => handleSocialClick('instagram')}
                   aria-label="Follow us on Instagram"
                 >
@@ -136,7 +133,7 @@ const Footer = () => {
                 <Button
                   variant="outline"
                   size="icon"
-                  className="border-white text-white hover:bg-white hover:text-primary"
+                  className="border-white text-primary"
                   onClick={() => handleSocialClick('linkedin')}
                   aria-label="Follow us on LinkedIn"
                 >
@@ -152,7 +149,7 @@ const Footer = () => {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="border-white text-white hover:bg-white hover:text-primary w-full justify-start"
+                  className="border-white text-primary w-full justify-start"
                   onClick={() => {
                     const link = document.createElement('a');
                     link.href = 'https://ayranirman.com/wp-content/uploads/2025/09/Lakshmi-Castle-Ayra-Nirma.pdf';
@@ -170,7 +167,7 @@ const Footer = () => {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="border-white text-white hover:bg-white hover:text-primary w-full justify-start"
+                  className="border-white text-primary w-full justify-start"
                   onClick={() => scrollToSection('#floor-plans')}
                   aria-label="View floor plans"
                 >
@@ -251,7 +248,7 @@ const Footer = () => {
             {/* Copyright */}
             <div className="text-center pt-4 border-t border-gray-600">
               <p className="text-sm text-gray-400">
-                © 2024 Lakshmi Castle by Arya Nirman Pvt. Ltd. All rights reserved.
+                © 2025 Ayra Nirman Private Limited. All rights reserved.
               </p>
               <p className="text-xs text-gray-500 mt-1">
                 Designed with luxury and precision for modern living.

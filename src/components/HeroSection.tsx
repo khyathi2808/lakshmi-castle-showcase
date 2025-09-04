@@ -137,7 +137,7 @@ const HeroSection = () => {
               <Button
                 onClick={handleExploreFloorPlans}
                 variant="outline"
-                className="btn-outline-luxury text-lg px-8 py-4 border-white text-white hover:bg-white hover:text-primary"
+                className="btn-outline-luxury text-lg px-8 py-4 border-white text-primary"
                 aria-label="View floor plans section"
               >
                 <MapPin className="w-5 h-5 mr-2" />

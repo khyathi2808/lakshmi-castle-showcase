@@ -268,7 +268,7 @@ const LocationSection = () => {
                 </Button>
                 <Button
                   variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-primary px-8 py-3 text-lg"
+                  className="border-white text-primary px-8 py-3 text-lg"
                   onClick={handleViewOnMaps}
                   aria-label="Explore on map"
                 >
