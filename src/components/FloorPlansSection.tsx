@@ -117,7 +117,7 @@ const FloorPlansSection = () => {
                     <Dialog>
                       <DialogTrigger asChild>
                         <Button
-                          className="opacity-0 group-hover:opacity-100 btn-hero"
+                          className="opacity-70 group-hover:opacity-100 btn-hero"
                           onClick={() => handleZoomPlan(plan.id)}
                           aria-label={`Zoom ${plan.name} floor plan`}
                         >

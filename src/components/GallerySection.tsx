@@ -153,7 +153,7 @@ const GallerySection = () => {
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
                   <Button
-                    className="opacity-0 group-hover:opacity-100 btn-hero transform scale-90 group-hover:scale-100 transition-all duration-300"
+                    className="opacity-70 group-hover:opacity-100 btn-hero transform scale-90 group-hover:scale-100 transition-all duration-300"
                     onClick={() => openLightbox(image.id)}
                     aria-label={`View ${image.title} in lightbox`}
                   >
