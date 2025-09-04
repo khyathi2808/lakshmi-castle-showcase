@@ -38,7 +38,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border h-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -46,7 +46,7 @@ const Navigation = () => {
             <img 
               src="https://res.cloudinary.com/dwzqkft2i/image/upload/v1756901252/generated-image_2_1_k6pmdg.jpg" 
               alt="Ayra Nirman Logo" 
-              className="h-10 w-auto object-contain"
+              className="h-20 w-auto object-contain"
             />
           </div>
 

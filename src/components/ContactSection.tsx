@@ -155,31 +155,6 @@ const ContactSection = () => {
               </Button>
             </div>
 
-            {/* Developer Information */}
-            <Card className="card-premium mt-8">
-              <CardHeader>
-                <CardTitle className="text-lg">Developer Details</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="space-y-3 text-sm">
-                  <div>
-                    <h5 className="font-semibold text-foreground">Ayra Nirman Private Limited</h5>
-                    <p className="text-muted-foreground">
-                      Crafting luxury residences for global living. With operations in India and USA, we combine modern design with timeless elegance.
-                    </p>
-                    <p className="text-muted-foreground mt-2">
-                      504, 5th Floor, Kotu Empire, VIP Rd<br />
-                      Siripuram, Visakhapatnam, Andhra Pradesh 530003<br />
-                      Email: info@ayranirman.com
-                    </p>
-                  </div>
-                  <div>
-                    <h5 className="font-semibold text-foreground">Project Architect</h5>
-                    <p className="text-muted-foreground">K. Uday Sankar</p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
           </div>
 
           {/* Contact Form */}

@@ -46,11 +46,10 @@ const AboutSection = () => {
         {/* Header */}
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            About Lakshmi Castle
+            Our Prestigious Property
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            A premium residential project by Arya Nirman Pvt. Ltd., strategically located on VIP Road, 
-            offering luxury 3BHK apartments with world-class amenities and unmatched connectivity.
+            Lakshmi Castle
           </p>
         </div>
 

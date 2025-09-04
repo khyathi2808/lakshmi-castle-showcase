@@ -50,10 +50,10 @@ const ProjectHighlights = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Why Choose Lakshmi Castle?
+            Who We Are
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Experience luxury living with premium amenities, prime location, and superior construction quality
+            At Ayra Nirman, we craft more than homes—we create lifestyles. With a presence in India and the USA, our expertise lies in delivering luxury apartments that combine modern design with timeless elegance.
           </p>
         </div>
 
