@@ -9,42 +9,42 @@ const LocationSection = () => {
       name: "Vizag Central Mall",
       distance: "2 minutes",
       type: "Shopping",
-      color: "from-primary to-primary-glow"
+      color: "from-amber-400 to-amber-700"
     },
     {
       icon: Car,
       name: "RTC Complex",
       distance: "5 minutes",
       type: "Transportation",
-      color: "from-primary to-primary-glow"
+      color: "from-amber-400 to-amber-700"
     },
     {
       icon: GraduationCap,
       name: "Educational Institutions",
       distance: "3-8 minutes",
       type: "Education",
-      color: "from-primary to-primary-glow"
+      color: "from-amber-400 to-amber-700"
     },
     {
       icon: Hospital,
       name: "Healthcare Facilities",
       distance: "5-10 minutes",
       type: "Healthcare",
-      color: "from-primary to-primary-glow"
+      color: "from-amber-400 to-amber-700"
     },
     {
       icon: Building2,
       name: "IT Corridor",
       distance: "15 minutes",
       type: "Business",
-      color: "from-primary to-primary-glow"
+      color: "from-amber-400 to-amber-700"
     },
     {
       icon: Plane,
       name: "Airport & Railway",
       distance: "20-25 minutes",
       type: "Transportation",
-      color: "from-primary to-primary-glow"
+      color: "from-amber-400 to-amber-700"
     }
   ];
 
@@ -119,7 +119,7 @@ const LocationSection = () => {
             <div className="flex flex-col sm:flex-row gap-3">
               <Button
                 onClick={handleViewOnMaps}
-                className="w-full btn-hero"
+                className="w-full bg-amber-600 hover:bg-amber-700 text-white"
                 aria-label="View location on Google Maps"
               >
                 <MapPin className="w-5 h-5 mr-2" />
@@ -128,7 +128,7 @@ const LocationSection = () => {
               <Button
                 onClick={handleGetDirections}
                 variant="outline"
-                className="w-full btn-hero"
+                className="w-full bg-amber-600 hover:bg-amber-700 text-white"
                 aria-label="Get directions to location"
               >
                 Get Directions
@@ -213,7 +213,7 @@ const LocationSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           <Card className="card-luxury text-center">
             <CardContent className="p-6">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-primary to-primary-glow flex items-center justify-center shadow-lg">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-amber-400 to-amber-700 flex items-center justify-center shadow-lg">
                 <ShoppingBag className="w-8 h-8 text-white" />
               </div>
               <h4 className="text-lg font-semibold text-foreground mb-2">Shopping & Entertainment</h4>
@@ -225,7 +225,7 @@ const LocationSection = () => {
 
           <Card className="card-luxury text-center">
             <CardContent className="p-6">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-primary to-primary-glow flex items-center justify-center shadow-lg">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-amber-400 to-amber-700 flex items-center justify-center shadow-lg">
                 <Car className="w-8 h-8 text-white" />
               </div>
               <h4 className="text-lg font-semibold text-foreground mb-2">Excellent Connectivity</h4>
@@ -237,7 +237,7 @@ const LocationSection = () => {
 
           <Card className="card-luxury text-center">
             <CardContent className="p-6">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-primary to-primary-glow flex items-center justify-center shadow-lg">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-amber-400 to-amber-700 flex items-center justify-center shadow-lg">
                 <Building2 className="w-8 h-8 text-white" />
               </div>
               <h4 className="text-lg font-semibold text-foreground mb-2">Business District</h4>
@@ -250,7 +250,7 @@ const LocationSection = () => {
 
         {/* Call to Action */}
         <div className="text-center">
-          <Card className="bg-gradient-to-r from-primary to-primary-glow text-white max-w-2xl mx-auto">
+          <Card className="bg-gradient-to-r from-amber-400 to-amber-700 text-white max-w-2xl mx-auto">
             <CardContent className="p-8">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">
                 Experience the Location Advantage

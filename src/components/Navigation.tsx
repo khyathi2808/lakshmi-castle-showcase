@@ -10,11 +10,18 @@ const Navigation = () => {
   const navItems = [
     
     { name: "About", href: "#about" },
-    { name: "Properties", href: "#properties" },
-   
-    { name: "Specifications", href: "#specifications" },
-    { name: "Testimonials", href: "#testimonials" }, 
+    { name: "Our Process", href: "#our-process" },
+   { name: "Projects", href: "#projects" },
+{ name: "HomeOwners", href: "#homeOwner" },
+{ name: "Investors", href: "#investor" },
+{ name: "Resources", href: "#resource" },
+{ name: "Testimonials", href: "#testimonials" }, 
     { name: "Contact", href: "#contact" },
+
+   
+{/*  { name: "Properties", href: "#properties" },
+    { name: "Specifications", href: "#specifications" },*/},
+    
 
   ];
 
@@ -39,7 +46,7 @@ const Navigation = () => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border h-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex justify-between items-center h-20 overflow-x-auto whitespace-nowrap">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
 <div className="flex-shrink-0">
@@ -88,7 +95,7 @@ const Navigation = () => {
             </Button>
             <Button
               onClick={handleEnquireNow}
-              className="btn-hero"
+              className="bg-amber-600 hover:bg-amber-700 text-white text-lg"
               aria-label="Open enquiry form"
             >
               Enquire Now
@@ -136,7 +143,7 @@ const Navigation = () => {
               </Button>
               <Button
                 onClick={handleEnquireNow}
-                className="w-full btn-hero"
+                className="w-full bg-amber-600 hover:bg-amber-700 text-white text-lg"
                 aria-label="Open enquiry form"
               >
                 Enquire Now

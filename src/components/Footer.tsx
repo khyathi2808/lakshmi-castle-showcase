@@ -30,7 +30,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-primary text-primary-foreground">
+    <footer className="bg-gradient-to-r from-amber-400 to-amber-700 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Developer Information */}
@@ -80,21 +80,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-bold mb-4">Quick Links</h3>
-            <div className="space-y-2">
-              {quickLinks.map((link) => (
-                <button
-                  key={link.name}
-                  onClick={() => scrollToSection(link.href)}
-                  className="block text-sm text-gray-300 hover:text-white transition-colors duration-300 text-left"
-                  aria-label={`Navigate to ${link.name}`}
-                >
-                  {link.name}
-                </button>
-              ))}
-            </div>
-          </div>
+          
 
           {/* Social & Downloads */}
           <div className="space-y-4">

@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
+import OurProcess from "@/components/OurProcess";
 import ProjectHighlights from "@/components/ProjectHighlights";
 import AboutSection from "@/components/AboutSection";
 import FloorPlansSection from "@/components/FloorPlansSection";
@@ -9,6 +10,10 @@ import LocationSection from "@/components/LocationSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import Testimonials from "@/components/testimonials";
+import Projects from "@/components/projects";
+import HomeOwner from "@/components/HomeOwner";
+import InvestorsScreen from "@/components/Investors";
+import Resources from "@/components/Resources";
 
 const Index = () => {
   return (
@@ -16,13 +21,18 @@ const Index = () => {
       <Navigation />
       <HeroSection />
       <ProjectHighlights />
-      <AboutSection />
-      <FloorPlansSection />
+      <OurProcess/>
+      <Projects/>
+      <HomeOwner/>
+      <InvestorsScreen/>
+      <Resources/>
+      {/*<AboutSection />*/}
+      {/*<FloorPlansSection />*/}
       
-      <GallerySection />
+      {/*<GallerySection />*/}
       <LocationSection />
       
-      <SpecificationsSection />
+      {/*<SpecificationsSection />*/}
       <Testimonials/>
       <ContactSection />
       <Footer />

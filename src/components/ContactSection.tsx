@@ -80,28 +80,28 @@ const ContactSection = () => {
       title: "Call Us",
       content: "99633 79888",
       action: () => window.open("tel:+919963379888", "_self"),
-      color: "from-primary to-primary-glow"
+      color: "from-amber-400 to-amber-700"
     },
     {
       icon: MessageCircle,
       title: "WhatsApp Us",
       content: "99633 79888",
       action: () =>  window.open('https://wa.me/919963379888?text=Hi, I would like to schedule a site visit for Lakshmi Castle', '_blank'),
-      color: "from-primary to-primary-glow"
+      color: "from-amber-400 to-amber-700"
     },
     {
       icon: Mail,
       title: "Email Us",
       content: "info@ayranirman.com",
       action: () => window.open("mailto:info@ayranirman.com", "_self"),
-      color: "from-primary to-primary-glow"
+      color: "from-amber-400 to-amber-700"
     },
     {
       icon: MapPin,
       title: "Visit Us",
       content: "504, 5th Floor, Kotu Empire, VIP Rd, Siripuram, Visakhapatnam",
       action: () => document.querySelector('#location')?.scrollIntoView({ behavior: 'smooth' }),
-      color: "from-primary to-primary-glow"
+      color: " from-amber-400 to-amber-700"
     }
   ];
 
@@ -146,7 +146,7 @@ const ContactSection = () => {
             <div className="space-y-3 pt-4">
               <Button
                 onClick={handleCallNow}
-                className="w-full btn-hero"
+                className="w-full bg-amber-500 hover:bg-amber-700 text-white text-lg px-4 py-2 rounded-lg"
                 aria-label="Call developer now"
               >
                 <Phone className="w-5 h-5 mr-2" />
@@ -253,7 +253,7 @@ const ContactSection = () => {
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Button
                       type="submit"
-                      className="btn-hero flex-1"
+                      className="bg-amber-600 hover:bg-amber-700 text-white flex-1"
                       aria-label="Submit inquiry form"
                     >
                       <Send className="w-5 h-5 mr-2" />
@@ -283,7 +283,7 @@ const ContactSection = () => {
 
         {/* Call to Action */}
         <div className="mt-16">
-          <Card className="bg-gradient-to-r from-primary to-primary-glow text-white">
+          <Card className="bg-gradient-to-r from-amber-400 to-amber-700 text-white">
             <CardContent className="p-8 text-center">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">
                 Schedule Your Site Visit Today

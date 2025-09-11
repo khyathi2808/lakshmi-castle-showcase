@@ -169,7 +169,7 @@ const Testimonials = () => {
               Experience the luxury and comfort that our residents love. Schedule a visit today.
             </p>
             <Button
-              className="btn-hero px-8 py-3 text-lg"
+              className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 text-lg"
               onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
               aria-label="Contact us today"
             >
