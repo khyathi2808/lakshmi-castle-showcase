@@ -109,7 +109,7 @@ const Navigation = () => {
 
       {/* Mobile Navigation */}
       {isOpen && (
-        <div className="lg:hidden">
+        <div className="xl:hidden">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-background border-b border-border">
             {navItems.map((item) => (
               <button
