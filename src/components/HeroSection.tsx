@@ -199,9 +199,9 @@ const handleWhatsAppSubmit = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div id="home" className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
       {/* 1. Hero Section */}
-      <section id="home" className="relative h-screen overflow-hidden">
+      <section className="relative h-screen overflow-hidden">
         {/* Image Carousel */}
         <div className="absolute inset-0">
           {slides.map((slide, index) => (
