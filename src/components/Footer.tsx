@@ -1,7 +1,7 @@
 import { Phone, Mail, MapPin, Download, Facebook, Instagram, Linkedin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-
+import "./prohight.css";
 const Footer = () => {
   const quickLinks = [
     { name: "Home", href: "#home" },

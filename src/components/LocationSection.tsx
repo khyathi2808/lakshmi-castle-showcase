@@ -1,7 +1,7 @@
 import { MapPin, Clock, Car, GraduationCap, Hospital, ShoppingBag, Building2, Plane } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-
+import "./prohight.css";
 const LocationSection = () => {
   const nearbyLandmarks = [
     {
@@ -72,10 +72,10 @@ const LocationSection = () => {
   };
 
   return (
-    <section id="location" className="py-20 bg-muted/30">
+    <section id="location" className="section-stack py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className=" section-stack text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Prime Location & Connectivity
           </h2>

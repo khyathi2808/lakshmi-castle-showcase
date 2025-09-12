@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { 
   ChevronLeft, 
   ChevronRight, 
@@ -20,10 +20,8 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import interiorliving from "@/assets/interior-living.jpg";
-import herohero from "@/assets/hero-building-1.jpeg";
-import house1 from "@/assets/hero-building-1.jpg";
-import house2 from "@/assets/hero-building-2.jpg";
+import { ScrollProgress, SectionNavigation } from "@/components/ui/scroll-progress";
+import { useScrollEffects, useIntersectionObserver, useParallax } from "@/hooks/use-scroll-effects";
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -33,30 +31,57 @@ const HeroSection = () => {
   const [phone, setPhone] = useState('');
   const [message, setMessage] = useState('');
 
+  // Refs for scroll sections
+  const heroRef = useRef<HTMLElement>(null);
+  const projectsRef = useRef<HTMLElement>(null);
+  const achievementsRef = useRef<HTMLElement>(null);
+  const whatsappRef = useRef<HTMLElement>(null);
+  const socialRef = useRef<HTMLElement>(null);
+
+  // Scroll effects
+  const { scrollProgress, activeSection, isScrolling } = useScrollEffects();
+  const parallaxSlow = useParallax(0.3);
+  const parallaxFast = useParallax(0.6);
+
+  // Intersection observers for scroll animations
+  const { hasIntersected: projectsVisible } = useIntersectionObserver(projectsRef);
+  const { hasIntersected: achievementsVisible } = useIntersectionObserver(achievementsRef);
+  const { hasIntersected: socialVisible } = useIntersectionObserver(socialRef);
+const { hasIntersected: contactVisible } = useIntersectionObserver(whatsappRef);
+  const sections = ['Hero', 'Projects', 'Achievements', 'Contact', 'Social'];
+
   const handleEnquireNow = () => {
     const element = document.querySelector("#contact");
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const scrollToSection = (index: number) => {
+    const refs = [heroRef, projectsRef, achievementsRef, whatsappRef, socialRef];
+    const targetRef = refs[index];
+    if (targetRef.current) {
+      targetRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   
   const slides = [
     {
-      image: house1,
+      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=1920&h=1080&fit=crop",
       title: "Crafting Timeless Homes with Ayra Nirma",
       subtitle: "Lakshmi Castle - Where Dreams Meet Reality",
       description: "Experience Vastu-compliant luxury living with panoramic views and premium amenities",
       highlight: "10,000 sq ft of Pure Elegance"
     },
     {
-      image: house2,
+      image: "https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=1920&h=1080&fit=crop",
       title: "Vastu-Compliant Premium Living",
       subtitle: "Designed for Prosperity & Peace",
       description: "Airy windows, abundant sunlight, and harmonious layouts following ancient Vastu principles",
       highlight: "100% Vastu Certified"
     },
     {
-      image: interiorliving,
+      image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1920&h=1080&fit=crop",
       title: "Luxury Redefined in Vizag",
       subtitle: "VIP Road's Most Prestigious Address",
       description: "Premium amenities, world-class architecture, and unparalleled lifestyle experiences",
@@ -72,7 +97,7 @@ const HeroSection = () => {
       area: "10,000 sq ft",
       type: "Luxury Villas",
       price: "₹1.9 Cr onwards",
-      image: herohero,
+      image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop",
       features: ["Vastu Compliant", "Premium Finishes", "Gym & Pool", "24/7 Security"],
       status: "Launching Soon",
       description: "Experience luxury living with Vastu-compliant design, airy windows, and abundant sunlight in every corner.",
@@ -163,6 +188,27 @@ const HeroSection = () => {
     return () => clearInterval(timer);
   }, []);
 
+  // Parallax effect for scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const elements = document.querySelectorAll('.parallax-slow');
+      elements.forEach((el) => {
+        const htmlEl = el as HTMLElement;
+        htmlEl.style.setProperty('--parallax-offset-slow', `${parallaxSlow}px`);
+      });
+
+      const fastElements = document.querySelectorAll('.parallax-fast');
+      fastElements.forEach((el) => {
+        const htmlEl = el as HTMLElement;
+        htmlEl.style.setProperty('--parallax-offset-fast', `${parallaxFast}px`);
+      });
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [parallaxSlow, parallaxFast]);
+
   const handleWhatsAppSubmit = () => {
     if (!name.trim() || !phone.trim()) {
       return; // Basic validation
@@ -192,16 +238,30 @@ const HeroSection = () => {
   };
 
   return (
-    <div id="home" className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
+    <div className="relative">
+      {/* Scroll Progress Indicator */}
+      <ScrollProgress progress={scrollProgress} />
+      
+      {/* Section Navigation */}
+      <SectionNavigation 
+        sections={sections}
+        activeSection={activeSection}
+        onSectionClick={scrollToSection}
+      />
+
       {/* Hero Section */}
-      <section className="relative h-screen overflow-hidden">
-        {/* Image Carousel */}
-        <div className="absolute inset-0">
+      <section 
+        ref={heroRef}
+        data-scroll-section
+        className="sticky-section relative overflow-hidden"
+      >
+        {/* Image Carousel with Parallax */}
+        <div className="absolute inset-0 parallax-slow">
           {slides.map((slide, index) => (
             <div
               key={index}
-              className={`absolute inset-0 transition-opacity duration-1000 ${
-                index === currentSlide ? "opacity-100" : "opacity-0"
+              className={`absolute inset-0 transition-all duration-1000 ${
+                index === currentSlide ? "opacity-100 scale-100" : "opacity-0 scale-105"
               }`}
             >
               <img
@@ -220,7 +280,7 @@ const HeroSection = () => {
           variant="ghost"
           size="icon"
           onClick={prevSlide}
-          className="absolute left-4 sm:left-6 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all duration-300"
+          className="absolute left-4 sm:left-6 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all duration-300 hover:scale-110"
           aria-label="Previous slide"
         >
           <ChevronLeft className="h-6 w-6" />
@@ -230,36 +290,35 @@ const HeroSection = () => {
           variant="ghost"
           size="icon"
           onClick={nextSlide}
-          className="absolute right-4 sm:right-6 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all duration-300"
+          className="absolute right-4 sm:right-6 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all duration-300 hover:scale-110"
           aria-label="Next slide"
         >
           <ChevronRight className="h-6 w-6" />
         </Button>
 
-        {/* Hero Content */}
-        <div className="relative z-10 h-full flex items-center pt-20">
+        {/* Hero Content with Enhanced Animations */}
+        <div className="relative z-10 h-full flex items-center">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl">
-              <div className="animate-fade-in-up">
-                <Badge className="mb-4 bg-amber-600/90 text-white hover:bg-amber-700 animate-pulse-soft">
+              <div className={`transition-all duration-1000 ${isScrolling ? 'parallax-fast' : ''}`}>
+                <Badge className="mb-4 bg-amber-600/90 text-white hover:bg-amber-700 animate-pulse">
                   {slides[currentSlide].highlight}
                 </Badge>
-                <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                  <span className="block">{slides[currentSlide].title.split(' ').slice(0, -2).join(' ')}</span>
-                  <span className="block text-amber-200" style={{ animationDelay: '0.4s' }}>{slides[currentSlide].title.split(' ').slice(-2).join(' ')}</span>
+                <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                  {slides[currentSlide].title}
                 </h1>
-                <h2 className="text-xl sm:text-2xl md:text-3xl text-amber-200 mb-6 font-medium animate-fade-in-left" style={{ animationDelay: '0.6s' }}>
+                <h2 className="text-xl sm:text-2xl md:text-3xl text-amber-200 mb-6 font-medium">
                   {slides[currentSlide].subtitle}
                 </h2>
-                <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl leading-relaxed animate-fade-in-right" style={{ animationDelay: '0.8s' }}>
+                <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl leading-relaxed">
                   {slides[currentSlide].description}
                 </p>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in-up" style={{ animationDelay: '1s' }}>
+                <div className="flex flex-col sm:flex-row gap-4 mb-12">
                   <Button 
                     onClick={handleEnquireNow} 
-                    className="bg-amber-600 hover:bg-amber-700 text-white text-lg px-8 py-4 rounded-full shadow-lg hover-lift hover-glow transition-all duration-300"
+                    className="bg-amber-600 hover:bg-amber-700 text-white text-lg px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 hover:shadow-2xl"
                   >
                     Get a Quote
                   </Button>
@@ -268,7 +327,7 @@ const HeroSection = () => {
                     <DialogTrigger asChild>
                       <Button 
                         variant="outline" 
-                        className="border-2 border-white text-white hover:text-gray-900 text-lg px-8 py-4 rounded-full backdrop-blur-sm hover:bg-white/90 hover-scale transition-all duration-300"
+                        className="border-2 border-white text-white hover:text-gray-900 text-lg px-8 py-4 rounded-full backdrop-blur-sm hover:bg-white/90 transition-all duration-300 hover:scale-105"
                       >
                         I'm Interested
                       </Button>
@@ -332,12 +391,12 @@ const HeroSection = () => {
                 </div>
 
                 {/* Project Highlights */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 animate-scale-in hover-glow" style={{ animationDelay: '1.2s' }}>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 transition-all duration-500 hover:bg-white/15">
                   <h3 className="text-2xl font-semibold text-white mb-4 flex items-center gap-2">
-                    <Building className="h-6 w-6 animate-float" />
+                    <Building className="h-6 w-6" />
                     Project Highlights
                   </h3>
-                  <div className="bg-white/20 rounded-xl p-4 hover-lift transition-all duration-300">
+                  <div className="bg-white/20 rounded-xl p-4 transform hover:scale-105 transition-all duration-300">
                     <h4 className="font-semibold text-white mb-2">Lakshmi Castle</h4>
                     <p className="text-gray-200 text-sm">10,000 sq ft luxury villas with Vastu compliance and airy windows</p>
                   </div>
@@ -346,28 +405,17 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-
-        {/* Slide Indicators */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-          <div className="flex space-x-3">
-            {slides.map((_, index) => (
-              <button
-                key={index}
-                onClick={() => setCurrentSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                  index === currentSlide ? "bg-white scale-125" : "bg-white/50"
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
-            ))}
-          </div>
-        </div>
+       
       </section>
 
       {/* Latest Projects Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section 
+        ref={projectsRef}
+        data-scroll-section
+        className="section-stack py-20 px-4 sm:px-6 lg:px-8 bg-white relative z-20"
+      >
         <div className="container mx-auto">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 scroll-reveal ${projectsVisible ? 'revealed' : ''}`}>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Latest Project
             </h2>
@@ -377,8 +425,16 @@ const HeroSection = () => {
           </div>
 
           <div className="max-w-4xl mx-auto">
-            {latestProjects.map((project) => (
-              <Card key={project.id} className="group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white">
+            {latestProjects.map((project, index) => (
+              <Card 
+                key={project.id} 
+                className={`group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white transform scroll-reveal ${
+                  projectsVisible ? 'revealed' : ''
+                }`}
+                style={{
+                  transitionDelay: `${index * 200}ms`
+                }}
+              >
                 <div className="relative overflow-hidden">
                   <img 
                     src={project.image} 
@@ -419,7 +475,7 @@ const HeroSection = () => {
                   
                   {/* Expandable Content */}
                   {expandedProject === project.id && (
-                    <div className="mb-6 p-4 bg-gray-50 rounded-lg">
+                    <div className="mb-6 p-4 bg-gray-50 rounded-lg animate-fade-in">
                       <div className="grid md:grid-cols-2 gap-4">
                         <div>
                           <h4 className="font-semibold text-gray-900 mb-2">Configuration</h4>
@@ -450,11 +506,11 @@ const HeroSection = () => {
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Button 
                       onClick={() => toggleProjectExpansion(project.id)}
-                      className="flex-1 bg-amber-600 hover:bg-amber-700"
+                      className="flex-1 bg-amber-600 hover:bg-amber-700 transform hover:scale-105 transition-all duration-300"
                     >
                       {expandedProject === project.id ? 'Show Less' : 'View Details'}
                     </Button>
-                    <Button variant="outline" className="flex-1">
+                    <Button variant="outline" className="flex-1 hover:scale-105 transition-all duration-300">
                       Schedule Visit
                     </Button>
                   </div>
@@ -466,9 +522,13 @@ const HeroSection = () => {
       </section>
 
       {/* Achievements Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
+      <section 
+        ref={achievementsRef}
+        data-scroll-section
+        className="sticky-section py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 relative z-30"
+      >
         <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 scroll-reveal ${achievementsVisible ? 'revealed' : ''}`}>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Achievements & Recognition
             </h2>
@@ -482,11 +542,16 @@ const HeroSection = () => {
               <AccordionItem 
                 key={index} 
                 value={`achievement-${index}`} 
-                className="bg-white rounded-lg border shadow-sm"
+                className={`bg-white rounded-lg border shadow-sm transition-all duration-500 hover:shadow-lg scroll-reveal ${
+                  achievementsVisible ? 'revealed' : ''
+                }`}
+                style={{
+                  transitionDelay: `${index * 150}ms`
+                }}
               >
                 <AccordionTrigger className="px-6 py-4 hover:no-underline group">
                   <div className="flex items-center gap-4 text-left">
-                    <div className="bg-amber-100 p-3 rounded-full flex-shrink-0">
+                    <div className="bg-amber-100 p-3 rounded-full flex-shrink-0 group-hover:bg-amber-200 transition-colors duration-300">
                       <Award className="h-6 w-6 text-amber-600" />
                     </div>
                     <div className="flex-1">
@@ -512,7 +577,12 @@ const HeroSection = () => {
       </section>
 
       {/* WhatsApp Integration Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-green-600">
+      <section 
+        id="contact"
+        ref={whatsappRef}
+        data-scroll-section
+        className="section-stack py-16 px-4 sm:px-6 lg:px-8 bg-green-600 relative z-40"
+      >
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
             Ready to Find Your Dream Home?
@@ -526,7 +596,7 @@ const HeroSection = () => {
               href="https://wa.me/919963379888"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-white text-green-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-50 transition-colors duration-300 shadow-lg"
+              className="inline-flex items-center gap-3 bg-white text-green-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-50 transition-all duration-300 shadow-lg transform hover:scale-105"
             >
               <Phone className="h-6 w-6" />
               Chat on WhatsApp
@@ -537,7 +607,7 @@ const HeroSection = () => {
             
             <Button 
               variant="outline" 
-              className="border-2 border-white text-white hover:bg-white hover:text-green-600 px-8 py-4 rounded-full text-lg transition-all duration-300"
+              className="border-2 border-white text-white hover:bg-white hover:text-green-600 px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
               onClick={() => setIsWhatsAppOpen(true)}
             >
               Send Details
@@ -551,9 +621,13 @@ const HeroSection = () => {
       </section>
 
       {/* Social Feed Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section 
+        ref={socialRef}
+        data-scroll-section
+        className="sticky-section py-20 px-4 sm:px-6 lg:px-8 bg-white relative z-50"
+      >
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
+          <div className={`text-center mb-16 scroll-reveal ${socialVisible ? 'revealed' : ''}`}>
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
               Stay Connected
             </h2>
@@ -562,16 +636,16 @@ const HeroSection = () => {
             </p>
           </div>
 
-          <div className="bg-gray-50 rounded-2xl p-6">
+          <div className={`bg-gray-50 rounded-2xl p-6 scroll-reveal ${socialVisible ? 'revealed' : ''}`}>
             <div className="flex items-center gap-4 mb-6">
               <div className="flex gap-3">
-                <div className="bg-blue-500 p-2 rounded-full">
+                <div className="bg-blue-500 p-2 rounded-full hover:scale-110 transition-transform duration-300">
                   <Twitter className="h-5 w-5 text-white" />
                 </div>
-                <div className="bg-pink-500 p-2 rounded-full">
+                <div className="bg-pink-500 p-2 rounded-full hover:scale-110 transition-transform duration-300">
                   <Instagram className="h-5 w-5 text-white" />
                 </div>
-                <div className="bg-blue-600 p-2 rounded-full">
+                <div className="bg-blue-600 p-2 rounded-full hover:scale-110 transition-transform duration-300">
                   <Linkedin className="h-5 w-5 text-white" />
                 </div>
               </div>
@@ -580,7 +654,15 @@ const HeroSection = () => {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-h-96 overflow-y-auto">
               {socialPosts.map((post, index) => (
-                <Card key={index} className="border-l-4 border-l-amber-600 hover:shadow-lg transition-shadow duration-300">
+                <Card 
+                  key={index} 
+                  className={`border-l-4 border-l-amber-600 hover:shadow-lg transition-all duration-500 transform scroll-reveal ${
+                    socialVisible ? 'revealed' : ''
+                  }`}
+                  style={{
+                    transitionDelay: `${index * 100}ms`
+                  }}
+                >
                   <CardContent className="p-6">
                     <div className="flex items-center gap-3 mb-4">
                       {getPlatformIcon(post.platform)}
@@ -589,11 +671,11 @@ const HeroSection = () => {
                     </div>
                     <p className="text-gray-700 text-sm leading-relaxed mb-4">{post.content}</p>
                     <div className="flex items-center gap-4 text-sm text-gray-500">
-                      <span className="flex items-center gap-1">
+                      <span className="flex items-center gap-1 hover:text-red-500 transition-colors cursor-pointer">
                         <Heart className="h-4 w-4" />
                         {post.likes}
                       </span>
-                      <span className="flex items-center gap-1">
+                      <span className="flex items-center gap-1 hover:text-blue-500 transition-colors cursor-pointer">
                         <MessageCircle className="h-4 w-4" />
                         {post.shares}
                       </span>
@@ -606,15 +688,15 @@ const HeroSection = () => {
             <div className="text-center mt-6">
               <p className="text-gray-600 mb-4">Follow us for more updates!</p>
               <div className="flex flex-wrap justify-center gap-4">
-                <Button variant="outline" size="sm" className="text-blue-500 border-blue-500 hover:bg-blue-50">
+                <Button variant="outline" size="sm" className="text-blue-500 border-blue-500 hover:bg-blue-50 hover:scale-105 transition-all duration-300">
                   <Twitter className="h-4 w-4 mr-2" />
                   Follow on Twitter
                 </Button>
-                <Button variant="outline" size="sm" className="text-pink-500 border-pink-500 hover:bg-pink-50">
+                <Button variant="outline" size="sm" className="text-pink-500 border-pink-500 hover:bg-pink-50 hover:scale-105 transition-all duration-300">
                   <Instagram className="h-4 w-4 mr-2" />
                   Follow on Instagram
                 </Button>
-                <Button variant="outline" size="sm" className="text-blue-600 border-blue-600 hover:bg-blue-50">
+                <Button variant="outline" size="sm" className="text-blue-600 border-blue-600 hover:bg-blue-50 hover:scale-105 transition-all duration-300">
                   <Linkedin className="h-4 w-4 mr-2" />
                   Follow on LinkedIn
                 </Button>

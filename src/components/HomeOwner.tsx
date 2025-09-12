@@ -17,7 +17,7 @@ import {
   Percent,
   LucideIcon 
 } from 'lucide-react';
-
+import "./prohight.css";
 // Type definitions
 interface BenefitData {
   icon: LucideIcon;
@@ -263,38 +263,14 @@ const HomeOwner: React.FC<HomeOwnerProps> = ({ className = '' }) => {
   };
 
   return (
-    <div className={`min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 ${className}`}>
+    <div id="homeOwner" className={`min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 ${className}`}>
       {/* Hero Section */}
-      <div className={`relative overflow-hidden bg-gradient-to-r from-hero-gradient-from to-hero-gradient-to text-white transition-all duration-1000 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
-        <div className="absolute inset-0 bg-black opacity-20"></div>
-        <div className="relative max-w-7xl mx-auto px-4 py-20">
-          <div className="text-center">
-            <h1 className="text-5xl font-bold mb-6 animate-fade-in">Your Dream Home Awaits</h1>
-            <p className="text-xl mb-8 max-w-3xl mx-auto opacity-90">
-              Invest in your future with premium properties that grow in value while providing the perfect living experience
-            </p>
-            <div className="flex justify-center space-x-4">
-              <button 
-                className="bg-hero-accent text-hero-accent-foreground px-8 py-3 rounded-lg font-semibold hover:bg-hero-accent/90 transform hover:scale-105 transition-all duration-300 shadow-lg"
-                onClick={() => console.log('Explore Properties clicked')}
-              >
-                Explore Properties
-              </button>
-              <button 
-                className="border-2 border-hero-accent px-8 py-3 rounded-lg font-semibold hover:bg-hero-accent hover:text-hero-accent-foreground transform hover:scale-105 transition-all duration-300"
-                 onClick={handleEnquireNow}
-              >
-                Schedule Visit
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      
 
       <div className="max-w-7xl mx-auto px-4 py-12 space-y-16">
         
         {/* Benefits of Early Investment */}
-        <section id="homeOwner" className={`transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
+        <section className={`sticky-section transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Benefits of Early Investment</h2>
             <p className="text-xl text-gray-600">Start building your wealth today with smart property investments</p>
@@ -323,7 +299,7 @@ const HomeOwner: React.FC<HomeOwnerProps> = ({ className = '' }) => {
         </section>
 
         {/* Resale Value Growth */}
-        <section className={`transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
+        <section className={`section-stack transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Resale Value Growth</h2>
             <p className="text-xl text-gray-600">Watch your investment grow year over year</p>
@@ -355,7 +331,7 @@ const HomeOwner: React.FC<HomeOwnerProps> = ({ className = '' }) => {
         </section>
 
         {/* Extra Benefits - Loyalty Programs */}
-        <section className={`transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
+        <section className={` sticky-section transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Exclusive Member Benefits</h2>
             <p className="text-xl text-gray-600">Enjoy special perks and rewards as our valued customer</p>
@@ -387,7 +363,7 @@ const HomeOwner: React.FC<HomeOwnerProps> = ({ className = '' }) => {
         </section>
 
         {/* Packages */}
-        <section className={`transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
+        <section className={`transition-all section-stack duration-1000 delay-500 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Choose Your Package</h2>
             <p className="text-xl text-gray-600">Select the perfect home package that suits your needs</p>
@@ -430,7 +406,7 @@ const HomeOwner: React.FC<HomeOwnerProps> = ({ className = '' }) => {
         </section>
 
         {/* Personalized Quotes - EMI Calculator */}
-        <section className={`transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
+        <section className={`section-stack transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Get Personalized Quote</h2>
             <p className="text-xl text-gray-600">Calculate your EMI and plan your investment</p>
@@ -528,7 +504,7 @@ const HomeOwner: React.FC<HomeOwnerProps> = ({ className = '' }) => {
         </section>
 
         {/* Old Home Assistance */}
-        <section className={`transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
+        <section className={`sticky-section transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
           <div className="bg-gradient-to-r from-orange-500 to-red-500 rounded-xl p-8 text-white">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-8">
@@ -606,7 +582,7 @@ const HomeOwner: React.FC<HomeOwnerProps> = ({ className = '' }) => {
         </section>
 
         {/* Security Features */}
-        <section className={`transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
+        <section className={`sticky-section transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Advanced Security Features</h2>
             <p className="text-xl text-gray-600">Your safety and peace of mind is our top priority</p>
@@ -639,29 +615,7 @@ const HomeOwner: React.FC<HomeOwnerProps> = ({ className = '' }) => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className={`transition-all duration-1000 delay-900 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
-          <div className="bg-gradient-to-r from-primary via-primary-glow to-hero-gradient-to rounded-xl p-12 text-white text-center">
-            <h2 className="text-4xl font-bold mb-6">Ready to Make Your Move?</h2>
-            <p className="text-xl mb-8 opacity-90">Join thousands of satisfied homeowners who trusted us with their dreams</p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <button 
-                onClick={() => console.log('Call Now clicked')}
-                className="bg-hero-accent text-hero-accent-foreground px-8 py-4 rounded-lg font-semibold hover:bg-hero-accent/90 transform hover:scale-105 transition-all duration-300 flex items-center space-x-2"
-              >
-                <Phone size={20} />
-                <span>Call Now</span>
-              </button>
-              <button 
-                onClick={() => console.log('Book Site Visit clicked')}
-                className="border-2 border-hero-accent px-8 py-4 rounded-lg font-semibold hover:bg-hero-accent hover:text-hero-accent-foreground transform hover:scale-105 transition-all duration-300 flex items-center space-x-2"
-              >
-                <Calendar size={20} />
-                <span>Book Site Visit</span>
-              </button>
-            </div>
-          </div>
-        </section>
+        
       </div>
     </div>
   );

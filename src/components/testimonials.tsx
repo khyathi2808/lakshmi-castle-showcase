@@ -6,8 +6,7 @@ import AnimatedSection from "./AnimatedSection";
 import testimonial1 from "@/assets/testimonial-1.jpg";
 import testimonial2 from "@/assets/testimonial-2.png";
 import testimonial3 from "@/assets/testimonial-3.png";
-
-
+import "./prohight.css";
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -72,8 +71,8 @@ const Testimonials = () => {
   );
 
   return (
-    <section id="testimonials" className="py-20 bg-gradient-to-b from-background to-muted/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="sticky-section testimonials" className="py-20 bg-gradient-to-b from-background to-muted/30">
+      <div className=" sticky-section  max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <AnimatedSection className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">

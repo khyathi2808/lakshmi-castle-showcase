@@ -1,0 +1,45 @@
+ .sticky-section {
+          position: sticky;
+    top: 0;
+      background: linear-gradient(to right, #fbbf24, #b45309); 
+    
+        }
+        
+        .section-stack {
+          position: relative;
+          z-index: 10;
+           background: linear-gradient(to right, #fbbf24, #b45309); 
+        }
+        
+        .parallax-slow {
+          transform: translateY(var(--parallax-offset-slow, 0px));
+        }
+        
+        .parallax-fast {
+          transform: translateY(var(--parallax-offset-fast, 0px));
+        }
+        
+        .scroll-reveal {
+          opacity: 0;
+          transform: translateY(50px);
+          transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .scroll-reveal.revealed {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        
+        .animate-fade-in {
+          animation: fadeIn 0.6s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }.parallax-slow {
+            --parallax-offset-slow: ${parallaxSlow}px;
+          }
+          .parallax-fast {
+            --parallax-offset-fast: ${parallaxFast}px;
+          }

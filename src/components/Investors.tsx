@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
-
+import "./prohight.css";
 const InvestorsScreen = () => {
   const { toast } = useToast();
   const [activeTab, setActiveTab] = useState('lakshmi');
@@ -217,7 +217,7 @@ Description: ${partnershipForm.description}`;
   return (
     <div id="investor" className="min-h-screen bg-gradient-to-br from-slate-50 to-amber-50">
       {/* Hero Section */}
-      <div className="relative bg-gradient-to-r from-amber-900 via-amber-800 to-orange-900 text-white py-20">
+      <div className="sticky-section relative bg-gradient-to-r from-amber-900 via-amber-800 to-orange-900 text-white py-20">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative max-w-7xl mx-auto px-4">
           <div className="text-center">
@@ -244,10 +244,10 @@ Description: ${partnershipForm.description}`;
           </div>
         </div>
       </div>
-
-      <div className="max-w-7xl mx-auto px-4 py-12">
+<div className="section-stack max-w-7xl mx-auto px-4 py-12">
+      
         {/* Investment Opportunities Section */}
-        <section className="mb-16">
+        <section className=" mb-16">
           <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Featured Investment Opportunities</h2>
           
           <div className="flex flex-wrap justify-center gap-4 mb-8">
@@ -337,7 +337,7 @@ Description: ${partnershipForm.description}`;
         </section>
 
         {/* Why Vizag Section */}
-        <section className="mb-16">
+        <section className=" mb-16">
           <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Why Vizag?</h2>
           
           <div className="bg-white rounded-2xl shadow-xl p-8">
@@ -377,7 +377,7 @@ Description: ${partnershipForm.description}`;
         </section>
 
         {/* Competitive Pricing & ROI Section */}
-        <section className="mb-16">
+        <section className=" mb-16">
           <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Get Custom Quote</h2>
           
           <div className="bg-white rounded-2xl shadow-xl p-8">
@@ -508,7 +508,7 @@ Description: ${partnershipForm.description}`;
         </section>
 
         {/* Business Partnership Section */}
-        <section className="mb-16">
+        <section className=" mb-16">
           <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Business with Us</h2>
           
           <div className="grid md:grid-cols-2 gap-8">

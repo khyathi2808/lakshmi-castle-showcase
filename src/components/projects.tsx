@@ -31,7 +31,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/com
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-
+import "./prohight.css";
 interface Project {
   id: string;
   name: string;
@@ -363,7 +363,7 @@ const Projects: React.FC = () => {
   );
 
   return (
-    <div  className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
+     <div  className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Hero Section - Lakshmi Castle */}
       
 
@@ -371,7 +371,7 @@ const Projects: React.FC = () => {
       <section 
         id="projects" 
         ref={setSectionRef('projects')} 
-        className={`py-20 transition-all duration-800 ${
+        className={`sticky-section py-20 transition-all duration-800 ${
           visibleSections.has('projects') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
@@ -407,14 +407,7 @@ const Projects: React.FC = () => {
             <TabsContent value="upcoming">
               <div className="grid grid-cols-1 gap-8">
                 {projects.filter(p => p.status === 'upcoming').map(renderProjectCard)}
-                <Card className="p-12 text-center border-2 border-dashed border-gray-300 bg-gray-50">
-                  <Building className="w-16 h-16 mx-auto text-gray-400 mb-6" />
-                  <h3 className="text-2xl font-bold text-gray-600 mb-4">More Projects Coming Soon</h3>
-                  <p className="text-gray-500 mb-6">Stay tuned for exciting new developments in prime Vizag locations</p>
-                  <Button variant="outline">
-                    Get Notified <ArrowRight className="ml-2 w-4 h-4" />
-                  </Button>
-                </Card>
+                
               </div>
             </TabsContent>
             
@@ -427,11 +420,12 @@ const Projects: React.FC = () => {
         </div>
       </section>
 
+
       {/* 3D Modeling / 360° Views Section */}
       <section 
         id="3d-tours" 
         ref={setSectionRef('3d-tours')} 
-        className={`py-20 bg-gray-50 transition-all duration-800 ${
+        className={`sticky-section py-20 bg-gray-50 transition-all duration-800 ${
           visibleSections.has('3d-tours') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
@@ -490,7 +484,7 @@ const Projects: React.FC = () => {
       <section 
         id="amenities" 
         ref={setSectionRef('amenities')} 
-        className={`py-20 transition-all duration-800 ${
+        className={`section-stack py-20 transition-all duration-800 ${
           visibleSections.has('amenities') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
@@ -536,7 +530,7 @@ const Projects: React.FC = () => {
       <section 
         id="interior-packages" 
         ref={setSectionRef('interior-packages')} 
-        className={`py-20 bg-gray-50 transition-all duration-800 ${
+        className={` py-20 sticky-section bg-gray-50 transition-all duration-800 ${
           visibleSections.has('interior-packages') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >
@@ -616,7 +610,7 @@ const Projects: React.FC = () => {
       <section 
         id="eco-measures" 
         ref={setSectionRef('eco-measures')} 
-        className={`py-20 transition-all duration-800 ${
+        className={`py-20 sticky-section transition-all duration-800 ${
           visibleSections.has('eco-measures') ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
         }`}
       >

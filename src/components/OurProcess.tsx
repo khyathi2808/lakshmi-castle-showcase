@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-
+import "./prohight.css";
 const OurProcess = () => {
   const [selectedMaterial, setSelectedMaterial] = useState(null);
 
@@ -205,7 +205,7 @@ const OurProcess = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center sticky-section mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Our Process & Craftsmanship
           </h2>
@@ -216,7 +216,7 @@ const OurProcess = () => {
         </div>
 
         {/* Step-by-Step Construction Process */}
-        <div className="mb-20">
+        <div className="mb-20 section-stack">
           <div className="text-center mb-12">
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               Construction Process
@@ -286,7 +286,7 @@ const OurProcess = () => {
         </div>
 
         {/* Stories Behind the Projects */}
-        <div className="mb-20">
+        <div className="mb-20 section-stack">
           <div className="text-center mb-12">
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               Stories Behind Our Projects
@@ -335,7 +335,7 @@ const OurProcess = () => {
         </div>
 
         {/* Craftsmanship & Robust Construction */}
-        <div className="mb-20">
+        <div className="mb-20 sticky-section">
           <div className="text-center mb-12">
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               Craftsmanship & Robust Construction
@@ -371,7 +371,7 @@ const OurProcess = () => {
         </div>
 
         {/* Team Qualifications */}
-        <div className="mb-20">
+        <div className="mb-20 sticky-section">
           <div className="text-center mb-12">
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               Our Expert Team
@@ -405,7 +405,7 @@ const OurProcess = () => {
         </div>
 
         {/* Materials & Quality Standards */}
-        <div className="mb-20">
+        <div className="mb-20 section-stack">
           <div className="text-center mb-12">
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               Premium Materials & Quality Standards
@@ -447,7 +447,7 @@ const OurProcess = () => {
         </div>
 
         {/* Sustainability Practices */}
-        <div>
+        <div className="section-stack">
           <div className="text-center mb-12">
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               Sustainability Practices
