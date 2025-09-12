@@ -241,24 +241,25 @@ const HeroSection = () => {
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl">
               <div className="animate-fade-in-up">
-                <Badge className="mb-4 bg-amber-600/90 text-white hover:bg-amber-700">
+                <Badge className="mb-4 bg-amber-600/90 text-white hover:bg-amber-700 animate-pulse-soft">
                   {slides[currentSlide].highlight}
                 </Badge>
-                <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-                  {slides[currentSlide].title}
+                <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 leading-tight animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                  <span className="block">{slides[currentSlide].title.split(' ').slice(0, -2).join(' ')}</span>
+                  <span className="block text-amber-200" style={{ animationDelay: '0.4s' }}>{slides[currentSlide].title.split(' ').slice(-2).join(' ')}</span>
                 </h1>
-                <h2 className="text-xl sm:text-2xl md:text-3xl text-amber-200 mb-6 font-medium">
+                <h2 className="text-xl sm:text-2xl md:text-3xl text-amber-200 mb-6 font-medium animate-fade-in-left" style={{ animationDelay: '0.6s' }}>
                   {slides[currentSlide].subtitle}
                 </h2>
-                <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl leading-relaxed">
+                <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl leading-relaxed animate-fade-in-right" style={{ animationDelay: '0.8s' }}>
                   {slides[currentSlide].description}
                 </p>
 
                 {/* CTA Buttons */}
-                <div className="flex flex-col sm:flex-row gap-4 mb-12">
+                <div className="flex flex-col sm:flex-row gap-4 mb-12 animate-fade-in-up" style={{ animationDelay: '1s' }}>
                   <Button 
                     onClick={handleEnquireNow} 
-                    className="bg-amber-600 hover:bg-amber-700 text-white text-lg px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300"
+                    className="bg-amber-600 hover:bg-amber-700 text-white text-lg px-8 py-4 rounded-full shadow-lg hover-lift hover-glow transition-all duration-300"
                   >
                     Get a Quote
                   </Button>
@@ -267,7 +268,7 @@ const HeroSection = () => {
                     <DialogTrigger asChild>
                       <Button 
                         variant="outline" 
-                        className="border-2 border-white text-white hover:text-gray-900 text-lg px-8 py-4 rounded-full backdrop-blur-sm hover:bg-white/90 transition-all duration-300"
+                        className="border-2 border-white text-white hover:text-gray-900 text-lg px-8 py-4 rounded-full backdrop-blur-sm hover:bg-white/90 hover-scale transition-all duration-300"
                       >
                         I'm Interested
                       </Button>
@@ -331,12 +332,12 @@ const HeroSection = () => {
                 </div>
 
                 {/* Project Highlights */}
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6">
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 animate-scale-in hover-glow" style={{ animationDelay: '1.2s' }}>
                   <h3 className="text-2xl font-semibold text-white mb-4 flex items-center gap-2">
-                    <Building className="h-6 w-6" />
+                    <Building className="h-6 w-6 animate-float" />
                     Project Highlights
                   </h3>
-                  <div className="bg-white/20 rounded-xl p-4 transform hover:scale-105 transition-all duration-300">
+                  <div className="bg-white/20 rounded-xl p-4 hover-lift transition-all duration-300">
                     <h4 className="font-semibold text-white mb-2">Lakshmi Castle</h4>
                     <p className="text-gray-200 text-sm">10,000 sq ft luxury villas with Vastu compliance and airy windows</p>
                   </div>

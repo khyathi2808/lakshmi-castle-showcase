@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Landmark, GitFork, Bus, Train } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import AnimatedSection from "./AnimatedSection";
+import AnimatedCounter from "./AnimatedCounter";
 // Import beach and shopping images
 import lawsonsBayImage from "../assets/lawsons-bay-beach.jpg";
 import ramakrishnaBeachImage from "../assets/ramakrishna-beach.jpg";
@@ -95,7 +97,7 @@ const AboutSection = () => {
     <section id="properties" className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
+        <AnimatedSection className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Our Prestigious Property
           </h2>
@@ -105,46 +107,48 @@ const AboutSection = () => {
               Located on VIP Road, Visakhapatnam, Lakshmi Castle combines prime location, unparalleled connectivity, 
               shopping, beaches, and cultural hubs. It is designed for modern living with effortless convenience.
             </p>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
-              <div className="text-center">
-                <div className="w-12 h-12 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center">
-                  <MapPin className="w-6 h-6 text-primary" />
+            <AnimatedSection animation="stagger" className="mb-8">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div className="text-center hover-lift">
+                  <div className="w-12 h-12 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center animate-float">
+                    <MapPin className="w-6 h-6 text-primary" />
+                  </div>
+                  <p className="text-sm text-muted-foreground">Prime location on VIP Road</p>
                 </div>
-                <p className="text-sm text-muted-foreground">Prime location on VIP Road</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Car className="w-6 h-6 text-primary" />
+                <div className="text-center hover-lift">
+                  <div className="w-12 h-12 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center animate-float" style={{ animationDelay: '0.2s' }}>
+                    <Car className="w-6 h-6 text-primary" />
+                  </div>
+                  <p className="text-sm text-muted-foreground">World-class connectivity</p>
                 </div>
-                <p className="text-sm text-muted-foreground">World-class connectivity</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center">
-                  <ShoppingBag className="w-6 h-6 text-primary" />
+                <div className="text-center hover-lift">
+                  <div className="w-12 h-12 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center animate-float" style={{ animationDelay: '0.4s' }}>
+                    <ShoppingBag className="w-6 h-6 text-primary" />
+                  </div>
+                  <p className="text-sm text-muted-foreground">Premium shopping nearby</p>
                 </div>
-                <p className="text-sm text-muted-foreground">Premium shopping nearby</p>
-              </div>
-              <div className="text-center">
-                <div className="w-12 h-12 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center">
-                  <Waves className="w-6 h-6 text-primary" />
+                <div className="text-center hover-lift">
+                  <div className="w-12 h-12 mx-auto mb-2 rounded-full bg-primary/10 flex items-center justify-center animate-float" style={{ animationDelay: '0.6s' }}>
+                    <Waves className="w-6 h-6 text-primary" />
+                  </div>
+                  <p className="text-sm text-muted-foreground">Close to beaches</p>
                 </div>
-                <p className="text-sm text-muted-foreground">Close to beaches</p>
               </div>
-            </div>
+            </AnimatedSection>
             <Button
                 onClick={handleDownloadBrochure}
                 
-                className="btn-hero text-lg px-8 py-4"
+                className="btn-hero text-lg px-8 py-4 hover-lift hover-glow"
                 aria-label="Download Lakshmi Castle brochure"
               >
                 <Download className="w-5 h-5 mr-2" />
                 Download Brochure
               </Button>
           </div>
-        </div>
+        </AnimatedSection>
 
         {/* Location & Connectivity */}
-        <div className="mb-16">
+        <AnimatedSection animation="fade-up" className="mb-16">
           <div className="text-center mb-12">
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               Location & Connectivity
@@ -154,30 +158,32 @@ const AboutSection = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {locationConnectivity.map((location, index) => {
-              const IconComponent = location.icon;
-              return (
-                <Card key={index} className="card-luxury text-center">
-                  <CardContent className="p-6">
-                    <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-primary to-primary-glow flex items-center justify-center shadow-lg">
-                      <IconComponent className="w-8 h-8 text-white" />
-                    </div>
-                    <h4 className="text-lg font-semibold text-foreground mb-2">
-                      {location.name}
-                    </h4>
-                    <p className="text-xl font-bold text-primary">
-                      {location.distance}
-                    </p>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-        </div>
+          <AnimatedSection animation="stagger">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {locationConnectivity.map((location, index) => {
+                const IconComponent = location.icon;
+                return (
+                  <Card key={index} className="card-luxury text-center hover-lift hover-glow">
+                    <CardContent className="p-6">
+                      <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-primary to-primary-glow flex items-center justify-center shadow-lg animate-float" style={{ animationDelay: `${index * 0.2}s` }}>
+                        <IconComponent className="w-8 h-8 text-white" />
+                      </div>
+                      <h4 className="text-lg font-semibold text-foreground mb-2">
+                        {location.name}
+                      </h4>
+                      <p className="text-xl font-bold text-primary">
+                        {location.distance}
+                      </p>
+                    </CardContent>
+                  </Card>
+                );
+              })}
+            </div>
+          </AnimatedSection>
+        </AnimatedSection>
 
         {/* Lifestyle & Shopping */}
-        <div className="mb-16">
+        <AnimatedSection animation="fade-left" className="mb-16">
           <div className="text-center mb-12">
             <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4">
               Lifestyle & Shopping
@@ -187,32 +193,39 @@ const AboutSection = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {shoppingDestinations.map((destination, index) => (
-              <Card key={index} className="card-premium overflow-hidden">
-                <CardContent className="p-0">
-                  <div className="h-48 relative">
-                    <img 
-                      src={destination.image} 
-                      alt={destination.name}
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-black/20"></div>
-                    <div className="absolute bottom-4 left-4 text-white">
-                      <div className="flex items-center mb-2">
-                        <ShoppingBag className="w-6 h-6 mr-2" />
-                        <h4 className="text-xl font-bold">{destination.name}</h4>
+          <AnimatedSection animation="stagger">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {shoppingDestinations.map((destination, index) => (
+                <Card key={index} className="card-premium overflow-hidden hover-scale image-overlay">
+                  <CardContent className="p-0">
+                    <div className="h-48 relative">
+                      <img 
+                        src={destination.image} 
+                        alt={destination.name}
+                        className="w-full h-full object-cover transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-black/20"></div>
+                      <div className="absolute bottom-4 left-4 text-white">
+                        <div className="flex items-center mb-2">
+                          <ShoppingBag className="w-6 h-6 mr-2" />
+                          <h4 className="text-xl font-bold">{destination.name}</h4>
+                        </div>
+                      </div>
+                      <div className="overlay-content">
+                        <Button variant="outline" className="text-white border-white hover:bg-white hover:text-black">
+                          View Details
+                        </Button>
                       </div>
                     </div>
-                  </div>
-                  <div className="p-6 text-center">
-                    <p className="text-muted-foreground">{destination.description}</p>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
+                    <div className="p-6 text-center">
+                      <p className="text-muted-foreground">{destination.description}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </AnimatedSection>
+        </AnimatedSection>
 
         {/* Cultural & Spiritual Hub */}
         <div className="mb-16">
