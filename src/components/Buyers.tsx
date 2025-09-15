@@ -507,7 +507,7 @@ const Buyers: React.FC<BuyersProps> = ({ className = '' }) => {
                   </div>
                 </div>
               </div>
-              <div className="bg-gradient-to-r from-amber-400 to-amber-600 rounded-xl p-8 text-white">
+              <div className="bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] rounded-xl p-8 text-white">
                 <div className="text-center">
                   <Calculator className="mx-auto mb-4" size={48} />
                   <h3 className="text-2xl font-bold mb-6">Your EMI Calculation</h3>
@@ -531,7 +531,7 @@ const Buyers: React.FC<BuyersProps> = ({ className = '' }) => {
                   </div>
                   <button 
                     onClick={handleGetPreApproved}
-                    className="w-full bg-white text-amber-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 mt-6"
+                    className="w-full bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 mt-6"
                   >
                     Get Pre-Approved
                   </button>
@@ -554,7 +554,7 @@ const Buyers: React.FC<BuyersProps> = ({ className = '' }) => {
                   <Quote className="text-amber-400" size={48} />
                 </div>
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
+                  <div className="w-16 h-16 bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-4">
                     {testimonials[currentTestimonial].avatar}
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -598,7 +598,7 @@ const Buyers: React.FC<BuyersProps> = ({ className = '' }) => {
         </section>
 
         {/* Customer Feedback */}
-        <section className={`sticky-section transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
+        <section className={`sticky-section flex flex-col justify-center items-center transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Customer Feedback Analytics</h2>
             <p className="text-xl text-gray-600">Data-driven insights from our customer reviews</p>
@@ -644,7 +644,7 @@ const Buyers: React.FC<BuyersProps> = ({ className = '' }) => {
           <div className="grid md:grid-cols-2 gap-8">
             {aiPredictions.map((prediction: AIPrediction, index: number) => (
               <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300">
-                <div className="bg-gradient-to-r from-amber-400 to-amber-700 p-6 text-white">
+                <div className="bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] p-6 text-white">
                   <div className="flex items-center justify-between mb-4">
                     <Brain className="text-white" size={32} />
                     <div className="text-right">
@@ -664,7 +664,7 @@ const Buyers: React.FC<BuyersProps> = ({ className = '' }) => {
                   <div className="mt-4">
                     <div className="w-full bg-gray-200 rounded-full h-2">
                       <div 
-                        className="bg-gradient-to-r from-amber-400 to-amber-700 h-2 rounded-full transition-all duration-1000"
+                        className="bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] h-2 rounded-full transition-all duration-1000"
                         style={{ width: `${prediction.confidence}%` }}
                       ></div>
                     </div>
@@ -689,7 +689,7 @@ const Buyers: React.FC<BuyersProps> = ({ className = '' }) => {
                   onClick={() => setActiveTab(key)}
                   className={`flex-1 px-8 py-4 font-semibold transition-all duration-300 ${
                     activeTab === key
-                      ? 'bg-amber-600 text-white transform scale-105'
+                      ? 'bg-[#bf9c63] text-white transform scale-105'
                       : ' amber-600 bg-blue-50'
                   }`}
                 >
@@ -700,7 +700,7 @@ const Buyers: React.FC<BuyersProps> = ({ className = '' }) => {
             <div className="p-8">
               <div className="text-center mb-8">
                 <h3 className="text-3xl font-bold text-gray-900 mb-2">{packages[activeTab].title}</h3>
-                <p className="text-4xl font-bold text-blue-600">{packages[activeTab].price}</p>
+                <p className="text-4xl font-bold text-[#bf9c63]">{packages[activeTab].price}</p>
               </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
                 {packages[activeTab].features.map((feature: string, index: number) => (

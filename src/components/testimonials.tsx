@@ -78,7 +78,7 @@ const Testimonials = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
             Testimonials
           </h2>
-          <p className="text-lg max-w-3xl mx-auto">
+          <p className="text-lg text-black max-w-3xl mx-auto">
             Hear from our satisfied residents who have made our properties their home
           </p>
         </AnimatedSection>

@@ -164,8 +164,8 @@ const Resources = () => {
         {/* Header */}
         <section data-scroll-section className="sticky-section1 items-center justify-center text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <h1 className="text-4xl font-bold mb-4">Resources Center</h1>
-            <p className="text-xl text-slate-400 max-w-2xl">
+            <h1 className="text-4xl text-black font-bold mb-4">Resources Center</h1>
+            <p className="text-xl text-black max-w-2xl">
               Everything you need to make informed real estate decisions - from expert guides to interactive tools
             </p>
           </div>
@@ -185,7 +185,7 @@ const Resources = () => {
                   onClick={() => setActiveSection(id)}
                   className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all ${
                     activeSection === id
-                      ? 'bg-amber-100 text-amber-700 border-2 border-amber-200'
+                      ? 'bg-amber-100 text-[#bf9c63] border-2 border-amber-200'
                       : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                   }`}
                 >
@@ -211,7 +211,7 @@ const Resources = () => {
                       placeholder="Search articles, guides, and tips..."
                       value={searchTerm}
                       onChange={(e) => setSearchTerm(e.target.value)}
-                      className="w-full pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
+                      className="w-full text-black pl-10 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#BF9C63] focus:border-transparent"
                     />
                   </div>
                   <div className="relative">
@@ -219,7 +219,7 @@ const Resources = () => {
                     <select
                       value={selectedCategory}
                       onChange={(e) => setSelectedCategory(e.target.value)}
-                      className="pl-10 pr-8 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent appearance-none bg-white min-w-[200px]"
+                      className="pl-10 pr-8 py-2.5 border text-black border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent appearance-none bg-white min-w-[200px]"
                     >
                       <option value="all">All Categories</option>
                       <option value="buying-guide">Buying Guide</option>
@@ -236,7 +236,7 @@ const Resources = () => {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {filteredPosts.filter(post => post.featured).map((post) => (
                   <article key={post.id} className="bg-white rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden">
-                    <div className="h-48 bg-gradient-to-br from-amber-400 to-amber-700 flex items-center justify-center">
+                    <div className="h-48 bg-gradient-to-br from-[#aaa8a3] to-[#BF9C63] flex items-center justify-center">
                       <div className="text-center text-white p-6">
                         <div className="inline-block px-3 py-1 bg-white bg-opacity-20 rounded-full text-sm mb-3">
                           Featured
@@ -246,7 +246,7 @@ const Resources = () => {
                     </div>
                     <div className="p-6">
                       <div className="flex items-center justify-between mb-3">
-                        <span className="px-3 py-1 bg-amber-100 text-amber-800 text-sm rounded-full capitalize">
+                        <span className="px-3 py-1 bg-amber-100 text-black text-sm rounded-full capitalize">
                           {post.category.replace('-', ' ')}
                         </span>
                         <span className="text-sm text-gray-500">{post.readTime}</span>

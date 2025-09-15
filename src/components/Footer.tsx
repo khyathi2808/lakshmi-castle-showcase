@@ -34,14 +34,14 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Developer Information */}
-          <div className="space-y-4">
+          <div className="space-y-4 text-black">
             <h3 className="text-xl font-bold mb-4">Developer</h3>
-            <div className="space-y-3">
+            <div className="space-y-3 text-black">
               <h4 className="font-semibold">Ayra Nirman Private Limited</h4>
-              <p className="text-sm text-gray-300">
+              <p className="text-sm text-black">
                 Crafting luxury residences for global living. With operations in India, we combine modern design with timeless elegance.
               </p>
-              <p className="text-sm text-gray-300 mt-2">
+              <p className="text-sm text-black mt-2">
                 504, 5th Floor, Kotu Empire, VIP Rd<br />
                 Siripuram, Visakhapatnam, Andhra Pradesh 530003
               </p>
@@ -50,7 +50,7 @@ const Footer = () => {
           </div>
 
           {/* Contact Information */}
-          <div className="space-y-4">
+          <div className="space-y-4 text-black">
             <h3 className="text-xl font-bold mb-4">Contact Info</h3>
             <div className="space-y-3">
               <div className="flex items-center">
@@ -83,7 +83,7 @@ const Footer = () => {
           
 
           {/* Social & Downloads */}
-          <div className="space-y-4">
+          <div className="space-y-4 text-black">
             <h3 className="text-xl font-bold mb-4">Connect & Download</h3>
             
             {/* Social Media */}
@@ -158,11 +158,11 @@ const Footer = () => {
         </div>
 
         {/* Legal Notes */}
-        <div className="mt-12 pt-8 border-t border-gray-600">
+        <div className="mt-12 pt-8 border-t border-gray-600 text-black">
           <div className="space-y-4">
             <div className="text-center">
               <h4 className="font-semibold mb-3">Important Legal Information</h4>
-              <p className="text-sm text-gray-300 max-w-4xl mx-auto leading-relaxed">
+              <p className="text-sm text-black max-w-4xl mx-auto leading-relaxed">
                 Extra charges for electricity, water, UGD, parking, and registration apply. 
                 Promoter reserves the right to modify design or specifications without prior notice. 
                 All images and floor plans are for representational purposes only. Prices are subject to change.
@@ -171,7 +171,7 @@ const Footer = () => {
                 <DialogTrigger asChild>
                   <Button
                     variant="ghost"
-                    className="text-white hover:bg-white/10 mt-3"
+                    className="text-black hover:bg-white/10 mt-3"
                     aria-label="Read full terms and conditions"
                   >
                     Read Full Terms & Conditions
@@ -183,26 +183,26 @@ const Footer = () => {
                   </DialogHeader>
                   <div className="p-4 space-y-4 text-sm">
                    <div>
-  <h5 className="font-semibold mb-2">1. Pricing & Additional Charges</h5>
+  <h5 className="font-semibold mb-2 text-black">1. Pricing & Additional Charges</h5>
   <p className="text-muted-foreground">
     All services, features, and add-ons are subject to the stated pricing plans, and any additional usage beyond the included limits may incur extra charges as per the platform’s billing policy.
   </p>
 </div>
-<div>
-  <h5 className="font-semibold mb-2">2. Modifications</h5>
-  <p className="text-muted-foreground">
+<div className="text-black">
+  <h5 className="font-semibold mb-2 ">2. Modifications</h5>
+  <p className="text-muted-foreground text-black">
     The promoter reserves the right to modify the design, specifications, floor plans, and amenities without prior notice to comply with legal requirements or for project improvement.
   </p>
 </div>
 <div>
-  <h5 className="font-semibold mb-2">3. Representations</h5>
-  <p className="text-muted-foreground">
+  <h5 className="font-semibold mb-2 text-black">3. Representations</h5>
+  <p className="text-muted-foreground text-black">
     All images, floor plans, and artistic impressions are for representational purposes only and may not reflect the actual appearance of the development.
   </p>
 </div>
 <div>
-  <h5 className="font-semibold mb-2">4. Specifications</h5>
-  <p className="text-muted-foreground">
+  <h5 className="font-semibold mb-2 text-black">4. Specifications</h5>
+  <p className="text-muted-foreground text-black">
     Construction specifications and features may change as per project needs.
   </p>
 </div>
@@ -216,10 +216,10 @@ const Footer = () => {
 
             {/* Copyright */}
             <div className="text-center pt-4 border-t border-gray-600">
-              <p className="text-sm text-gray-400">
+              <p className="text-sm text-black">
                 © 2025 Ayra Nirman Private Limited. All rights reserved.
               </p>
-              <p className="text-xs text-gray-500 mt-1">
+              <p className="text-xs text-black mt-1">
                 Designed with luxury and precision for modern living.
               </p>
             </div>

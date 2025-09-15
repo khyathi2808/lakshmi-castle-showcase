@@ -293,42 +293,42 @@ const Projects: React.FC = () => {
       name: "Vizag Central Mall",
       distance: "2 minutes",
       type: "Shopping",
-      color: "from-amber-400 to-amber-700"
+      color: "from-[#aaa8a3] to-[#BF9C63]"
     },
     {
       icon: Car,
       name: "RTC Complex",
       distance: "5 minutes",
       type: "Transportation",
-      color: "from-amber-400 to-amber-700"
+      color: "from-[#aaa8a3] to-[#BF9C63]"
     },
     {
       icon: GraduationCap,
       name: "Educational Institutions",
       distance: "3-8 minutes",
       type: "Education",
-      color: "from-amber-400 to-amber-700"
+      color: "from-[#aaa8a3] to-[#BF9C63]"
     },
     {
       icon: Hospital,
       name: "Healthcare Facilities",
       distance: "5-10 minutes",
       type: "Healthcare",
-      color: "from-amber-400 to-amber-700"
+      color: "from-[#aaa8a3] to-[#BF9C63]"
     },
     {
       icon: Building2,
       name: "IT Corridor",
       distance: "15 minutes",
       type: "Business",
-      color: "from-amber-400 to-amber-700"
+      color: "from-[#aaa8a3] to-[#BF9C63]"
     },
     {
       icon: Plane,
       name: "Airport & Railway",
       distance: "20-25 minutes",
       type: "Transportation",
-      color: "from-amber-400 to-amber-700"
+      color: "from-[#aaa8a3] to-[#BF9C63]"
     }
   ];
 
@@ -540,7 +540,7 @@ const Projects: React.FC = () => {
           <div className="text-center text-black px-4 max-w-4xl">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               Welcome to
-              <span className="block bg-gradient-to-r from-amber-400 to-amber-700 bg-clip-text text-transparent">
+              <span className="block bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] bg-clip-text text-transparent">
                 Lakshmi Castle
               </span>
             </h1>
@@ -550,11 +550,11 @@ const Projects: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
                 onClick={() => scrollToSection('projects')}
-                className="bg-gradient-to-r from-amber-400 to-amber-700 text-white px-8 py-4 rounded-lg text-lg hover:shadow-xl transition-all duration-300"
+                className="bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] text-white px-8 py-4 rounded-lg text-lg hover:shadow-xl transition-all duration-300"
               >
                 Explore Projects
               </button>
-              <button className="border-2 border-white text-white px-8 py-4 rounded-lg text-lg hover:bg-white hover:text-black transition-all duration-300">
+              <button className="border-2 border-black px-8 py-4 rounded-lg text-lg text-black transition-all duration-300">
                 <Play className="w-5 h-5 mr-2 inline" />
                 Watch Video
               </button>
@@ -569,7 +569,7 @@ const Projects: React.FC = () => {
               key={index}
               onClick={() => setCurrentSlide(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
-                index === currentSlide ? 'bg-amber-500' : 'bg-white/50'
+                index === currentSlide ? 'bg-[#bf9c63]' : 'bg-white/50'
               }`}
             />
           ))}
@@ -585,12 +585,12 @@ const Projects: React.FC = () => {
       <section 
         id="projects" 
         ref={setSectionRef('projects')}
-        className={`sticky-section relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden'
+        className={`sticky-section1 relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-amber-400 to-amber-700 bg-clip-text text-transparent">
+            <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-slate-800 to-black bg-clip-text text-transparent">
               Our Premium Projects
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -607,7 +607,7 @@ const Projects: React.FC = () => {
                   onClick={() => setSelectedProject(project.id)}
                   className={`px-6 py-3 rounded-md transition-all duration-300 ${
                     selectedProject === project.id
-                      ? 'bg-gradient-to-r from-amber-400 to-amber-700 text-white shadow-lg'
+                      ? 'bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] text-white shadow-lg'
                       : 'text-gray-600 hover:text-gray-800'
                   }`}
                 >
@@ -626,7 +626,7 @@ const Projects: React.FC = () => {
                   onClick={() => setActiveTab(tab)}
                   className={`px-4 py-2 rounded-lg transition-all duration-300 text-sm ${
                     activeTab === tab
-                      ? 'bg-gradient-to-r from-amber-400 to-amber-700 text-white shadow-lg'
+                      ? 'bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] text-white shadow-lg'
                       : 'bg-white text-gray-600 hover:text-gray-800 shadow-md'
                   }`}
                 >
@@ -655,25 +655,25 @@ const Projects: React.FC = () => {
                     
                     <div className="grid grid-cols-2 gap-4 mb-6">
                       <div className="bg-gray-50 p-4 rounded-lg">
-                        <div className="text-2xl font-bold text-amber-600">{selectedProjectData.area}</div>
+                        <div className="text-2xl font-bold text-[#bf9c63]">{selectedProjectData.area}</div>
                         <div className="text-gray-600">Project Area</div>
                       </div>
                       <div className="bg-gray-50 p-4 rounded-lg">
-                        <div className="text-2xl font-bold text-amber-600">{selectedProjectData.launchYear}</div>
+                        <div className="text-2xl font-bold text-[#bf9c63]">{selectedProjectData.launchYear}</div>
                         <div className="text-gray-600">Launch Year</div>
                       </div>
                     </div>
 
                     <div className="flex flex-wrap gap-2 mb-6">
                       {selectedProjectData.features.map((feature, idx) => (
-                        <span key={idx} className="bg-amber-100 text-amber-800 px-3 py-1 rounded-full text-sm">
+                        <span key={idx} className="bg-amber-100 text-[#bf9c63] px-3 py-1 rounded-full text-sm">
                           {feature}
                         </span>
                       ))}
                     </div>
 
                     <div className="flex gap-4">
-                      <button className="flex-1 bg-gradient-to-r from-amber-400 to-amber-700 text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all duration-300">
+                      <button className="flex-1 bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] text-white px-6 py-3 rounded-lg hover:shadow-lg transition-all duration-300">
                         Schedule Visit
                       </button>
                       <button className="flex-1 border border-gray-300 text-gray-700 px-6 py-3 rounded-lg hover:shadow-lg transition-all duration-300">
@@ -749,7 +749,7 @@ const Projects: React.FC = () => {
                 <h3 className="text-3xl font-bold mb-8 text-center">Premium Craftsmanship</h3>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
                   <div className="bg-gradient-to-br from-amber-50 to-amber-100 p-6 rounded-lg">
-                    <Hammer className="w-12 h-12 text-amber-600 mb-4" />
+                    <Hammer className="w-12 h-12 text-[#bf9c63] mb-4" />
                     <h4 className="text-xl font-bold mb-4">Premium Materials</h4>
                     <ul className="space-y-2">
                       {selectedProjectData.craftsmanship.materials.map((material, idx) => (
@@ -796,7 +796,7 @@ const Projects: React.FC = () => {
                             key={i}
                             className={`w-6 h-6 ${
                               i < selectedProjectData.security!.rating
-                                ? 'text-yellow-500 fill-current'
+                                ? 'text-[#bf9c63] fill-current'
                                 : 'text-gray-300'
                             }`}
                           />
@@ -816,7 +816,7 @@ const Projects: React.FC = () => {
                   </div>
 
                   <div className="bg-gradient-to-br from-red-50 to-red-100 p-8 rounded-lg">
-                    <Lock className="w-16 h-16 text-red-600 mb-6 mx-auto" />
+                    <Lock className="w-16 h-16 text-[#bf9c63] mb-6 mx-auto" />
                     <h4 className="text-2xl font-bold text-center mb-4">Multi-Layer Security</h4>
                     <p className="text-gray-700 text-center leading-relaxed">
                       Our comprehensive security system ensures the safety and peace of mind for all residents with 
@@ -851,9 +851,9 @@ const Projects: React.FC = () => {
                   </div>
 
                   <div className="bg-gradient-to-br from-purple-50 to-purple-100 p-8 rounded-lg text-center">
-                    <TrendingUp className="w-12 h-12 text-purple-600 mx-auto mb-4" />
+                    <TrendingUp className="w-12 h-12 text-[#bf9c63] mx-auto mb-4" />
                     <h4 className="text-xl font-bold mb-2">EMI Options</h4>
-                    <div className="text-3xl font-bold text-purple-600 mb-2">
+                    <div className="text-3xl font-bold text-[#bf9c63] mb-2">
                       {selectedProjectData.pricing.emi}
                     </div>
                     <p className="text-gray-600">Monthly EMI</p>
@@ -886,7 +886,7 @@ const Projects: React.FC = () => {
                       </div>
                       <div className="p-4">
                         <h4 className="font-bold text-lg mb-2">{video.title}</h4>
-                        <button className="w-full bg-gradient-to-r from-amber-400 to-amber-700 text-white py-2 rounded-lg hover:shadow-lg transition-all duration-300">
+                        <button className="w-full bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] text-white py-2 rounded-lg hover:shadow-lg transition-all duration-300">
                           <Play className="w-4 h-4 inline mr-2" />
                           Watch Video
                         </button>
@@ -946,7 +946,7 @@ const Projects: React.FC = () => {
       >
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-amber-400 to-amber-700 bg-clip-text text-transparent">
+            <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-slate-800 to-black bg-clip-text text-transparent">
               Premium Amenities
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
@@ -1026,7 +1026,7 @@ const Projects: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-3">
               <Button
                 onClick={handleViewOnMaps}
-                className="w-full bg-amber-600 hover:bg-amber-700 text-white"
+                className="w-full from-[#aaa8a3] to-[#BF9C63] text-white"
                 aria-label="View location on Google Maps"
               >
                 <MapPin className="w-5 h-5 mr-2" />
@@ -1035,7 +1035,7 @@ const Projects: React.FC = () => {
               <Button
                 onClick={handleGetDirections}
                 variant="outline"
-                className="w-full bg-amber-600 hover:bg-amber-700 text-white"
+                className="w-full bg-[#bf9c63] hover:bg-[#bf9c69] text-white"
                 aria-label="Get directions to location"
               >
                 Get Directions
@@ -1103,7 +1103,7 @@ const Projects: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           <Card className="card-luxury text-center">
             <CardContent className="p-6">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-amber-400 to-amber-700 flex items-center justify-center shadow-lg">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] flex items-center justify-center shadow-lg">
                 <ShoppingBag className="w-8 h-8 text-white" />
               </div>
               <h4 className="text-lg font-semibold text-foreground mb-2">Shopping & Entertainment</h4>
@@ -1115,7 +1115,7 @@ const Projects: React.FC = () => {
 
           <Card className="card-luxury text-center">
             <CardContent className="p-6">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-amber-400 to-amber-700 flex items-center justify-center shadow-lg">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] flex items-center justify-center shadow-lg">
                 <Car className="w-8 h-8 text-white" />
               </div>
               <h4 className="text-lg font-semibold text-foreground mb-2">Excellent Connectivity</h4>
@@ -1127,7 +1127,7 @@ const Projects: React.FC = () => {
 
           <Card className="card-luxury text-center">
             <CardContent className="p-6">
-              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-amber-400 to-amber-700 flex items-center justify-center shadow-lg">
+              <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] flex items-center justify-center shadow-lg">
                 <Building2 className="w-8 h-8 text-white" />
               </div>
               <h4 className="text-lg font-semibold text-foreground mb-2">Business District</h4>
@@ -1151,7 +1151,7 @@ const Projects: React.FC = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             Image Gallery
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-black max-w-2xl mx-auto">
             Explore high-resolution images showcasing the architecture, interiors, and amenities of Lakshmi Castle.
           </p>
         </div>
@@ -1161,7 +1161,7 @@ const Projects: React.FC = () => {
           {categories.map((category) => (
             <Button
               key={category.id}
-              variant={selectedCategory === category.id ? "default" : "outline"}
+              variant={selectedCategory === category.id ? "default" : "default"}
               className={`${
                 selectedCategory === category.id 
                   ? "btn-hero" 
@@ -1324,7 +1324,7 @@ const Projects: React.FC = () => {
       >
         <div className="max-w-6xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-amber-400 to-amber-700 bg-clip-text text-transparent">
+            <h2 className="text-5xl font-bold mb-4 bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] bg-clip-text text-transparent">
               Future Expansion Plans
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -1335,11 +1335,11 @@ const Projects: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {futureProjects.map((project, idx) => (
               <div key={idx} className="bg-white rounded-xl shadow-xl overflow-hidden hover:shadow-2xl transform hover:scale-105 transition-all duration-500">
-                <div className="bg-gradient-to-br from-amber-100 to-amber-200 p-6">
+                <div className="bg-gradient-to-br from-[#aaa8a3] to-[#BF9C63] p-6">
                   <div className="flex items-center justify-between mb-4">
-                    <Sparkles className="w-8 h-8 text-amber-600" />
+                    <Sparkles className="w-8 h-8 text-[#bf9c63]" />
                     <span className={`px-3 py-1 rounded-full text-sm ${
-                      project.status === 'Planning' ? 'bg-yellow-100 text-yellow-800' :
+                      project.status === 'Planning' ? 'bg-[#bf9c63] text-black' :
                       'bg-green-100 text-green-800'
                     }`}>
                       {project.status}
@@ -1356,11 +1356,11 @@ const Projects: React.FC = () => {
                   </div>
                   <div className="bg-white rounded-lg p-3">
                     <div className="text-sm text-gray-600 mb-1">Project Type</div>
-                    <div className="font-semibold text-amber-700">{project.type}</div>
+                    <div className="font-semibold text-[#bf9c63]">{project.type}</div>
                   </div>
                 </div>
                 <div className="p-6">
-                  <button className="w-full bg-gradient-to-r from-amber-400 to-amber-700 text-white py-3 rounded-lg hover:shadow-lg transition-all duration-300">
+                  <button className="w-full bg-[#bf9c63] text-white py-3 rounded-lg hover:shadow-lg transition-all duration-300">
                     <Bell className="w-4 h-4 mr-2 inline" />
                     Get Notified
                   </button>

@@ -401,7 +401,7 @@ const ProjectHighlights = () => {
           <div className="mb-16">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
               <span className="Black">About </span>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63]">
                 Ayra Nirma
               </span>
             </h1>
@@ -413,19 +413,19 @@ const ProjectHighlights = () => {
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-16 max-w-4xl mx-auto">
             <div className="text-center group">
-              <div className="text-4xl md:text-5xl font-bold text-amber-400 mb-2 group-hover:scale-110 transition-transform duration-300">500+</div>
+              <div className="text-4xl md:text-5xl font-bold text-[#BF9C63] mb-2 group-hover:scale-110 transition-transform duration-300">500+</div>
               <div className="text-sm md:text-base text-slate-500 uppercase tracking-wider">Happy Families</div>
             </div>
             <div className="text-center group">
-              <div className="text-4xl md:text-5xl font-bold text-amber-400 mb-2 group-hover:scale-110 transition-transform duration-300">20+</div>
+              <div className="text-4xl md:text-5xl font-bold text-[#BF9C63] mb-2 group-hover:scale-110 transition-transform duration-300">20+</div>
               <div className="text-sm md:text-base text-slate-500 uppercase tracking-wider">Years Experience</div>
             </div>
             <div className="text-center group">
-              <div className="text-4xl md:text-5xl font-bold text-amber-400 mb-2 group-hover:scale-110 transition-transform duration-300">50+</div>
+              <div className="text-4xl md:text-5xl font-bold text-[#BF9C63] mb-2 group-hover:scale-110 transition-transform duration-300">50+</div>
               <div className="text-sm md:text-base text-slate-500 uppercase tracking-wider">Projects Delivered</div>
             </div>
             <div className="text-center group">
-              <div className="text-4xl md:text-5xl font-bold text-amber-400 mb-2 group-hover:scale-110 transition-transform duration-300">100%</div>
+              <div className="text-4xl md:text-5xl font-bold text-[#BF9C63] mb-2 group-hover:scale-110 transition-transform duration-300">100%</div>
               <div className="text-sm md:text-base text-slate-500 uppercase tracking-wider">Customer Satisfaction</div>
             </div>
           </div>
@@ -433,7 +433,7 @@ const ProjectHighlights = () => {
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-8 mb-16">
             <Button 
               onClick={handleEnquireNow}
-              className="bg-gradient-to-r from-amber-400 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-slate-900 px-10 py-4 text-lg font-semibold rounded-none transform hover:scale-105 transition-all duration-300 shadow-2xl border-0"
+              className="bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] hover:from-[#BF9C63] hover:to-[#aaa8a3] text-slate-900 px-10 py-4 text-lg font-semibold rounded-none transform hover:scale-105 transition-all duration-300 shadow-2xl border-0"
             >
               <UserCheck className="w-5 h-5 mr-2" />
               Get In Touch
@@ -441,7 +441,7 @@ const ProjectHighlights = () => {
             <Button 
               variant="outline" 
               onClick={() => scrollToSection(1)}
-              className="border-2 border-amber-400  hover:bg-amber-400 text-slate-900 px-10 py-4 text-lg font-semibold rounded-none transform hover:scale-105 transition-all duration-300"
+              className="border-2 border-[#BF9C63]  hover:bg-[#BF9C63] text-slate-900 px-10 py-4 text-lg font-semibold rounded-none transform hover:scale-105 transition-all duration-300"
             >
               <Lightbulb className="w-5 h-5 mr-2" />
               Our Story
@@ -453,12 +453,12 @@ const ProjectHighlights = () => {
       {/* Our Story Section */}
       <section 
         ref={storyRef}
-        className="sticky-section1 h-screen"
+        className="sticky-section1 flex flex-col justify-center items-center h-screen"
       >
         <div className="max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className={`text-center mb-16 scroll-reveal ${storyVisible ? 'revealed' : ''}`}>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Story</h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+            <p className="text-lg text-[#2c2c2c] max-w-3xl mx-auto">
               From humble beginnings to becoming a trusted name in Visakhapatnam's real estate landscape
             </p>
           </div>
@@ -502,7 +502,7 @@ const ProjectHighlights = () => {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
             <Card className={`bg-white shadow-xl border-0 transform hover:scale-105 transition-all duration-500 scroll-reveal ${missionVisible ? 'revealed' : ''}`} style={{ transitionDelay: '200ms' }}>
               <CardHeader>
-                <div className="w-16 h-16 bg-gradient-to-r from-amber-400 to-amber-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] rounded-full flex items-center justify-center mx-auto mb-4">
                   <Target className="w-8 h-8 text-white" />
                 </div>
                 <CardTitle className="text-center text-xl">Mission</CardTitle>
@@ -517,7 +517,7 @@ const ProjectHighlights = () => {
 
             <Card className={`bg-white shadow-xl border-0 transform hover:scale-105 transition-all duration-500 scroll-reveal ${missionVisible ? 'revealed' : ''}`} style={{ transitionDelay: '400ms' }}>
               <CardHeader>
-                <div className="w-16 h-16 bg-gradient-to-r from-amber-400 to-amber-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] rounded-full flex items-center justify-center mx-auto mb-4">
                   <Eye className="w-8 h-8 text-white" />
                 </div>
                 <CardTitle className="text-center text-xl">Vision</CardTitle>
@@ -532,7 +532,7 @@ const ProjectHighlights = () => {
 
             <Card className={`bg-white shadow-xl border-0 transform hover:scale-105 transition-all duration-500 scroll-reveal ${missionVisible ? 'revealed' : ''}`} style={{ transitionDelay: '600ms' }}>
               <CardHeader>
-                <div className="w-16 h-16 bg-gradient-to-r from-amber-400 to-amber-700 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] rounded-full flex items-center justify-center mx-auto mb-4">
                   <Heart className="w-8 h-8 text-white" />
                 </div>
                 <CardTitle className="text-center text-xl">Values</CardTitle>
@@ -556,7 +556,7 @@ const ProjectHighlights = () => {
                   style={{ transitionDelay: `${(index + 3) * 200}ms` }}
                 >
                   <CardContent className="p-8 text-center">
-                    <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-amber-400 to-amber-700 flex items-center justify-center shadow-lg">
+                    <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] flex items-center justify-center shadow-lg">
                       <IconComponent className="w-10 h-10 text-white" />
                     </div>
                     <h3 className="text-xl font-bold text-slate-900 mb-4">{value.title}</h3>
@@ -715,7 +715,7 @@ const ProjectHighlights = () => {
             </div>
             <div className={`space-y-8 scroll-reveal ${qualityVisible ? 'revealed' : ''}`} style={{ transitionDelay: '400ms' }}>
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] rounded-full flex items-center justify-center flex-shrink-0">
                   <Shield className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -724,7 +724,7 @@ const ProjectHighlights = () => {
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] rounded-full flex items-center justify-center flex-shrink-0">
                   <CheckCircle className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -733,7 +733,7 @@ const ProjectHighlights = () => {
                 </div>
               </div>
               <div className="flex items-start space-x-4">
-                <div className="w-12 h-12 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full flex items-center justify-center flex-shrink-0">
+                <div className="w-12 h-12 bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] rounded-full flex items-center justify-center flex-shrink-0">
                   <Star className="w-6 h-6 text-white" />
                 </div>
                 <div>
@@ -778,7 +778,7 @@ const ProjectHighlights = () => {
                   <h3 className="text-xl font-bold text-slate-900 mb-2">{leader.name}</h3>
                   <p className="text-blue-600 font-semibold mb-2">{leader.position}</p>
                   <div className="flex items-center justify-center space-x-2 mb-3">
-                    <Star className="w-4 h-4 text-yellow-500" />
+                    <Star className="w-4 h-4 text-[#BF9C63]" />
                     <span className="text-sm text-slate-500">{leader.experience}</span>
                   </div>
                   <p className="text-sm text-slate-600">{leader.description}</p>
@@ -813,17 +813,17 @@ const ProjectHighlights = () => {
                 >
                   <AccordionTrigger className="text-left hover:no-underline group">
                     <div className="flex items-center space-x-4">
-                      <div className="w-16 h-16 bg-gradient-to-r from-amber-400 to-amber-700 rounded-full flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform duration-300">
+                      <div className="w-16 h-16 bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] rounded-full flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform duration-300">
                         {item.year}
                       </div>
                       <div>
-                        <h4 className="text-lg font-semibold group-hover:text-amber-600 transition-colors">{item.title}</h4>
+                        <h4 className="text-lg font-semibold group-hover:text-[#bf9c63] transition-colors">{item.title}</h4>
                       </div>
                     </div>
                   </AccordionTrigger>
                   <AccordionContent>
                     <div className="pl-20 animate-fade-in">
-                      <p className="text-slate-600">{item.description}</p>
+                      <p className="text-[#bf9c63]">{item.description}</p>
                     </div>
                   </AccordionContent>
                 </AccordionItem>
@@ -841,7 +841,7 @@ const ProjectHighlights = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`text-center mb-16 scroll-reveal ${awardsVisible ? 'revealed' : ''}`}>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Awards & Achievements</h2>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+            <p className="text-lg text-[#bf9c63] max-w-3xl mx-auto">
               Recognition for our commitment to excellence and industry leadership
             </p>
           </div>
@@ -855,15 +855,15 @@ const ProjectHighlights = () => {
               >
                 <CardContent className="p-8">
                   <div className="flex items-start space-x-4">
-                    <div className="w-16 h-16 bg-gradient-to-r from-amber-400 to-amber-700 rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-16 h-16 bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] rounded-full flex items-center justify-center flex-shrink-0">
                       <Trophy className="w-8 h-8 text-white" />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center space-x-2 mb-2">
-                        <span className="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-semibold">{award.year}</span>
+                        <span className="bg-amber-100 text-[#bf9c63] px-3 py-1 rounded-full text-sm font-semibold">{award.year}</span>
                       </div>
                       <h3 className="text-xl font-bold text-slate-900 mb-2">{award.title}</h3>
-                      <p className="text-blue-600 font-semibold mb-3">{award.organization}</p>
+                      <p className="text-[#bf9c63] font-semibold mb-3">{award.organization}</p>
                       <p className="text-slate-600">{award.description}</p>
                     </div>
                   </div>
@@ -897,11 +897,11 @@ const ProjectHighlights = () => {
                   style={{ transitionDelay: `${index * 200}ms` }}
                 >
                   <CardHeader className="text-center">
-                    <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r from-amber-400 to-amber-700 flex items-center justify-center shadow-lg">
+                    <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] flex items-center justify-center shadow-lg">
                       <IconComponent className="w-10 h-10 text-white" />
                     </div>
                     <CardTitle className="text-xl mb-2">{team.category}</CardTitle>
-                    <div className="text-3xl font-bold text-amber-600">{team.count}</div>
+                    <div className="text-3xl font-bold text-[#bf9c63]">{team.count}</div>
                   </CardHeader>
                   <CardContent>
                     <p className="text-slate-600 text-center mb-6">{team.description}</p>
@@ -944,14 +944,14 @@ const ProjectHighlights = () => {
                   style={{ transitionDelay: `${index * 200}ms` }}
                 >
                   <CardContent className="p-8 text-center">
-                    <div className="text-4xl font-bold text-amber-600 mb-4">{process.step}</div>
-                    <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-r from-amber-400 to-amber-700 flex items-center justify-center shadow-lg">
+                    <div className="text-4xl font-bold text-[#bf9c63] mb-4">{process.step}</div>
+                    <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] flex items-center justify-center shadow-lg">
                       <IconComponent className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-xl font-bold text-slate-900 mb-4">{process.title}</h3>
                     <p className="text-slate-600 mb-4">{process.description}</p>
                     <div className="bg-amber-100 rounded-lg p-3">
-                      <p className="text-amber-700 font-semibold text-sm">Duration: {process.duration}</p>
+                      <p className="text-[#bf9c63] font-semibold text-sm">Duration: {process.duration}</p>
                     </div>
                   </CardContent>
                 </Card>

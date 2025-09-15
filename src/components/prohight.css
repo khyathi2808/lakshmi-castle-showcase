@@ -10,7 +10,9 @@
      color: black !important; } 
 .sticky-section1{ position: sticky;
    top: 0; min-height: 100%; 
-   background: linear-gradient(135deg,#fbbf19, #d97706) !important;
+   background: linear-gradient(135deg,
+    #f5f5dc 0%,   /* beige base */
+    #b3b0aa 35% ,#f5f5dc 50%) !important;
     color: white !important; }
 
 .section-stack {

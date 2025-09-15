@@ -284,13 +284,13 @@ const { hasIntersected: contactVisible } = useIntersectionObserver(whatsappRef);
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl">
               <div className={`transition-all duration-1000 ${isScrolling ? 'parallax-fast' : ''}`}>
-                <Badge className="mb-4 bg-amber-600/90 text-white hover:bg-amber-700 animate-pulse">
+                <Badge className="mb-4 bg-[#BF9C63] text-white hover:bg-[#bf9c69] animate-pulse">
                   {slides[currentSlide].highlight}
                 </Badge>
                 <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
                   {slides[currentSlide].title}
                 </h1>
-                <h2 className="text-xl sm:text-2xl md:text-3xl text-amber-200 mb-6 font-medium">
+                <h2 className="text-xl sm:text-2xl md:text-3xl text-[#aaa8a3] mb-6 font-medium">
                   {slides[currentSlide].subtitle}
                 </h2>
                 <p className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 max-w-3xl leading-relaxed">
@@ -301,7 +301,7 @@ const { hasIntersected: contactVisible } = useIntersectionObserver(whatsappRef);
                 <div className="flex flex-col sm:flex-row gap-4 mb-12">
                   <Button 
                     onClick={handleEnquireNow} 
-                    className="bg-amber-600 hover:bg-amber-700 text-white text-lg px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 hover:shadow-2xl"
+                    className="bg-[#BF9C63] hover:bg-[#BF9C69] text-white text-lg px-8 py-4 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 hover:shadow-2xl"
                   >
                     Get a Quote
                   </Button>

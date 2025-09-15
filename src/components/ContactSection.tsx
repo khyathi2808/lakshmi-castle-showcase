@@ -80,28 +80,28 @@ const ContactSection = () => {
       title: "Call Us",
       content: "99633 79888",
       action: () => window.open("tel:+919963379888", "_self"),
-      color: "from-amber-400 to-amber-700"
+      color: "from-[#aaa8a3] to-[#BF9C63]"
     },
     {
       icon: MessageCircle,
       title: "WhatsApp Us",
       content: "99633 79888",
       action: () =>  window.open('https://wa.me/919963379888?text=Hi, I would like to schedule a site visit for Lakshmi Castle', '_blank'),
-      color: "from-amber-400 to-amber-700"
+      color: "from-[#aaa8a3] to-[#BF9C63]"
     },
     {
       icon: Mail,
       title: "Email Us",
       content: "info@ayranirman.com",
       action: () => window.open("mailto:info@ayranirman.com", "_self"),
-      color: "from-amber-400 to-amber-700"
+      color: "from-[#aaa8a3] to-[#BF9C63]"
     },
     {
       icon: MapPin,
       title: "Visit Us",
       content: "504, 5th Floor, Kotu Empire, VIP Rd, Siripuram, Visakhapatnam",
       action: () => document.querySelector('#location')?.scrollIntoView({ behavior: 'smooth' }),
-      color: " from-amber-400 to-amber-700"
+      color: " from-[#aaa8a3] to-[#BF9C63]"
     }
   ];
 
@@ -138,7 +138,7 @@ const ContactSection = () => {
             <div className="space-y-3 pt-4">
               <Button
                 onClick={handleCallNow}
-                className="w-full bg-amber-500 hover:bg-amber-700 text-white text-lg px-4 py-2 rounded-lg"
+                className="w-full bg-[#bf9c63] hover:bg-amber-700 text-white text-lg px-4 py-2 rounded-lg"
                 aria-label="Call developer now"
               >
                 <Phone className="w-5 h-5 mr-2" />
@@ -245,7 +245,7 @@ const ContactSection = () => {
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Button
                       type="submit"
-                      className="bg-amber-600 hover:bg-amber-700 text-white flex-1"
+                      className="bg-[#bf9c63] hover:bg-amber-700 text-white flex-1"
                       aria-label="Submit inquiry form"
                     >
                       <Send className="w-5 h-5 mr-2" />

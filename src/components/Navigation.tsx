@@ -87,7 +87,7 @@ const Navigation = () => {
             </Button>
             <Button
               onClick={handleEnquireNow}
-              className="bg-amber-600 hover:bg-amber-700 text-white whitespace-nowrap"
+              className=" from-[#f5f5dc] to-[#aaa8a3] text-[#BF9C63] whitespace-nowrap"
               aria-label="Open enquiry form"
             >
               Enquire Now
@@ -134,7 +134,7 @@ const Navigation = () => {
               </Button>
               <Button
                 onClick={handleEnquireNow}
-                className="w-full bg-amber-600 hover:bg-amber-700 text-white"
+                className="w-full from-[#f5f5dc] to-[#aaa8a3] text-[#BF9C63]"
                 aria-label="Open enquiry form"
               >
                 Enquire Now

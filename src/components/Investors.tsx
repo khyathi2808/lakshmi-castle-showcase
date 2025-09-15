@@ -217,17 +217,17 @@ Description: ${partnershipForm.description}`;
   return (
     <div id="investor" className="min-h-screen bg-gradient-to-br from-slate-50 to-amber-50">
       {/* Hero Section */}
-      <div className="sticky-section1 relative bg-gradient-to-r from-amber-900 via-amber-800 to-orange-900 text-white py-20">
+      <div className="sticky-section1 h-screen flex flex-col justify-center items-center relative bg-gradient-to-r from-amber-900 via-amber-800 to-orange-900 text-white py-20">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative max-w-7xl mx-auto px-4">
           <div className="text-center">
-            <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-white to-amber-200 bg-clip-text text-transparent">
+            <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-white to-amber-200 bg-clip-text text-black">
               Investment Opportunities
             </h1>
-            <p className="text-xl text-amber-100 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-black max-w-3xl mx-auto mb-8">
               Discover premium real estate investments in Vizag's most promising locations
             </p>
-            <div className="flex items-center justify-center gap-8 text-amber-200">
+            <div className="flex items-center justify-center gap-8 text-black">
               <div className="text-center">
                 <TrendingUp className="w-8 h-8 mx-auto mb-2" />
                 <p className="text-sm">15% Projected Growth</p>
@@ -282,15 +282,15 @@ Description: ${partnershipForm.description}`;
                   <h3 className="text-2xl font-bold text-gray-800 mb-4">{projects[activeTab].name}</h3>
                   <div className="space-y-3 mb-6">
                     <div className="flex items-center gap-3">
-                      <Building className="w-5 h-5 text-amber-600" />
+                      <Building className="w-5 h-5 text-[#bf9c63]" />
                       <span className="text-gray-600">Area: {projects[activeTab].area}</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <Calendar className="w-5 h-5 text-amber-600" />
+                      <Calendar className="w-5 h-5 text-[#bf9c63]" />
                       <span className="text-gray-600">Status: {projects[activeTab].status}</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <TrendingUp className="w-5 h-5 text-amber-600" />
+                      <TrendingUp className="w-5 h-5 text-[#bf9c63]" />
                       <span className="text-gray-600">Starting: {projects[activeTab].price}</span>
                     </div>
                   </div>
@@ -299,7 +299,7 @@ Description: ${partnershipForm.description}`;
                   <ul className="space-y-2">
                     {projects[activeTab].features.map((feature, index) => (
                       <li key={index} className="flex items-center gap-2">
-                        <Star className="w-4 h-4 text-yellow-500 flex-shrink-0" />
+                        <Star className="w-4 h-4 text-[#bf9c63] flex-shrink-0" />
                         <span className="text-gray-600">{feature}</span>
                       </li>
                     ))}
@@ -307,7 +307,7 @@ Description: ${partnershipForm.description}`;
                 </div>
                 
                 <div className="bg-gradient-to-br from-amber-50 to-orange-50 rounded-xl p-6">
-                  <div className="h-48 bg-gradient-to-br from-amber-200 to-orange-300 rounded-lg mb-4 flex items-center justify-center">
+                  <div className="h-48 bg-gradient-to-br from-[#aaa8a3] to-[#BF9C63] rounded-lg mb-4 flex items-center justify-center">
                     <Building className="w-16 h-16 text-white/70" />
                   </div>
                   <div className="text-center">
@@ -381,12 +381,12 @@ Description: ${partnershipForm.description}`;
 
         {/* AI Predictions Section */}
         <section className="flex flex-col justify-center h-screen items-center sticky-section mb-16">
-          <div className="bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-2xl p-8">
+          <div className="bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] text-black rounded-2xl p-8">
             <div className="text-center">
               <h2 className="text-3xl font-bold mb-4">AI Market Predictions</h2>
               <div className="text-6xl font-bold mb-2">15%</div>
-              <p className="text-xl text-amber-100 mb-4">Projected Growth by 2030</p>
-              <p className="text-amber-200 max-w-2xl mx-auto">
+              <p className="text-xl text-black mb-4">Projected Growth by 2030</p>
+              <p className="text-black max-w-2xl mx-auto">
                 Based on advanced AI analysis of market trends, infrastructure development, 
                 and economic indicators, Vizag real estate shows strong growth potential.
               </p>
@@ -524,7 +524,7 @@ Description: ${partnershipForm.description}`;
                 <Button 
                   onClick={handlePartnershipSubmit}
                   disabled={isSubmitting}
-                  className="w-full bg-amber-600 text-white hover:bg-amber-700"
+                  className="w-full bg-[#bf9c63] text-white hover:bg-amber-700"
                 >
                   {isSubmitting ? 'Sending...' : 'Submit Partnership Request'}
                 </Button>

@@ -600,12 +600,12 @@ const HomeOwner: React.FC<HomeOwnerProps> = ({ className = '' }) => {
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Referral Benefits</h2>
             <p className="text-xl text-gray-600">Earn amazing rewards by referring friends and family</p>
           </div>
-          <div className="bg-gradient-to-r from-amber-400 to-amber-700 rounded-xl p-8 text-white mb-8">
+          <div className="bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] rounded-xl p-8 text-white mb-8">
             <div className="text-center">
               <Share2 className="mx-auto mb-4" size={48} />
               <h3 className="text-2xl font-bold mb-4">Share the Joy of Home Ownership</h3>
               <p className="text-lg opacity-90 mb-6">Help others find their dream home and earn exclusive rewards</p>
-              <button className="bg-white text-amber-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors">
+              <button className="bg-white text-[#bf9c63] px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors">
                 Start Referring Now
               </button>
             </div>
@@ -619,11 +619,11 @@ const HomeOwner: React.FC<HomeOwnerProps> = ({ className = '' }) => {
                   className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
                 >
                   <div className="text-center">
-                    <div className="bg-gradient-to-r from-amber-400 to-amber-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="bg-gradient-to-r from-[#aaa8a3] to-[#BF9C63] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                       <IconComponent className="text-white" size={28} />
                     </div>
                     <h3 className="text-lg font-bold text-gray-900 mb-2">{benefit.level}</h3>
-                    <p className="text-xl font-bold from-amber-200 to-amber-500 mb-2">{benefit.reward}</p>
+                    <p className="text-xl font-bold from-[#aaa8a3] to-[#BF9C63] mb-2">{benefit.reward}</p>
                     <p className="text-sm text-gray-600">{benefit.description}</p>
                   </div>
                 </div>
@@ -647,7 +647,7 @@ const HomeOwner: React.FC<HomeOwnerProps> = ({ className = '' }) => {
                 >
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900">{program.title}</h3>
-                    <p className="text-lg font-medium text-purple-600 mt-1">{program.benefit}</p>
+                    <p className="text-lg font-medium text-[#bf9c63] mt-1">{program.benefit}</p>
                   </div>
                   {openAccordions[`loyalty-${index}`] ? 
                     <ChevronUp className="text-gray-500" /> : 
@@ -833,7 +833,7 @@ const HomeOwner: React.FC<HomeOwnerProps> = ({ className = '' }) => {
                       <div className="flex items-center space-x-4">
                         <button 
                           onClick={() => handleLikeMeme(meme.id)}
-                          className="flex items-center space-x-2 text-red-500 hover:text-red-600 transition-colors"
+                          className="flex items-center space-x-2 text-[#bf9c63] hover:text-red-300 transition-colors"
                         >
                           <Heart size={18} />
                           <span className="text-sm font-medium">{meme.likes}</span>
@@ -851,7 +851,7 @@ const HomeOwner: React.FC<HomeOwnerProps> = ({ className = '' }) => {
                 ))}
               </div>
               <div className="text-center mt-8">
-                <button className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-8 py-3 rounded-lg font-bold hover:from-yellow-600 hover:to-orange-600 transition-all duration-300 transform hover:scale-105">
+                <button className="bg-[#bf9c63] text-white px-8 py-3 rounded-lg font-bold hover:from-yellow-600 hover:to-orange-600 transition-all duration-300 transform hover:scale-105">
                   Upload Your Meme
                 </button>
               </div>
