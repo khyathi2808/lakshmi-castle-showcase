@@ -226,7 +226,7 @@ const ProjectHighlights = () => {
       title: "Healthcare Initiative",
       description: "Free medical camps and healthcare facilities for underprivileged communities",
       beneficiaries: "1000+ families",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop"
+      image: "https://res.cloudinary.com/dwzqkft2i/image/upload/v1757918286/Screenshot_2025-09-15_120731_gguego.jpg"
     },
     {
       title: "Environmental Conservation",
