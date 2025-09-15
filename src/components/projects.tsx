@@ -537,7 +537,7 @@ const Projects: React.FC = () => {
 
         {/* Hero Content */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white px-4 max-w-4xl">
+          <div className="text-center text-black px-4 max-w-4xl">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
               Welcome to
               <span className="block bg-gradient-to-r from-amber-400 to-amber-700 bg-clip-text text-transparent">

@@ -380,7 +380,7 @@ Description: ${partnershipForm.description}`;
        
 
         {/* AI Predictions Section */}
-        <section className="flex flex-col justify-center h-screen items-center sticky-section1 mb-16">
+        <section className="flex flex-col justify-center h-screen items-center sticky-section mb-16">
           <div className="bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-2xl p-8">
             <div className="text-center">
               <h2 className="text-3xl font-bold mb-4">AI Market Predictions</h2>
@@ -395,7 +395,7 @@ Description: ${partnershipForm.description}`;
         </section>
 
         {/* Latest News Section */}
-        <section className="flex flex-col justify-center items-center sticky-section mb-16">
+        <section className="flex h-screen flex-col justify-center items-center sticky-section1 mb-16">
           <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Latest News & Media Features</h2>
           
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
@@ -450,7 +450,7 @@ Description: ${partnershipForm.description}`;
         </section>
 
         {/* Business Partnership Section */}
-        <section className="flex flex-col justify-center  h-screen items-center sticky-section1  mb-16">
+        <section className="flex flex-col justify-center  h-screen items-center sticky-section  mb-16">
           <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Business with Us</h2>
           
           <div className="grid md:grid-cols-2 gap-8">
@@ -534,7 +534,7 @@ Description: ${partnershipForm.description}`;
         </section>
 
         {/* Awards & Testimonials Section */}
-        <section className="sticky-section h-screen flex flex-col justify-center items-center mb-16">
+        <section className="sticky-section1 h-screen flex flex-col justify-center items-center mb-16">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-8">
               <div className="text-center">
@@ -572,7 +572,7 @@ Description: ${partnershipForm.description}`;
         </section>
 
         {/* Timeline & Sustainability */}
-        <section className="sticky-section1 flexjustify-center items-center h-screen mb-16">
+        <section className="sticky-section flexjustify-center items-center h-screen mb-16">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white rounded-2xl shadow-xl p-8">
               <div className="flex items-center gap-3 mb-6">

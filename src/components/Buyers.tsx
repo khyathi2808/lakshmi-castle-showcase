@@ -415,7 +415,7 @@ const Buyers: React.FC<BuyersProps> = ({ className = '' }) => {
       <div >
         
         {/* Benefits of Early Investment */}
-        <section className={`sticky-section1 transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
+        <section className={`sticky-section1 h-screen flex flex-col justify-center items-center transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Benefits for Smart Buyers</h2>
             <p className="text-xl text-gray-600">Make informed decisions with our comprehensive buyer support</p>
@@ -719,7 +719,7 @@ const Buyers: React.FC<BuyersProps> = ({ className = '' }) => {
         </section>
 
         {/* Security Features */}
-        <section className={`sticky-section1 flex flex-col items-center justify-center transition-all duration-1000 delay-900 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
+        <section className={`sticky-section1 h-screen flex flex-col items-center justify-center transition-all duration-1000 delay-900 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Advanced Security Features</h2>
             <p className="text-xl text-gray-600">Your safety and peace of mind is our top priority</p>

@@ -400,13 +400,13 @@ const ProjectHighlights = () => {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-16">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
-              <span className="text-white">About </span>
+              <span className="Black">About </span>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600">
                 Ayra Nirma
               </span>
             </h1>
             
-            <p className="text-xl md:text-3xl text-slate-300 max-w-5xl mx-auto font-light leading-relaxed">
+            <p className="text-xl md:text-3xl text-slate-500 max-w-5xl mx-auto font-light leading-relaxed">
               Building homes with trust, crafting dreams with precision
             </p>
           </div>
@@ -414,19 +414,19 @@ const ProjectHighlights = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-16 max-w-4xl mx-auto">
             <div className="text-center group">
               <div className="text-4xl md:text-5xl font-bold text-amber-400 mb-2 group-hover:scale-110 transition-transform duration-300">500+</div>
-              <div className="text-sm md:text-base text-slate-400 uppercase tracking-wider">Happy Families</div>
+              <div className="text-sm md:text-base text-slate-500 uppercase tracking-wider">Happy Families</div>
             </div>
             <div className="text-center group">
               <div className="text-4xl md:text-5xl font-bold text-amber-400 mb-2 group-hover:scale-110 transition-transform duration-300">20+</div>
-              <div className="text-sm md:text-base text-slate-400 uppercase tracking-wider">Years Experience</div>
+              <div className="text-sm md:text-base text-slate-500 uppercase tracking-wider">Years Experience</div>
             </div>
             <div className="text-center group">
               <div className="text-4xl md:text-5xl font-bold text-amber-400 mb-2 group-hover:scale-110 transition-transform duration-300">50+</div>
-              <div className="text-sm md:text-base text-slate-400 uppercase tracking-wider">Projects Delivered</div>
+              <div className="text-sm md:text-base text-slate-500 uppercase tracking-wider">Projects Delivered</div>
             </div>
             <div className="text-center group">
               <div className="text-4xl md:text-5xl font-bold text-amber-400 mb-2 group-hover:scale-110 transition-transform duration-300">100%</div>
-              <div className="text-sm md:text-base text-slate-400 uppercase tracking-wider">Customer Satisfaction</div>
+              <div className="text-sm md:text-base text-slate-500 uppercase tracking-wider">Customer Satisfaction</div>
             </div>
           </div>
 
@@ -441,7 +441,7 @@ const ProjectHighlights = () => {
             <Button 
               variant="outline" 
               onClick={() => scrollToSection(1)}
-              className="border-2 border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-slate-900 px-10 py-4 text-lg font-semibold rounded-none transform hover:scale-105 transition-all duration-300"
+              className="border-2 border-amber-400  hover:bg-amber-400 text-slate-900 px-10 py-4 text-lg font-semibold rounded-none transform hover:scale-105 transition-all duration-300"
             >
               <Lightbulb className="w-5 h-5 mr-2" />
               Our Story
@@ -453,9 +453,9 @@ const ProjectHighlights = () => {
       {/* Our Story Section */}
       <section 
         ref={storyRef}
-        className="sticky-section1 max-w-7xl mx-auto px-4 py-16"
+        className="sticky-section1 h-screen"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className={`text-center mb-16 scroll-reveal ${storyVisible ? 'revealed' : ''}`}>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Story</h2>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto">
@@ -572,7 +572,7 @@ const ProjectHighlights = () => {
       {/* Ayra Advantage */}
       <section 
         ref={advantageRef}
-        className=" sticky-section1 py-16"
+        className=" sticky-section1 h-screen py-16"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`text-center mb-16 scroll-reveal ${advantageVisible ? 'revealed' : ''}`}>
@@ -654,7 +654,7 @@ const ProjectHighlights = () => {
       {/* CSR Section */}
       <section 
         ref={csrRef}
-        className="sticky-section1 py-16"
+        className="sticky-section1 h-screen py-16"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`text-center mb-16 scroll-reveal ${csrVisible ? 'revealed' : ''}`}>

@@ -498,7 +498,7 @@ const HomeOwner: React.FC<HomeOwnerProps> = ({ className = '' }) => {
       <div>
         
         {/* Benefits of Early Investment */}
-        <section className="sticky-section1 flex flex-col items-center justify-center text-white ">
+        <section className="sticky-section h-screen flex flex-col items-center justify-center text-white ">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Benefits of Early Investment</h2>
             <p className="text-xl text-gray-600">Start building your wealth today with smart property investments</p>
@@ -527,7 +527,7 @@ const HomeOwner: React.FC<HomeOwnerProps> = ({ className = '' }) => {
         </section>
 
         {/* Resale & Investment Options */}
-        <section className={`sticky-section transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
+        <section className={`sticky-section1 h-screen transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Resale & Investment Options</h2>
             <p className="text-xl text-gray-600">Diversify your real estate portfolio with multiple investment strategies</p>
@@ -563,7 +563,7 @@ const HomeOwner: React.FC<HomeOwnerProps> = ({ className = '' }) => {
         </section>
 
         {/* Resale Value Growth */}
-        <section className={`sticky-section1 flex flex-col  items-center justify-center transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
+        <section className={`sticky-section h-screen flex flex-col  items-center justify-center transition-all duration-1000 delay-300 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Resale Value Growth</h2>
             <p className="text-xl text-gray-600">Watch your investment grow year over year</p>
@@ -595,17 +595,17 @@ const HomeOwner: React.FC<HomeOwnerProps> = ({ className = '' }) => {
         </section>
 
         {/* Referral Benefits */}
-        <section className={`sticky-section transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
+        <section className={`sticky-section1 h-screen transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Referral Benefits</h2>
             <p className="text-xl text-gray-600">Earn amazing rewards by referring friends and family</p>
           </div>
-          <div className="bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl p-8 text-white mb-8">
+          <div className="bg-gradient-to-r from-amber-400 to-amber-700 rounded-xl p-8 text-white mb-8">
             <div className="text-center">
               <Share2 className="mx-auto mb-4" size={48} />
               <h3 className="text-2xl font-bold mb-4">Share the Joy of Home Ownership</h3>
               <p className="text-lg opacity-90 mb-6">Help others find their dream home and earn exclusive rewards</p>
-              <button className="bg-white text-purple-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors">
+              <button className="bg-white text-amber-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors">
                 Start Referring Now
               </button>
             </div>
@@ -619,11 +619,11 @@ const HomeOwner: React.FC<HomeOwnerProps> = ({ className = '' }) => {
                   className="bg-white rounded-xl p-6 shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300"
                 >
                   <div className="text-center">
-                    <div className="bg-gradient-to-r from-purple-500 to-pink-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <div className="bg-gradient-to-r from-amber-400 to-amber-700 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                       <IconComponent className="text-white" size={28} />
                     </div>
                     <h3 className="text-lg font-bold text-gray-900 mb-2">{benefit.level}</h3>
-                    <p className="text-xl font-bold text-purple-600 mb-2">{benefit.reward}</p>
+                    <p className="text-xl font-bold from-amber-200 to-amber-500 mb-2">{benefit.reward}</p>
                     <p className="text-sm text-gray-600">{benefit.description}</p>
                   </div>
                 </div>
@@ -633,7 +633,7 @@ const HomeOwner: React.FC<HomeOwnerProps> = ({ className = '' }) => {
         </section>
 
         {/* Extra Benefits - Loyalty Programs */}
-        <section className={`sticky-section1 flex flex-col  items-center justify-center transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
+        <section className={`sticky-section h-screen flex flex-col  items-center justify-center transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Exclusive Member Benefits</h2>
             <p className="text-xl text-gray-600">Enjoy special perks and rewards as our valued customer</p>
@@ -665,7 +665,7 @@ const HomeOwner: React.FC<HomeOwnerProps> = ({ className = '' }) => {
         </section>
 
         {/* CSR / Community Engagement */}
-        <section className={`sticky-section flex flex-col  items-center justify-center  transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
+        <section className={`sticky-section1 flex flex-col  items-center justify-center  transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">CSR & Community Engagement</h2>
             <p className="text-xl text-gray-600">Building communities, transforming lives together</p>
@@ -708,7 +708,7 @@ const HomeOwner: React.FC<HomeOwnerProps> = ({ className = '' }) => {
         </section>
 
         {/* Community Events */}
-        <section className={`sticky-section1 flex flex-col transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
+        <section className={`sticky-section flex flex-col transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Community Events</h2>
             <p className="text-xl text-gray-600">Connect, celebrate, and create memories with your neighbors</p>
@@ -787,7 +787,7 @@ const HomeOwner: React.FC<HomeOwnerProps> = ({ className = '' }) => {
         </section>
 
         {/* Community Memes */}
-        <section className={`sticky-section transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
+        <section className={`sticky-section1 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100 transform translate-y-0' : 'opacity-0 transform translate-y-10'}`}>
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-4">Community Memes</h2>
             <p className="text-xl text-gray-600">Share laughs and connect through humor</p>

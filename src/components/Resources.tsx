@@ -162,10 +162,10 @@ const Resources = () => {
     <div className="min-h-screen bg-gray-50">
       <div id="resource">
         {/* Header */}
-        <section data-scroll-section className="sticky-section items-center justify-center text-white">
+        <section data-scroll-section className="sticky-section1 items-center justify-center text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <h1 className="text-4xl font-bold mb-4">Resources Center</h1>
-            <p className="text-xl text-amber-100 max-w-2xl">
+            <p className="text-xl text-slate-400 max-w-2xl">
               Everything you need to make informed real estate decisions - from expert guides to interactive tools
             </p>
           </div>
