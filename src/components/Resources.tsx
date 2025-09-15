@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Search, Filter, ChevronDown, ChevronUp, Calculator, MapPin, FileText, Calendar, ExternalLink, TrendingUp, Home } from 'lucide-react';
-
+import "./prohight.css";
 const Resources = () => {
   const [activeSection, setActiveSection] = useState('blogs');
   const [searchTerm, setSearchTerm] = useState('');
@@ -160,25 +160,25 @@ const Resources = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <section id="resource">
+      <div id="resource">
         {/* Header */}
-        <div className="bg-gradient-to-r from-amber-400 to-amber-700 text-white">
+        <section data-scroll-section className="sticky-section items-center justify-center text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
             <h1 className="text-4xl font-bold mb-4">Resources Center</h1>
             <p className="text-xl text-amber-100 max-w-2xl">
               Everything you need to make informed real estate decisions - from expert guides to interactive tools
             </p>
           </div>
-        </div>
+        </section>
 
         {/* Navigation */}
-        <div className="bg-white shadow-sm sticky top-0 z-10">
+        <section className="section-stack flex flex-col items-center justify-center  text-white max-w-7xl mx-auto px-4 py-12 ">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <nav className="flex space-x-8 py-4">
               {[
                 { id: 'blogs', label: 'Blogs & Articles', icon: FileText },
                 { id: 'faq', label: 'FAQ', icon: Calendar },
-                { id: 'tools', label: 'Interactive Tools', icon: Calculator }
+                
               ].map(({ id, label, icon: Icon }) => (
                 <button
                   key={id}
@@ -195,7 +195,7 @@ const Resources = () => {
               ))}
             </nav>
           </div>
-        </div>
+        
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           {/* Blogs & Articles Section */}
@@ -351,309 +351,10 @@ const Resources = () => {
           )}
 
           {/* Interactive Tools Section */}
-          {activeSection === 'tools' && (
-            <div className="space-y-8">
-              {/* EMI Calculator */}
-              <div className="bg-white rounded-xl shadow-sm p-8">
-                <div className="text-center mb-8">
-                  <Calculator className="w-12 h-12 text-amber-600 mx-auto mb-4" />
-                  <h2 className="text-3xl font-bold text-gray-900 mb-2">EMI Calculator</h2>
-                  <p className="text-gray-600">Calculate your monthly EMI for home loans with current interest rates</p>
-                </div>
-
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                  {/* Calculator Inputs */}
-                  <div className="space-y-6">
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-3">
-                        Loan Amount
-                      </label>
-                      <div className="relative">
-                        <span className="absolute left-3 top-2.5 text-gray-500">₹</span>
-                        <input
-                          type="number"
-                          value={loanAmount}
-                          onChange={(e) => setLoanAmount(Number(e.target.value))}
-                          className="w-full pl-8 pr-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                          min="100000"
-                          max="50000000"
-                          step="100000"
-                        />
-                      </div>
-                      <input
-                        type="range"
-                        min="100000"
-                        max="10000000"
-                        step="100000"
-                        value={loanAmount}
-                        onChange={(e) => setLoanAmount(Number(e.target.value))}
-                        className="w-full mt-2"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-3">
-                        Interest Rate (% per annum)
-                      </label>
-                      <input
-                        type="number"
-                        value={interestRate}
-                        onChange={(e) => setInterestRate(Number(e.target.value))}
-                        className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                        min="1"
-                        max="20"
-                        step="0.1"
-                      />
-                      <input
-                        type="range"
-                        min="6"
-                        max="15"
-                        step="0.1"
-                        value={interestRate}
-                        onChange={(e) => setInterestRate(Number(e.target.value))}
-                        className="w-full mt-2"
-                      />
-                    </div>
-
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-3">
-                        Loan Tenure (years)
-                      </label>
-                      <input
-                        type="number"
-                        value={loanTenure}
-                        onChange={(e) => setLoanTenure(Number(e.target.value))}
-                        className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                        min="1"
-                        max="30"
-                      />
-                      <input
-                        type="range"
-                        min="5"
-                        max="30"
-                        value={loanTenure}
-                        onChange={(e) => setLoanTenure(Number(e.target.value))}
-                        className="w-full mt-2"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Calculator Results */}
-                  <div className="bg-gradient-to-br from-amber-400 to-amber-700 rounded-xl p-8 text-white">
-                    <h3 className="text-xl font-bold mb-6">EMI Calculation Results</h3>
-                    <div className="space-y-6">
-                      <div className="text-center bg-white rounded-lg p-6 shadow-sm">
-                        <p className="text-sm text-gray-600 mb-2">Monthly EMI</p>
-                        <p className="text-3xl font-bold text-amber-600">₹{calculateEMI().toLocaleString()}</p>
-                      </div>
-                      <div className="grid grid-cols-2 gap-4">
-                        <div className="bg-white rounded-lg p-4 shadow-sm">
-                          <p className="text-sm text-gray-600 mb-1">Total Amount</p>
-                          <p className="text-lg font-semibold text-gray-900">₹{totalAmount.toLocaleString()}</p>
-                        </div>
-                        <div className="bg-white rounded-lg p-4 shadow-sm">
-                          <p className="text-sm text-gray-600 mb-1">Total Interest</p>
-                          <p className="text-lg font-semibold text-red-600">₹{totalInterest.toLocaleString()}</p>
-                        </div>
-                      </div>
-                      <div className="bg-white rounded-lg p-4 shadow-sm">
-                        <div className="flex justify-between text-sm text-gray-600 mb-2">
-                          <span>Principal Amount</span>
-                          <span>Interest Amount</span>
-                        </div>
-                        <div className="flex rounded-lg overflow-hidden h-4">
-                          <div 
-                            className="bg-amber-500"
-                            style={{width: `${(loanAmount / totalAmount) * 100}%`}}
-                          ></div>
-                          <div 
-                            className="bg-red-400"
-                            style={{width: `${(totalInterest / totalAmount) * 100}%`}}
-                          ></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Property Rates Map */}
-              <div className="bg-white rounded-xl shadow-sm p-8">
-                <div className="text-center mb-8">
-                  <MapPin className="w-12 h-12 text-amber-600 mx-auto mb-4" />
-                  <h2 className="text-3xl font-bold text-gray-900 mb-2">Property Rates</h2>
-                  <p className="text-gray-600">Current property rates in key locations</p>
-                </div>
-
-                <div className="max-w-4xl mx-auto">
-                  <div className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-xl p-8 text-center">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                      <div className="bg-white rounded-lg p-6 shadow-sm">
-                        <MapPin className="w-8 h-8 text-amber-600 mx-auto mb-3" />
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2">Visakhapatnam (Vizag)</h3>
-                        <p className="text-2xl font-bold text-amber-600">₹5,000/sq ft</p>
-                        <p className="text-sm text-gray-600 mt-2">Prime residential areas</p>
-                      </div>
-                      <div className="bg-white rounded-lg p-6 shadow-sm">
-                        <TrendingUp className="w-8 h-8 text-amber-600 mx-auto mb-3" />
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2">Growth Potential</h3>
-                        <p className="text-2xl font-bold text-amber-600">15-20%</p>
-                        <p className="text-sm text-gray-600 mt-2">Annual appreciation</p>
-                      </div>
-                      <div className="bg-white rounded-lg p-6 shadow-sm">
-                        <Home className="w-8 h-8 text-amber-600 mx-auto mb-3" />
-                        <h3 className="text-lg font-semibold text-gray-900 mb-2">Lakshmi Castle</h3>
-                        <p className="text-2xl font-bold text-amber-600">₹5+ Cr</p>
-                        <p className="text-sm text-gray-600 mt-2">10,000 sq ft premium</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Property Interest Survey */}
-              <div className="bg-white rounded-xl shadow-sm p-8">
-                <div className="text-center mb-8">
-                  <FileText className="w-12 h-12 text-amber-600 mx-auto mb-4" />
-                  <h2 className="text-3xl font-bold text-gray-900 mb-2">Property Interest Survey</h2>
-                  <p className="text-gray-600">Tell us about your property requirements and get personalized recommendations</p>
-                </div>
-
-                <div className="max-w-2xl mx-auto space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Full Name *</label>
-                      <input
-                        type="text"
-                        value={surveyData.name}
-                        onChange={(e) => setSurveyData({...surveyData, name: e.target.value})}
-                        className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                        placeholder="Enter your full name"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
-                      <input
-                        type="email"
-                        value={surveyData.email}
-                        onChange={(e) => setSurveyData({...surveyData, email: e.target.value})}
-                        className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                        placeholder="your.email@example.com"
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Phone Number *</label>
-                    <input
-                      type="tel"
-                      value={surveyData.phone}
-                      onChange={(e) => setSurveyData({...surveyData, phone: e.target.value})}
-                      className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                      placeholder="+91 9876543210"
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Budget Range</label>
-                    <select 
-                      value={surveyData.budget}
-                      onChange={(e) => setSurveyData({...surveyData, budget: e.target.value})}
-                      className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                    >
-                      <option value="">Select your budget range</option>
-                      <option value="below-50L">Below ₹50 Lakhs</option>
-                      <option value="50L-1Cr">₹50 Lakhs - ₹1 Crore</option>
-                      <option value="1Cr-2Cr">₹1 Crore - ₹2 Crores</option>
-                      <option value="2Cr-5Cr">₹2 Crores - ₹5 Crores</option>
-                      <option value="above-5Cr">Above ₹5 Crores</option>
-                    </select>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Property Type Interest</label>
-                    <div className="space-y-3">
-                      {[
-                        { value: 'lakshmi-castle', label: 'Lakshmi Castle (Premium Luxury)' },
-                        { value: 'villa', label: 'Independent Villa' },
-                        { value: 'apartment', label: 'Luxury Apartment' },
-                        { value: 'commercial', label: 'Commercial Property' },
-                        { value: 'investment', label: 'Investment Properties' }
-                      ].map((option) => (
-                        <label key={option.value} className="flex items-center">
-                          <input
-                            type="checkbox"
-                            checked={surveyData.propertyType === option.value}
-                            onChange={(e) => setSurveyData({...surveyData, propertyType: e.target.checked ? option.value : ''})}
-                            className="mr-3 text-amber-600 focus:ring-amber-500 rounded"
-                          />
-                          <span className="text-gray-700">{option.label}</span>
-                        </label>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-gray-700 mb-2">Preferred Location</label>
-                    <select 
-                      value={surveyData.location}
-                      onChange={(e) => setSurveyData({...surveyData, location: e.target.value})}
-                      className="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                    >
-                      <option value="vizag">Visakhapatnam (Vizag)</option>
-                      <option value="hyderabad">Hyderabad</option>
-                      <option value="bangalore">Bangalore</option>
-                      <option value="chennai">Chennai</option>
-                      <option value="other">Other</option>
-                    </select>
-                  </div>
-
-                  <button
-                    onClick={handleSurveySubmit}
-                    className="w-full bg-gradient-to-r from-amber-600 to-amber-700 text-white py-3 px-6 rounded-lg hover:from-amber-700 hover:to-amber-800 transition-colors font-semibold"
-                  >
-                    Submit Survey & Get Personalized Recommendations
-                  </button>
-
-                  <p className="text-sm text-gray-500 text-center">
-                    * Required fields. Your information is secure and will not be shared with third parties.
-                  </p>
-                </div>
-              </div>
-
-              {/* Quick Contact Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-lg p-6 text-center">
-                  <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Calculator className="w-6 h-6 text-amber-600" />
-                  </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Loan Assistance</h3>
-                  <p className="text-sm text-gray-600 mb-3">Get help with home loans at competitive rates starting from 8.5%</p>
-                  <button className="text-amber-600 hover:text-amber-700 font-medium text-sm">Learn More</button>
-                </div>
-
-                <div className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-lg p-6 text-center">
-                  <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <MapPin className="w-6 h-6 text-amber-600" />
-                  </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Site Visit</h3>
-                  <p className="text-sm text-gray-600 mb-3">Schedule a visit to Lakshmi Castle and experience luxury living</p>
-                  <button className="text-amber-600 hover:text-amber-700 font-medium text-sm">Book Visit</button>
-                </div>
-
-                <div className="bg-gradient-to-br from-amber-50 to-amber-100 rounded-lg p-6 text-center">
-                  <div className="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <FileText className="w-6 h-6 text-amber-600" />
-                  </div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Expert Consultation</h3>
-                  <p className="text-sm text-gray-600 mb-3">Get free consultation from our real estate experts</p>
-                  <button className="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded font-medium text-sm">Consult Now</button>
-                </div>
-              </div>
-            </div>
-          )}
+         
         </div>
-      </section>
+        </section>
+      </div>
     </div>
   );
 };

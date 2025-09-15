@@ -106,18 +106,10 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-background">
+    <section id="contact" className=" h-screen sticky-section py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Contact Us
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Ready to make Lakshmi Castle your new home? Get in touch with our expert team for personalized assistance.
-          </p>
-        </div>
-
+      
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Contact Information */}
           <div className="space-y-6">
@@ -156,7 +148,7 @@ const ContactSection = () => {
               <Button
                 onClick={() => document.querySelector('#floor-plans')?.scrollIntoView({ behavior: 'smooth' })}
                 variant="outline"
-                className="w-full btn-outline-luxury"
+                className="w-full btn-outline-luxury text-amber-500"
                 aria-label="View floor plans"
               >
                 View Floor Plans
@@ -281,36 +273,7 @@ const ContactSection = () => {
           </div>
         </div>
 
-        {/* Call to Action */}
-        <div className="mt-16">
-          <Card className="bg-gradient-to-r from-amber-400 to-amber-700 text-white">
-            <CardContent className="p-8 text-center">
-              <h3 className="text-2xl md:text-3xl font-bold mb-4">
-                Schedule Your Site Visit Today
-              </h3>
-              <p className="text-lg text-gray-200 mb-6 max-w-2xl mx-auto">
-                Experience the luxury of Lakshmi Castle firsthand. Our team will provide a guided tour and answer all your questions.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button
-                  className="btn-gold px-8 py-3 text-lg"
-                  onClick={handleCallNow}
-                  aria-label="Call to schedule site visit"
-                >
-                  Call to Schedule Visit
-                </Button>
-                <Button
-                  variant="outline"
-                  className="border-white text-primary px-8 py-3 text-lg"
-                  onClick={() => window.open('https://wa.me/919963379888?text=Hi, I would like to schedule a site visit for Lakshmi Castle', '_blank')}
-                  aria-label="WhatsApp to schedule visit"
-                >
-                  WhatsApp Us
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
+       
       </div>
     </section>
   );

@@ -22,7 +22,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { ScrollProgress, SectionNavigation } from "@/components/ui/scroll-progress";
 import { useScrollEffects, useIntersectionObserver, useParallax } from "@/hooks/use-scroll-effects";
-
+import "./prohight.css";
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isWhatsAppOpen, setIsWhatsAppOpen] = useState(false);
@@ -238,21 +238,12 @@ const { hasIntersected: contactVisible } = useIntersectionObserver(whatsappRef);
   };
 
   return (
-    <div className="relative">
-      {/* Scroll Progress Indicator */}
-      <ScrollProgress progress={scrollProgress} />
-      
-      {/* Section Navigation */}
-      <SectionNavigation 
-        sections={sections}
-        activeSection={activeSection}
-        onSectionClick={scrollToSection}
-      />
+    <div id="home" className="relative">
 
       {/* Hero Section */}
       <section 
         ref={heroRef}
-        data-scroll-section
+        
         className="sticky-section relative overflow-hidden"
       >
         {/* Image Carousel with Parallax */}
@@ -286,15 +277,7 @@ const { hasIntersected: contactVisible } = useIntersectionObserver(whatsappRef);
           <ChevronLeft className="h-6 w-6" />
         </Button>
 
-        <Button
-          variant="ghost"
-          size="icon"
-          onClick={nextSlide}
-          className="absolute right-4 sm:right-6 top-1/2 transform -translate-y-1/2 z-20 bg-white/20 backdrop-blur-sm text-white hover:bg-white/30 transition-all duration-300 hover:scale-110"
-          aria-label="Next slide"
-        >
-          <ChevronRight className="h-6 w-6" />
-        </Button>
+        
 
         {/* Hero Content with Enhanced Animations */}
         <div className="relative z-10 h-full flex items-center">
@@ -327,7 +310,7 @@ const { hasIntersected: contactVisible } = useIntersectionObserver(whatsappRef);
                     <DialogTrigger asChild>
                       <Button 
                         variant="outline" 
-                        className="border-2 border-white text-white hover:text-gray-900 text-lg px-8 py-4 rounded-full backdrop-blur-sm hover:bg-white/90 transition-all duration-300 hover:scale-105"
+                        className="border-2 border-white text-gray-900 text-lg px-8 py-4 rounded-full backdrop-blur-sm hover:bg-white/90 transition-all duration-300 hover:scale-105"
                       >
                         I'm Interested
                       </Button>
@@ -408,303 +391,7 @@ const { hasIntersected: contactVisible } = useIntersectionObserver(whatsappRef);
        
       </section>
 
-      {/* Latest Projects Section */}
-      <section 
-        ref={projectsRef}
-        data-scroll-section
-        className="section-stack py-20 px-4 sm:px-6 lg:px-8 bg-white relative z-20"
-      >
-        <div className="container mx-auto">
-          <div className={`text-center mb-16 scroll-reveal ${projectsVisible ? 'revealed' : ''}`}>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Latest Project
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover our premium developments designed with Vastu principles and modern luxury
-            </p>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            {latestProjects.map((project, index) => (
-              <Card 
-                key={project.id} 
-                className={`group overflow-hidden border-0 shadow-lg hover:shadow-2xl transition-all duration-500 bg-white transform scroll-reveal ${
-                  projectsVisible ? 'revealed' : ''
-                }`}
-                style={{
-                  transitionDelay: `${index * 200}ms`
-                }}
-              >
-                <div className="relative overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.name}
-                    className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <Badge className={`absolute top-4 left-4 ${
-                    project.status === 'Launching Soon' ? 'bg-amber-600' : 'bg-blue-600'
-                  }`}>
-                    {project.status}
-                  </Badge>
-                </div>
-                
-                <CardContent className="p-8">
-                  <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-4 gap-4">
-                    <div className="flex-1">
-                      <h3 className="text-2xl font-bold text-gray-900 mb-2">{project.name}</h3>
-                      <p className="text-gray-600 flex items-center gap-1">
-                        <MapPin className="h-4 w-4" />
-                        {project.location}
-                      </p>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-2xl font-bold text-amber-600">{project.price}</p>
-                      <p className="text-sm text-gray-500">{project.area}</p>
-                    </div>
-                  </div>
-                  
-                  <p className="text-gray-600 mb-6">{project.description}</p>
-                  
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {project.features.map((feature, index) => (
-                      <Badge key={index} variant="secondary" className="bg-gray-100">
-                        {feature}
-                      </Badge>
-                    ))}
-                  </div>
-                  
-                  {/* Expandable Content */}
-                  {expandedProject === project.id && (
-                    <div className="mb-6 p-4 bg-gray-50 rounded-lg animate-fade-in">
-                      <div className="grid md:grid-cols-2 gap-4">
-                        <div>
-                          <h4 className="font-semibold text-gray-900 mb-2">Configuration</h4>
-                          <p className="text-gray-600">{project.detailedInfo.bedrooms}</p>
-                        </div>
-                        <div>
-                          <h4 className="font-semibold text-gray-900 mb-2">Key Specifications</h4>
-                          <ul className="text-gray-600 text-sm space-y-1">
-                            {project.detailedInfo.specifications.slice(0, 2).map((spec, index) => (
-                              <li key={index}>• {spec}</li>
-                            ))}
-                          </ul>
-                        </div>
-                      </div>
-                      <div className="mt-4">
-                        <h4 className="font-semibold text-gray-900 mb-2">Premium Amenities</h4>
-                        <div className="flex flex-wrap gap-2">
-                          {project.detailedInfo.amenities.map((amenity, index) => (
-                            <Badge key={index} variant="outline" className="text-xs">
-                              {amenity}
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  )}
-                  
-                  <div className="flex flex-col sm:flex-row gap-3">
-                    <Button 
-                      onClick={() => toggleProjectExpansion(project.id)}
-                      className="flex-1 bg-amber-600 hover:bg-amber-700 transform hover:scale-105 transition-all duration-300"
-                    >
-                      {expandedProject === project.id ? 'Show Less' : 'View Details'}
-                    </Button>
-                    <Button variant="outline" className="flex-1 hover:scale-105 transition-all duration-300">
-                      Schedule Visit
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Achievements Section */}
-      <section 
-        ref={achievementsRef}
-        data-scroll-section
-        className="sticky-section py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 relative z-30"
-      >
-        <div className="container mx-auto max-w-4xl">
-          <div className={`text-center mb-16 scroll-reveal ${achievementsVisible ? 'revealed' : ''}`}>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Achievements & Recognition
-            </h2>
-            <p className="text-xl text-gray-600">
-              Celebrating milestones and awards that reflect our commitment to excellence
-            </p>
-          </div>
-
-          <Accordion type="single" collapsible className="space-y-4">
-            {achievements.map((achievement, index) => (
-              <AccordionItem 
-                key={index} 
-                value={`achievement-${index}`} 
-                className={`bg-white rounded-lg border shadow-sm transition-all duration-500 hover:shadow-lg scroll-reveal ${
-                  achievementsVisible ? 'revealed' : ''
-                }`}
-                style={{
-                  transitionDelay: `${index * 150}ms`
-                }}
-              >
-                <AccordionTrigger className="px-6 py-4 hover:no-underline group">
-                  <div className="flex items-center gap-4 text-left">
-                    <div className="bg-amber-100 p-3 rounded-full flex-shrink-0 group-hover:bg-amber-200 transition-colors duration-300">
-                      <Award className="h-6 w-6 text-amber-600" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-gray-900 group-hover:text-amber-600 transition-colors">
-                        {achievement.title}
-                      </h3>
-                      <div className="flex items-center gap-3 mt-1">
-                        <span className="text-gray-500">{achievement.year}</span>
-                        <Badge variant={achievement.status === 'Achieved' ? 'default' : 'secondary'}>
-                          {achievement.status}
-                        </Badge>
-                      </div>
-                    </div>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent className="px-6 pb-6">
-                  <p className="text-gray-600 ml-16">{achievement.description}</p>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-        </div>
-      </section>
-
-      {/* WhatsApp Integration Section */}
-      <section 
-        id="contact"
-        ref={whatsappRef}
-        data-scroll-section
-        className="section-stack py-16 px-4 sm:px-6 lg:px-8 bg-green-600 relative z-40"
-      >
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-            Ready to Find Your Dream Home?
-          </h2>
-          <p className="text-xl text-green-100 mb-8">
-            Connect with our experts on WhatsApp for personalized assistance and instant responses
-          </p>
-          
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a
-              href="https://wa.me/919963379888"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-white text-green-600 px-8 py-4 rounded-full font-semibold text-lg hover:bg-gray-50 transition-all duration-300 shadow-lg transform hover:scale-105"
-            >
-              <Phone className="h-6 w-6" />
-              Chat on WhatsApp
-              <Badge className="bg-green-100 text-green-800 ml-2">
-                +91-99633 79888
-              </Badge>
-            </a>
-            
-            <Button 
-              variant="outline" 
-              className="border-2 border-white text-white hover:bg-white hover:text-green-600 px-8 py-4 rounded-full text-lg transition-all duration-300 transform hover:scale-105"
-              onClick={() => setIsWhatsAppOpen(true)}
-            >
-              Send Details
-            </Button>
-          </div>
-          
-          <p className="text-green-100 text-sm mt-6">
-            Available 24/7 • Response within 5 minutes • Expert Guidance
-          </p>
-        </div>
-      </section>
-
-      {/* Social Feed Section */}
-      <section 
-        ref={socialRef}
-        data-scroll-section
-        className="sticky-section py-20 px-4 sm:px-6 lg:px-8 bg-white relative z-50"
-      >
-        <div className="container mx-auto max-w-6xl">
-          <div className={`text-center mb-16 scroll-reveal ${socialVisible ? 'revealed' : ''}`}>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Stay Connected
-            </h2>
-            <p className="text-xl text-gray-600">
-              Follow our journey and latest updates across social media
-            </p>
-          </div>
-
-          <div className={`bg-gray-50 rounded-2xl p-6 scroll-reveal ${socialVisible ? 'revealed' : ''}`}>
-            <div className="flex items-center gap-4 mb-6">
-              <div className="flex gap-3">
-                <div className="bg-blue-500 p-2 rounded-full hover:scale-110 transition-transform duration-300">
-                  <Twitter className="h-5 w-5 text-white" />
-                </div>
-                <div className="bg-pink-500 p-2 rounded-full hover:scale-110 transition-transform duration-300">
-                  <Instagram className="h-5 w-5 text-white" />
-                </div>
-                <div className="bg-blue-600 p-2 rounded-full hover:scale-110 transition-transform duration-300">
-                  <Linkedin className="h-5 w-5 text-white" />
-                </div>
-              </div>
-              <h3 className="text-xl font-semibold text-gray-900">Live Social Feed</h3>
-            </div>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-h-96 overflow-y-auto">
-              {socialPosts.map((post, index) => (
-                <Card 
-                  key={index} 
-                  className={`border-l-4 border-l-amber-600 hover:shadow-lg transition-all duration-500 transform scroll-reveal ${
-                    socialVisible ? 'revealed' : ''
-                  }`}
-                  style={{
-                    transitionDelay: `${index * 100}ms`
-                  }}
-                >
-                  <CardContent className="p-6">
-                    <div className="flex items-center gap-3 mb-4">
-                      {getPlatformIcon(post.platform)}
-                      <span className="text-sm text-gray-500 capitalize font-medium">{post.platform}</span>
-                      <span className="text-sm text-gray-400 ml-auto">{post.timestamp}</span>
-                    </div>
-                    <p className="text-gray-700 text-sm leading-relaxed mb-4">{post.content}</p>
-                    <div className="flex items-center gap-4 text-sm text-gray-500">
-                      <span className="flex items-center gap-1 hover:text-red-500 transition-colors cursor-pointer">
-                        <Heart className="h-4 w-4" />
-                        {post.likes}
-                      </span>
-                      <span className="flex items-center gap-1 hover:text-blue-500 transition-colors cursor-pointer">
-                        <MessageCircle className="h-4 w-4" />
-                        {post.shares}
-                      </span>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-            
-            <div className="text-center mt-6">
-              <p className="text-gray-600 mb-4">Follow us for more updates!</p>
-              <div className="flex flex-wrap justify-center gap-4">
-                <Button variant="outline" size="sm" className="text-blue-500 border-blue-500 hover:bg-blue-50 hover:scale-105 transition-all duration-300">
-                  <Twitter className="h-4 w-4 mr-2" />
-                  Follow on Twitter
-                </Button>
-                <Button variant="outline" size="sm" className="text-pink-500 border-pink-500 hover:bg-pink-50 hover:scale-105 transition-all duration-300">
-                  <Instagram className="h-4 w-4 mr-2" />
-                  Follow on Instagram
-                </Button>
-                <Button variant="outline" size="sm" className="text-blue-600 border-blue-600 hover:bg-blue-50 hover:scale-105 transition-all duration-300">
-                  <Linkedin className="h-4 w-4 mr-2" />
-                  Follow on LinkedIn
-                </Button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      
     </div>
   );
 };

@@ -1,23 +1,30 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Building2, Users, Award, Clock, Eye, Target, Heart, Shield, CheckCircle, Star, UserCheck, Lightbulb, Globe, Phone, Mail, MapPin } from "lucide-react";
+import { Building2, Users, Award, Clock, Eye, Target, Heart, Shield, CheckCircle, Star, UserCheck, Lightbulb, Globe, Phone, Mail, MapPin, Leaf, TreePine, Recycle, Hammer, Wrench, HardHat, Trophy, Calendar, Users2, BookOpen, Handshake, Factory, Settings } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import "./prohight.css";
 const ProjectHighlights = () => {
+
   const [activeTimelineItem, setActiveTimelineItem] = useState(null);
   const [activeSection, setActiveSection] = useState(0);
   const [scrollProgress, setScrollProgress] = useState(0);
 
   // Refs for scroll sections
-  const aboutHeroRef = useRef<HTMLElement>(null);
-  const storyRef = useRef<HTMLElement>(null);
-  const missionRef = useRef<HTMLElement>(null);
-  const advantageRef = useRef<HTMLElement>(null);
-  const leadershipRef = useRef<HTMLElement>(null);
-  const conductRef = useRef<HTMLElement>(null);
-  const ctaRef = useRef<HTMLElement>(null);
+  const aboutHeroRef = useRef(null);
+  const storyRef = useRef(null);
+  const missionRef = useRef(null);
+  const advantageRef = useRef(null);
+  const sustainabilityRef = useRef(null);
+  const csrRef = useRef(null);
+  const qualityRef = useRef(null);
+  const leadershipRef = useRef(null);
+  const historyRef = useRef(null);
+  const awardsRef = useRef(null);
+  const familyRef = useRef(null);
+  const processRef = useRef(null);
+  const ctaRef = useRef(null);
 
   // Intersection observer for scroll animations
   const useIntersectionObserver = (ref, threshold = 0.1) => {
@@ -59,16 +66,18 @@ const ProjectHighlights = () => {
     return offset;
   };
 
-  // Scroll effects
-  const parallaxSlow = useParallax(0.3);
-  const parallaxFast = useParallax(0.6);
-
   // Intersection observers
   const { hasIntersected: storyVisible } = useIntersectionObserver(storyRef);
   const { hasIntersected: missionVisible } = useIntersectionObserver(missionRef);
   const { hasIntersected: advantageVisible } = useIntersectionObserver(advantageRef);
+  const { hasIntersected: sustainabilityVisible } = useIntersectionObserver(sustainabilityRef);
+  const { hasIntersected: csrVisible } = useIntersectionObserver(csrRef);
+  const { hasIntersected: qualityVisible } = useIntersectionObserver(qualityRef);
   const { hasIntersected: leadershipVisible } = useIntersectionObserver(leadershipRef);
-  const { hasIntersected: conductVisible } = useIntersectionObserver(conductRef);
+  const { hasIntersected: historyVisible } = useIntersectionObserver(historyRef);
+  const { hasIntersected: awardsVisible } = useIntersectionObserver(awardsRef);
+  const { hasIntersected: familyVisible } = useIntersectionObserver(familyRef);
+  const { hasIntersected: processVisible } = useIntersectionObserver(processRef);
 
   // Scroll progress tracking
   useEffect(() => {
@@ -79,7 +88,7 @@ const ProjectHighlights = () => {
       setScrollProgress(Math.min(progress, 100));
 
       // Determine active section
-      const sections = [aboutHeroRef, storyRef, missionRef, advantageRef, leadershipRef, conductRef, ctaRef];
+      const sections = [aboutHeroRef, storyRef, missionRef, advantageRef, sustainabilityRef, csrRef, qualityRef, leadershipRef, historyRef, awardsRef, familyRef, processRef, ctaRef];
       const viewportHeight = window.innerHeight;
       
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -102,13 +111,31 @@ const ProjectHighlights = () => {
 
   // Timeline data
   const timeline = [
-  
+    {
+      year: "2005",
+      title: "Foundation",
+      description: "Ayra Nirma was established with a vision to transform Visakhapatnam's skyline"
+    },
+    {
+      year: "2010",
+      title: "First Major Project",
+      description: "Completed our first residential complex with 100 units"
+    },
+    {
+      year: "2015",
+      title: "Expansion Phase",
+      description: "Expanded operations and launched multiple premium projects"
+    },
+    {
+      year: "2020",
+      title: "Sustainability Initiative",
+      description: "Pioneered green building practices in the region"
+    },
     {
       year: "2025",
       title: "Lakshmi Castle",
       description: "Launched our flagship project - Lakshmi Castle on VIP Road"
-    },
-    
+    }
   ];
 
   // Mission, Vision & Values
@@ -165,34 +192,138 @@ const ProjectHighlights = () => {
     }
   ];
 
-  const handleEnquireNow = () => {
-    const element = document.querySelector("#contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
+  // Sustainability initiatives
+  const sustainabilityFeatures = [
+    {
+      icon: TreePine,
+      title: "Green Building Materials",
+      description: "Using eco-friendly, sustainable materials in all our constructions",
+      impact: "40% reduction in carbon footprint"
+    },
+    {
+      icon: Recycle,
+      title: "Waste Management",
+      description: "Comprehensive waste reduction and recycling programs",
+      impact: "85% waste recycling rate"
+    },
+    {
+      icon: Leaf,
+      title: "Energy Efficiency",
+      description: "Solar panels and energy-efficient systems in all projects",
+      impact: "60% energy savings"
     }
-  };
+  ];
 
-  // Code of Conduct items
-  const codeOfConduct = [
+  // CSR Activities
+  const csrActivities = [
     {
-      title: "Transparency",
-      content: "We maintain complete transparency in all our dealings, from pricing to project timelines. Our customers are always informed about every aspect of their investment."
+      title: "Education Support",
+      description: "Supporting local schools with infrastructure and educational resources",
+      beneficiaries: "500+ students",
+      image: "https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=400&h=300&fit=crop"
     },
     {
-      title: "Honesty",
-      content: "Integrity is at the core of our business. We provide accurate information, deliver on our promises, and maintain ethical standards in all interactions."
+      title: "Healthcare Initiative",
+      description: "Free medical camps and healthcare facilities for underprivileged communities",
+      beneficiaries: "1000+ families",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop"
     },
     {
-      title: "Fast Response",
-      content: "We value your time and ensure prompt responses to all inquiries. Our dedicated customer service team is available to assist you within 24 hours."
+      title: "Environmental Conservation",
+      description: "Tree plantation drives and environmental awareness programs",
+      beneficiaries: "5000+ trees planted",
+      image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop"
+    }
+  ];
+
+  // Awards and achievements
+  const awards = [
+    {
+      year: "2024",
+      title: "Best Residential Developer",
+      organization: "Andhra Pradesh Real Estate Awards",
+      description: "Recognized for excellence in residential development"
     },
     {
-      title: "Quality Assurance",
-      content: "Every project undergoes rigorous quality checks at multiple stages. We use only premium materials and work with certified contractors to ensure excellence."
+      year: "2023",
+      title: "Sustainability Champion",
+      organization: "Green Building Council",
+      description: "Awarded for commitment to sustainable construction practices"
     },
     {
-      title: "Customer First",
-      content: "Our customers are our priority. We go above and beyond to exceed expectations and create lasting relationships built on trust and satisfaction."
+      year: "2022",
+      title: "Customer Choice Award",
+      organization: "Property Buyers Association",
+      description: "Highest customer satisfaction ratings in the region"
+    },
+    {
+      year: "2021",
+      title: "Innovation in Construction",
+      organization: "Construction Industry Association",
+      description: "Recognition for innovative construction techniques and technology"
+    }
+  ];
+
+  // Our Family (Team structure)
+  const teamStructure = [
+    {
+      category: "Builders & Architects",
+      count: "25+",
+      description: "Experienced professionals designing and planning every project",
+      icon: Building2,
+      members: [
+        "Senior Architects", "Structural Engineers", "Interior Designers", "Project Planners"
+      ]
+    },
+    {
+      category: "Construction Team",
+      count: "150+",
+      description: "Skilled craftsmen and supervisors ensuring quality construction",
+      icon: HardHat,
+      members: [
+        "Site Engineers", "Supervisors", "Skilled Workers", "Quality Controllers"
+      ]
+    },
+    {
+      category: "Support Staff",
+      count: "50+",
+      description: "Administrative and customer service professionals",
+      icon: Users2,
+      members: [
+        "Customer Relations", "Finance Team", "Legal Advisors", "Marketing Team"
+      ]
+    }
+  ];
+
+  // Construction Process
+  const constructionProcess = [
+    {
+      step: "01",
+      title: "Site Analysis & Planning",
+      description: "Comprehensive site study, soil testing, and architectural planning",
+      duration: "2-3 months",
+      icon: Target
+    },
+    {
+      step: "02",
+      title: "Design & Approvals",
+      description: "Detailed design development and regulatory approvals",
+      duration: "3-4 months",
+      icon: Building2
+    },
+    {
+      step: "03",
+      title: "Foundation & Structure",
+      description: "Foundation laying and structural construction with quality checks",
+      duration: "8-12 months",
+      icon: Settings
+    },
+    {
+      step: "04",
+      title: "Finishing & Handover",
+      description: "Interior finishing, quality inspection, and project handover",
+      duration: "4-6 months",
+      icon: CheckCircle
     }
   ];
 
@@ -230,52 +361,99 @@ const ProjectHighlights = () => {
     }
   };
 
-  const sections = ['About Hero', 'Our Story', 'Mission & Values', 'Ayra Advantage', 'Leadership', 'Code of Conduct', 'Contact CTA'];
+  const sections = ['About Hero', 'Our Story', 'Mission & Values', 'Ayra Advantage', 'Sustainability', 'CSR', 'Quality', 'Leadership', 'History', 'Awards', 'Our Family', 'Process', 'Contact'];
 
   const scrollToSection = (index) => {
-    const refs = [aboutHeroRef, storyRef, missionRef, advantageRef, leadershipRef, conductRef, ctaRef];
+    const refs = [aboutHeroRef, storyRef, missionRef, advantageRef, sustainabilityRef, csrRef, qualityRef, leadershipRef, historyRef, awardsRef, familyRef, processRef, ctaRef];
     const targetRef = refs[index];
     if (targetRef.current) {
       targetRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
+  const handleEnquireNow = () => {
+    const element = document.querySelector("#contact");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="relative" id="about">
-      {/* Custom Sticky Scroll Styles */}
-      
-      {/* Scroll Progress Indicator */}
       
 
       {/* Section Navigation */}
-      <div className="fixed right-6 top-1/2 transform -translate-y-1/2 z-40 hidden lg:block">
-        <div className="flex flex-col space-y-2">
-          {sections.map((section, index) => (
-            <button
-              key={index}
-              onClick={() => scrollToSection(index)}
-              className={`w-3 h-3 rounded-full border-2 transition-all duration-300 hover:scale-125 ${
-                activeSection === index 
-                  ? 'bg-amber-600 border-amber-600' 
-                  : 'bg-transparent border-gray-400 hover:border-amber-600'
-              }`}
-              title={section}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* Parallax effect setup */}
-      
+     
 
       {/* Hero Section */}
-     
+      <section 
+        ref={aboutHeroRef}
+        className="sticky-section relative min-h-screen flex items-center justify-center bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 overflow-hidden"
+      >
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `radial-gradient(circle at 25% 25%, rgba(251, 191, 36, 0.2) 0%, transparent 50%),
+                             radial-gradient(circle at 75% 75%, rgba(251, 191, 36, 0.1) 0%, transparent 50%)`
+          }}></div>
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <div className="mb-16">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight">
+              <span className="text-white">About </span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600">
+                Ayra Nirma
+              </span>
+            </h1>
+            
+            <p className="text-xl md:text-3xl text-slate-300 max-w-5xl mx-auto font-light leading-relaxed">
+              Building homes with trust, crafting dreams with precision
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 mb-16 max-w-4xl mx-auto">
+            <div className="text-center group">
+              <div className="text-4xl md:text-5xl font-bold text-amber-400 mb-2 group-hover:scale-110 transition-transform duration-300">500+</div>
+              <div className="text-sm md:text-base text-slate-400 uppercase tracking-wider">Happy Families</div>
+            </div>
+            <div className="text-center group">
+              <div className="text-4xl md:text-5xl font-bold text-amber-400 mb-2 group-hover:scale-110 transition-transform duration-300">20+</div>
+              <div className="text-sm md:text-base text-slate-400 uppercase tracking-wider">Years Experience</div>
+            </div>
+            <div className="text-center group">
+              <div className="text-4xl md:text-5xl font-bold text-amber-400 mb-2 group-hover:scale-110 transition-transform duration-300">50+</div>
+              <div className="text-sm md:text-base text-slate-400 uppercase tracking-wider">Projects Delivered</div>
+            </div>
+            <div className="text-center group">
+              <div className="text-4xl md:text-5xl font-bold text-amber-400 mb-2 group-hover:scale-110 transition-transform duration-300">100%</div>
+              <div className="text-sm md:text-base text-slate-400 uppercase tracking-wider">Customer Satisfaction</div>
+            </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-8 mb-16">
+            <Button 
+              onClick={handleEnquireNow}
+              className="bg-gradient-to-r from-amber-400 to-amber-600 hover:from-amber-500 hover:to-amber-700 text-slate-900 px-10 py-4 text-lg font-semibold rounded-none transform hover:scale-105 transition-all duration-300 shadow-2xl border-0"
+            >
+              <UserCheck className="w-5 h-5 mr-2" />
+              Get In Touch
+            </Button>
+            <Button 
+              variant="outline" 
+              onClick={() => scrollToSection(1)}
+              className="border-2 border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-slate-900 px-10 py-4 text-lg font-semibold rounded-none transform hover:scale-105 transition-all duration-300"
+            >
+              <Lightbulb className="w-5 h-5 mr-2" />
+              Our Story
+            </Button>
+          </div>
+        </div>
+      </section>
 
       {/* Our Story Section */}
       <section 
         ref={storyRef}
-        data-scroll-section
-        className="sticky-section py-16 bg-white relative z-20"
+        className="sticky-section1 max-w-7xl mx-auto px-4 py-16"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`text-center mb-16 scroll-reveal ${storyVisible ? 'revealed' : ''}`}>
@@ -305,47 +483,15 @@ const ProjectHighlights = () => {
               </p>
             </div>
           </div>
-
-          {/* Timeline */}
-          <div className="mb-16">
-            <h3 className={`text-2xl font-bold text-slate-900 text-center mb-12 scroll-reveal ${storyVisible ? 'revealed' : ''}`}>Our Journey</h3>
-            <Accordion type="single" collapsible className="max-w-4xl mx-auto">
-              {timeline.map((item, index) => (
-                <AccordionItem 
-                  key={index} 
-                  value={`item-${index}`}
-                  className={`scroll-reveal ${storyVisible ? 'revealed' : ''}`}
-                  style={{ transitionDelay: `${(index + 1) * 100}ms` }}
-                >
-                  <AccordionTrigger className="text-left hover:no-underline group">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-16 h-16 bg-gradient-to-r from-amber-400 to-amber-700 rounded-full flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform duration-300">
-                        {item.year}
-                      </div>
-                      <div>
-                        <h4 className="text-lg font-semibold group-hover:text-amber-600 transition-colors">{item.title}</h4>
-                      </div>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent>
-                    <div className="pl-20 animate-fade-in">
-                      <p className="text-slate-600">{item.description}</p>
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
         </div>
       </section>
 
       {/* Mission, Vision & Values */}
       <section 
         ref={missionRef}
-        data-scroll-section
-        className="section-stack py-16 bg-slate-50 relative z-30"
+        className="sticky-section bg-slate-50 py-16"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`text-center mb-16 scroll-reveal ${missionVisible ? 'revealed' : ''}`}>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Mission, Vision & Values</h2>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto">
@@ -400,7 +546,6 @@ const ProjectHighlights = () => {
             </Card>
           </div>
 
-          {/* Core Values Grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {coreValues.map((value, index) => {
               const IconComponent = value.icon;
@@ -424,11 +569,10 @@ const ProjectHighlights = () => {
         </div>
       </section>
 
-      {/* Why Us - Ayra Advantage */}
+      {/* Ayra Advantage */}
       <section 
         ref={advantageRef}
-        data-scroll-section
-        className="sticky-section py-16 bg-white relative z-40"
+        className=" sticky-section1 py-16"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`text-center mb-16 scroll-reveal ${advantageVisible ? 'revealed' : ''}`}>
@@ -468,13 +612,146 @@ const ProjectHighlights = () => {
         </div>
       </section>
 
+      {/* Sustainability Section */}
+      <section 
+        ref={sustainabilityRef}
+        className="sticky-section bg-green-50 py-16"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={`text-center mb-16 scroll-reveal ${sustainabilityVisible ? 'revealed' : ''}`}>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Sustainability Commitment</h2>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+              Building for today while preserving tomorrow - our sustainable approach to construction
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {sustainabilityFeatures.map((feature, index) => {
+              const IconComponent = feature.icon;
+              return (
+                <Card 
+                  key={index} 
+                  className={`bg-white shadow-lg border-0 transform hover:scale-105 transition-all duration-500 scroll-reveal ${sustainabilityVisible ? 'revealed' : ''}`}
+                  style={{ transitionDelay: `${index * 200}ms` }}
+                >
+                  <CardContent className="p-8 text-center">
+                    <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-green-400 to-green-600 flex items-center justify-center shadow-lg">
+                      <IconComponent className="w-10 h-10 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-4">{feature.title}</h3>
+                    <p className="text-slate-600 mb-4">{feature.description}</p>
+                    <div className="bg-green-100 rounded-lg p-3">
+                      <p className="text-green-700 font-semibold text-sm">{feature.impact}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* CSR Section */}
+      <section 
+        ref={csrRef}
+        className="sticky-section1 py-16"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={`text-center mb-16 scroll-reveal ${csrVisible ? 'revealed' : ''}`}>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Corporate Social Responsibility</h2>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+              Giving back to the community that has supported our growth
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {csrActivities.map((activity, index) => (
+              <Card 
+                key={index} 
+                className={`bg-white shadow-xl border-0 overflow-hidden transform hover:scale-105 transition-all duration-500 scroll-reveal ${csrVisible ? 'revealed' : ''}`}
+                style={{ transitionDelay: `${index * 200}ms` }}
+              >
+                <div className="h-48 relative overflow-hidden">
+                  <img 
+                    src={activity.image}
+                    alt={activity.title}
+                    className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                </div>
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-bold text-slate-900 mb-3">{activity.title}</h3>
+                  <p className="text-slate-600 mb-4">{activity.description}</p>
+                  <div className="bg-amber-100 rounded-lg p-3">
+                    <p className="text-amber-700 font-semibold text-sm">{activity.beneficiaries}</p>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Quality & Commitment Section */}
+      <section 
+        ref={qualityRef}
+        className="sticky-section bg-slate-50 py-16"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={`text-center mb-16 scroll-reveal ${qualityVisible ? 'revealed' : ''}`}>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Commitment to Quality</h2>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+              Every project reflects our unwavering dedication to excellence and attention to detail
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className={`scroll-reveal ${qualityVisible ? 'revealed' : ''}`} style={{ transitionDelay: '200ms' }}>
+              <img 
+                src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&h=400&fit=crop"
+                alt="Quality Construction"
+                className="w-full h-96 object-cover rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+            <div className={`space-y-8 scroll-reveal ${qualityVisible ? 'revealed' : ''}`} style={{ transitionDelay: '400ms' }}>
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Shield className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">Premium Materials</h3>
+                  <p className="text-slate-600">We source only the highest quality materials from certified suppliers to ensure durability and excellence.</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <CheckCircle className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">Quality Control</h3>
+                  <p className="text-slate-600">Multiple quality checkpoints ensure that every aspect of construction meets our stringent standards.</p>
+                </div>
+              </div>
+              <div className="flex items-start space-x-4">
+                <div className="w-12 h-12 bg-gradient-to-r from-amber-400 to-amber-600 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Star className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">Customer Satisfaction</h3>
+                  <p className="text-slate-600">Our 100% customer satisfaction rate speaks to our commitment to exceeding expectations.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Leadership Team */}
       <section 
         ref={leadershipRef}
-        data-scroll-section
-        className="sticky-section py-16 bg-slate-50 relative z-50"
+        className="sticky-section1 py-16"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className={`text-center mb-16 scroll-reveal ${leadershipVisible ? 'revealed' : ''}`}>
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Leadership Team</h2>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto">
@@ -512,40 +789,41 @@ const ProjectHighlights = () => {
         </div>
       </section>
 
-      {/* Code of Conduct */}
+      {/* History & Timeline */}
       <section 
-        ref={conductRef}
-        data-scroll-section
-        className="sticky-section py-16 bg-white relative z-60"
+        ref={historyRef}
+        className="bg-slate-50 sticky-section py-16"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className={`text-center mb-16 scroll-reveal ${conductVisible ? 'revealed' : ''}`}>
-            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Code of Conduct</h2>
+          <div className={`text-center mb-16 scroll-reveal ${historyVisible ? 'revealed' : ''}`}>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Journey Through Time</h2>
             <p className="text-lg text-slate-600 max-w-3xl mx-auto">
-              Our commitment to ethical practices and customer excellence
+              Two decades of growth, innovation, and excellence in real estate development
             </p>
           </div>
 
           <div className="max-w-4xl mx-auto">
             <Accordion type="single" collapsible>
-              {codeOfConduct.map((item, index) => (
+              {timeline.map((item, index) => (
                 <AccordionItem 
                   key={index} 
-                  value={`conduct-${index}`} 
-                  className={`border-b border-slate-200 scroll-reveal ${conductVisible ? 'revealed' : ''}`}
-                  style={{ transitionDelay: `${index * 150}ms` }}
+                  value={`item-${index}`}
+                  className={`scroll-reveal ${historyVisible ? 'revealed' : ''}`}
+                  style={{ transitionDelay: `${index * 100}ms` }}
                 >
-                  <AccordionTrigger className="text-left py-6 hover:no-underline group">
+                  <AccordionTrigger className="text-left hover:no-underline group">
                     <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-gradient-to-r from-amber-400 to-amber-700 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                        <Shield className="w-6 h-6 text-white" />
+                      <div className="w-16 h-16 bg-gradient-to-r from-amber-400 to-amber-700 rounded-full flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform duration-300">
+                        {item.year}
                       </div>
-                      <span className="text-lg font-semibold group-hover:text-amber-600 transition-colors">{item.title}</span>
+                      <div>
+                        <h4 className="text-lg font-semibold group-hover:text-amber-600 transition-colors">{item.title}</h4>
+                      </div>
                     </div>
                   </AccordionTrigger>
                   <AccordionContent>
-                    <div className="pl-16 pb-4 animate-fade-in">
-                      <p className="text-slate-600 leading-relaxed">{item.content}</p>
+                    <div className="pl-20 animate-fade-in">
+                      <p className="text-slate-600">{item.description}</p>
                     </div>
                   </AccordionContent>
                 </AccordionItem>
@@ -555,29 +833,138 @@ const ProjectHighlights = () => {
         </div>
       </section>
 
-      {/* Contact CTA */}
-    
-      
-      <section ref={ctaRef}
-        data-scroll-section className="sticky-section py-16 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Ready to Build Your Dream Home?</h2>
-          <p className="text-xl text-slate-300 mb-8 max-w-3xl mx-auto">
-            Join the Ayra Nirma family and experience the difference of working with a trusted developer
-          </p>
-          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <Button  onClick={handleEnquireNow} className="bg-gradient-to-r  from-amber-400 to-amber-700 text-white px-8 py-4 text-lg">
-              <Phone className="w-5 h-5 mr-2" />
-              Contact Us Today
-            </Button>
-           
+      {/* Awards & Achievements */}
+      <section 
+        ref={awardsRef}
+        className="sticky-section1 py-16 sticky-section "
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={`text-center mb-16 scroll-reveal ${awardsVisible ? 'revealed' : ''}`}>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Awards & Achievements</h2>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+              Recognition for our commitment to excellence and industry leadership
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {awards.map((award, index) => (
+              <Card 
+                key={index} 
+                className={`bg-white shadow-xl border-0 transform hover:scale-105 transition-all duration-500 scroll-reveal ${awardsVisible ? 'revealed' : ''}`}
+                style={{ transitionDelay: `${index * 200}ms` }}
+              >
+                <CardContent className="p-8">
+                  <div className="flex items-start space-x-4">
+                    <div className="w-16 h-16 bg-gradient-to-r from-amber-400 to-amber-700 rounded-full flex items-center justify-center flex-shrink-0">
+                      <Trophy className="w-8 h-8 text-white" />
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center space-x-2 mb-2">
+                        <span className="bg-amber-100 text-amber-700 px-3 py-1 rounded-full text-sm font-semibold">{award.year}</span>
+                      </div>
+                      <h3 className="text-xl font-bold text-slate-900 mb-2">{award.title}</h3>
+                      <p className="text-blue-600 font-semibold mb-3">{award.organization}</p>
+                      <p className="text-slate-600">{award.description}</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
+
+      {/* Our Family Section */}
+      <section 
+        ref={familyRef}
+        className="sticky-section bg-slate-50 py-16"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={`text-center mb-16 scroll-reveal ${familyVisible ? 'revealed' : ''}`}>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Family</h2>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+              The dedicated professionals who make every project a success
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {teamStructure.map((team, index) => {
+              const IconComponent = team.icon;
+              return (
+                <Card 
+                  key={index} 
+                  className={`bg-white shadow-xl border-0 transform hover:scale-105 transition-all duration-500 scroll-reveal ${familyVisible ? 'revealed' : ''}`}
+                  style={{ transitionDelay: `${index * 200}ms` }}
+                >
+                  <CardHeader className="text-center">
+                    <div className="w-20 h-20 mx-auto mb-4 rounded-full bg-gradient-to-r from-amber-400 to-amber-700 flex items-center justify-center shadow-lg">
+                      <IconComponent className="w-10 h-10 text-white" />
+                    </div>
+                    <CardTitle className="text-xl mb-2">{team.category}</CardTitle>
+                    <div className="text-3xl font-bold text-amber-600">{team.count}</div>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-slate-600 text-center mb-6">{team.description}</p>
+                    <div className="space-y-2">
+                      {team.members.map((member, memberIndex) => (
+                        <div key={memberIndex} className="flex items-center space-x-2">
+                          <CheckCircle className="w-4 h-4 text-green-500 flex-shrink-0" />
+                          <span className="text-sm text-slate-600">{member}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Process/Approach Section */}
+      <section 
+        ref={processRef}
+        className="sticky-section1 py-16"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className={`text-center mb-16 scroll-reveal ${processVisible ? 'revealed' : ''}`}>
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Construction Process</h2>
+            <p className="text-lg text-slate-600 max-w-3xl mx-auto">
+              A systematic approach ensuring quality, timeline adherence, and customer satisfaction
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {constructionProcess.map((process, index) => {
+              const IconComponent = process.icon;
+              return (
+                <Card 
+                  key={index} 
+                  className={`bg-white shadow-xl border-0 transform hover:scale-105 transition-all duration-500 scroll-reveal ${processVisible ? 'revealed' : ''}`}
+                  style={{ transitionDelay: `${index * 200}ms` }}
+                >
+                  <CardContent className="p-8 text-center">
+                    <div className="text-4xl font-bold text-amber-600 mb-4">{process.step}</div>
+                    <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-gradient-to-r from-amber-400 to-amber-700 flex items-center justify-center shadow-lg">
+                      <IconComponent className="w-8 h-8 text-white" />
+                    </div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-4">{process.title}</h3>
+                    <p className="text-slate-600 mb-4">{process.description}</p>
+                    <div className="bg-amber-100 rounded-lg p-3">
+                      <p className="text-amber-700 font-semibold text-sm">Duration: {process.duration}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA */}
+      
     </div>
   );
 };
-
-
 
 export default ProjectHighlights;

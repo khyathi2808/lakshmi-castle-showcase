@@ -14,15 +14,16 @@ import Projects from "@/components/projects";
 import HomeOwner from "@/components/HomeOwner";
 import InvestorsScreen from "@/components/Investors";
 import Resources from "@/components/Resources";
-
+import Buyers from "../components/Buyers";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
       <HeroSection />
       <ProjectHighlights />
-      <OurProcess/>
+      
       <Projects/>
+      <Buyers/>
       <HomeOwner/>
       <InvestorsScreen/>
       <Resources/>
@@ -30,7 +31,7 @@ const Index = () => {
       {/*<FloorPlansSection />*/}
       
       {/*<GallerySection />*/}
-      <LocationSection />
+      
       
       {/*<SpecificationsSection />*/}
       <Testimonials/>

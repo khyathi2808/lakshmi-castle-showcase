@@ -9,8 +9,9 @@ const Navigation = () => {
 
   const navItems = [
     { name: "About", href: "#about" },
-    { name: "Our Process", href: "#our-process" },
+   
     { name: "Projects", href: "#projects" },
+    {name:"Buyers",href:"#buyers"},
     { name: "HomeOwners", href: "#homeOwner" },
     { name: "Investors", href: "#investor" },
     { name: "Resources", href: "#resource" },

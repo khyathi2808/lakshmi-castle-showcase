@@ -72,7 +72,7 @@ const LocationSection = () => {
   };
 
   return (
-    <section id="location" className="section-stack py-20 bg-muted/30">
+    <section id="location" className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className=" section-stack text-center mb-16">

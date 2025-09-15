@@ -1,16 +1,24 @@
- .sticky-section {
-          position: sticky;
-    top: 0;
-      background: linear-gradient(to right, #fbbf24, #b45309); 
-    
-        }
-        
-        .section-stack {
-          position: relative;
-          z-index: 10;
-           background: linear-gradient(to right, #fbbf24, #b45309); 
-        }
-        
+.sticky-section {
+  position: sticky;
+  top: 0;
+  min-height: 100%;
+  background: linear-gradient(to right, #fbbf24, #b45309) !important; 
+  color: white !important;
+}
+.sticky-section1{
+  position: sticky;
+  top: 0;
+  min-height: 100%;
+  background: linear-gradient(to right, #b45309, #fbbf24) !important; 
+  color: white !important;
+}
+
+.section-stack {
+  position: relative;
+
+  z-index: 10;
+   /* This is amber-500 as a middle ground */
+}
         .parallax-slow {
           transform: translateY(var(--parallax-offset-slow, 0px));
         }

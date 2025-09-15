@@ -71,14 +71,14 @@ const Testimonials = () => {
   );
 
   return (
-    <section id="sticky-section testimonials" className="py-20 bg-gradient-to-b from-background to-muted/30">
-      <div className=" sticky-section  max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="testimonials" className="sticky-section1 flex flex-col justify-center items-center text-white py-20 bg-gradient-to-b from-background to-muted/30">
+      <div className=" max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <AnimatedSection className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-6">
             Testimonials
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg max-w-3xl mx-auto">
             Hear from our satisfied residents who have made our properties their home
           </p>
         </AnimatedSection>
@@ -137,7 +137,7 @@ const Testimonials = () => {
                   <StarRating rating={testimonial.rating} />
 
                   {/* Testimonial Text */}
-                  <blockquote className="text-muted-foreground leading-relaxed italic">
+                  <blockquote className="leading-relaxed italic">
                     "{testimonial.testimonial}"
                   </blockquote>
                 </CardContent>
@@ -147,39 +147,10 @@ const Testimonials = () => {
         </AnimatedSection>
 
         {/* Pagination Dots */}
-        <AnimatedSection animation="fade-up" className="flex justify-center space-x-2">
-          {[...Array(totalPages)].map((_, index) => (
-            <button
-              key={index}
-              onClick={() => goToPage(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 hover-scale ${
-                index === currentIndex
-                  ? "bg-primary shadow-lg"
-                  : "bg-muted hover:bg-muted-foreground/30"
-              }`}
-              aria-label={`Go to page ${index + 1}`}
-            />
-          ))}
-        </AnimatedSection>
+        
 
         {/* Call to Action */}
-        <AnimatedSection animation="scale" className="mt-16 text-center">
-          <div className="max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-foreground mb-4">
-              Join Our Satisfied Residents
-            </h3>
-            <p className="text-muted-foreground mb-6">
-              Experience the luxury and comfort that our residents love. Schedule a visit today.
-            </p>
-            <Button
-              className="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 text-lg hover-lift hover-glow"
-              onClick={() => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' })}
-              aria-label="Contact us today"
-            >
-              Contact Us Today
-            </Button>
-          </div>
-        </AnimatedSection>
+       
       </div>
     </section>
   );

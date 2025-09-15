@@ -217,7 +217,7 @@ Description: ${partnershipForm.description}`;
   return (
     <div id="investor" className="min-h-screen bg-gradient-to-br from-slate-50 to-amber-50">
       {/* Hero Section */}
-      <div className="sticky-section relative bg-gradient-to-r from-amber-900 via-amber-800 to-orange-900 text-white py-20">
+      <div className="sticky-section1 relative bg-gradient-to-r from-amber-900 via-amber-800 to-orange-900 text-white py-20">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative max-w-7xl mx-auto px-4">
           <div className="text-center">
@@ -244,10 +244,10 @@ Description: ${partnershipForm.description}`;
           </div>
         </div>
       </div>
-<div className="section-stack max-w-7xl mx-auto px-4 py-12">
+<div>
       
         {/* Investment Opportunities Section */}
-        <section className=" mb-16">
+        <section className="sticky-section flex flex-col justify-center items-center  mb-16">
           <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Featured Investment Opportunities</h2>
           
           <div className="flex flex-wrap justify-center gap-4 mb-8">
@@ -268,7 +268,7 @@ Description: ${partnershipForm.description}`;
               className={`px-6 py-3 rounded-full font-semibold transition-all ${
                 activeTab === 'vizag2'
                   ? 'shadow-lg transform scale-105'
-                  : 'hover:border-amber-400'
+                  : 'border-amber-400'
               }`}
             >
               Lakshmi Castle2
@@ -337,7 +337,7 @@ Description: ${partnershipForm.description}`;
         </section>
 
         {/* Why Vizag Section */}
-        <section className=" mb-16">
+        <section className="flex flex-col justify-center h-screen items-center h-100 sticky-section1 mb-16">
           <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Why Vizag?</h2>
           
           <div className="bg-white rounded-2xl shadow-xl p-8">
@@ -377,68 +377,10 @@ Description: ${partnershipForm.description}`;
         </section>
 
         {/* Competitive Pricing & ROI Section */}
-        <section className=" mb-16">
-          <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Get Custom Quote</h2>
-          
-          <div className="bg-white rounded-2xl shadow-xl p-8">
-            <div className="max-w-2xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-6 mb-6">
-                <div>
-                  <Label className="text-sm font-semibold text-gray-700 mb-2">Project Type</Label>
-                  <select
-                    value={quoteForm.projectType}
-                    onChange={(e) => setQuoteForm(prev => ({ ...prev, projectType: e.target.value }))}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                  >
-                    <option value="">Select Project Type</option>
-                    <option value="residential">Residential</option>
-                    <option value="commercial">Commercial</option>
-                    <option value="mixed">Mixed Development</option>
-                  </select>
-                </div>
-                
-                <div>
-                  <Label className="text-sm font-semibold text-gray-700 mb-2">Budget Range</Label>
-                  <select
-                    value={quoteForm.budgetRange}
-                    onChange={(e) => setQuoteForm(prev => ({ ...prev, budgetRange: e.target.value }))}
-                    className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                  >
-                    <option value="">Select Budget</option>
-                    <option value="1-3cr">₹1-3 Crores</option>
-                    <option value="3-5cr">₹3-5 Crores</option>
-                    <option value="5cr+">₹5+ Crores</option>
-                  </select>
-                </div>
-              </div>
-              
-              <div className="mb-6">
-                <Label className="text-sm font-semibold text-gray-700 mb-2">Investment Timeline</Label>
-                <select
-                  value={quoteForm.timeline}
-                  onChange={(e) => setQuoteForm(prev => ({ ...prev, timeline: e.target.value }))}
-                  className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent"
-                >
-                  <option value="">Select Timeline</option>
-                  <option value="immediate">Immediate (0-3 months)</option>
-                  <option value="short">Short-term (3-6 months)</option>
-                  <option value="medium">Medium-term (6-12 months)</option>
-                </select>
-              </div>
-              
-              <Button 
-                onClick={handleQuoteSubmit}
-                disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-amber-400 to-amber-700 text-white hover:from-amber-500 hover:to-amber-800 transform hover:scale-105"
-              >
-                {isSubmitting ? 'Sending...' : 'Request Personalized Quote'}
-              </Button>
-            </div>
-          </div>
-        </section>
+       
 
         {/* AI Predictions Section */}
-        <section className="mb-16">
+        <section className="flex flex-col justify-center h-screen items-center sticky-section1 mb-16">
           <div className="bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-2xl p-8">
             <div className="text-center">
               <h2 className="text-3xl font-bold mb-4">AI Market Predictions</h2>
@@ -453,7 +395,7 @@ Description: ${partnershipForm.description}`;
         </section>
 
         {/* Latest News Section */}
-        <section className="mb-16">
+        <section className="flex flex-col justify-center items-center sticky-section mb-16">
           <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Latest News & Media Features</h2>
           
           <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
@@ -508,7 +450,7 @@ Description: ${partnershipForm.description}`;
         </section>
 
         {/* Business Partnership Section */}
-        <section className=" mb-16">
+        <section className="flex flex-col justify-center  h-screen items-center sticky-section1  mb-16">
           <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Business with Us</h2>
           
           <div className="grid md:grid-cols-2 gap-8">
@@ -592,7 +534,7 @@ Description: ${partnershipForm.description}`;
         </section>
 
         {/* Awards & Testimonials Section */}
-        <section className="mb-16">
+        <section className="sticky-section h-screen flex flex-col justify-center items-center mb-16">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-8">
               <div className="text-center">
@@ -630,7 +572,7 @@ Description: ${partnershipForm.description}`;
         </section>
 
         {/* Timeline & Sustainability */}
-        <section className="mb-16">
+        <section className="sticky-section1 flexjustify-center items-center h-screen mb-16">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-white rounded-2xl shadow-xl p-8">
               <div className="flex items-center gap-3 mb-6">
@@ -690,36 +632,7 @@ Description: ${partnershipForm.description}`;
         </section>
 
         {/* Contact Section */}
-        <section className="mb-16">
-          <div className="bg-gradient-to-r from-amber-600 to-orange-600 text-white rounded-2xl p-8">
-            <div className="text-center">
-              <h2 className="text-3xl font-bold mb-6">Ready to Invest?</h2>
-              <p className="text-xl text-amber-100 mb-8">Contact us today to explore your investment opportunities</p>
-              
-              <div className="flex flex-wrap justify-center gap-4 mb-6">
-                <Button 
-                  onClick={handleCallNow}
-                  className="bg-white text-amber-600 hover:bg-amber-50 flex items-center gap-2"
-                >
-                  <Phone size={20} />
-                  Call: +91 {contactInfo.phone}
-                </Button>
-                <Button 
-                  onClick={handleEmailContact}
-                  variant="outline"
-                  className="border-white text-white hover:bg-white hover:text-amber-600 flex items-center gap-2"
-                >
-                  <Mail size={20} />
-                  Email Us
-                </Button>
-              </div>
-              
-              <p className="text-amber-200">
-                {contactInfo.address}
-              </p>
-            </div>
-          </div>
-        </section>
+       
       </div>
     </div>
   );
